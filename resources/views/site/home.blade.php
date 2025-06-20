@@ -64,7 +64,7 @@
 
         </div>
         <!-- Slider Rating Box End -->
-        @if($slider['image'])
+        @if(!empty($slider['image']))
         <!-- Slider Images Start -->
         <div class="slider-images">
             <div class="images">
