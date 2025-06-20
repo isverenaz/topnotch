@@ -58,13 +58,14 @@
 
             <!-- Header Main Start -->
             <div class="header-main-wrapper">
-
+                @if(!empty($setting['footer_logo']))
                 <!-- Header Logo Start -->
                 <div class="header-logo">
                     <a href="{{ route('site.index') }}">
                         <img src="{{ asset('uploads/settings/'.$setting['footer_logo']) }}" style="max-height: 53px;" alt="{{$setting['title'][$currentLang]}}">
                     </a>
                 </div>
+                @endif
                 <!-- Header Logo End -->
 
                 <!-- Header Menu Start -->

@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
+    @if(!empty($data['setting']['favicon']))
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings/'.$data['setting']['favicon']) }}">
+    @endif
     @yield('site.css')
     <style>
         .header-language select {

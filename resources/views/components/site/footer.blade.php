@@ -11,11 +11,13 @@
                 <div class="col-lg-3 col-md-6 order-md-1 order-lg-1">
                     <!-- Footer Widget Start -->
                     <div class="footer-widget">
+                        @if(!empty($setting['footer_logo']))
                         <div class="widget-logo">
                             <a href="{{ route('site.index') }}">
                                 <img src="{{ asset('uploads/settings/'.$setting['footer_logo']) }}" style="max-height: 53px;" alt="{{$setting['title'][$currentLang]}}">
                             </a>
                         </div>
+                        @endif
 
                         <div class="widget-address">
                             <h4 class="footer-widget-title">{{$setting['title'][$currentLang] ?? ''}}</h4>
