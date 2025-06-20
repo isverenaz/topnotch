@@ -73,7 +73,8 @@
                         <!-- About Content Start -->
                         <div class="about-content">
                             <h5 class="sub-title">@lang('site.welcome').</h5>
-                            <h2 class="main-title"></h2>
+                            <h2 class="main-title">
+                                @lang('site.about_title')</h2>
                             @lang('site.about_text')
                             <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup')</a>
                         </div>
@@ -103,8 +104,8 @@
 
                         <!-- Section Title Start -->
                         <div class="section-title shape-02">
-                            <h5 class="sub-title">@lang('site.about_title')</h5>
-                            <h2 class="main-title">@lang('site.about_text')</h2>
+                            <h5 class="sub-title">@lang('reklam.about_title')</h5>
+                            <h2 class="main-title">@lang('reklam.about_text')</h2>
                         </div>
                         <!-- Section Title End -->
 
