@@ -18,6 +18,11 @@
     'blog_text' => 'Bizi izləyib <span>Yeniliklərimizdən</span> xəbardar olun',
     'contact_full_text' => 'Bizi əlaqə saxlayıb <span>İstədiyiniz dili öyrənib, İstədiyiniz universitetdə</span> təhsil ala bilərsiniz.',
     'contact_text' => '<span>Yeniliklər üçün</span> bizim ilə əlaqə yaradın!',
+    'about_title' => '<span>Top-Notch Language Hub </span>– Uğura gedən yolda etibarlı bələdçiniz!',
+    'about_text' => '<p>Artıq 7 ildən çoxdur ki, Top-Notch Language Hub olaraq tələbələrimizin xaricdə təhsil arzularını gerçəkləşdirir, onları beynəlxalq səviyyədə uğurlu bir gələcəyə hazırlayırıq. İtaliya, Almaniya, Türkiyə, Polşa və digər Avropa ölkələrinin nüfuzlu universitetlərinə qəbul prosesində tam dəstək göstərir, hər bir tələbənin potensialını ortaya çıxarmağa çalışırıq.</p>
+                            <p>Xaricdə təhsillə yanaşı, dil hazırlığı sahəsində də fərqlənirik. Alman, ingilis, rus, italyan, polyak, fransız və koreya dilləri üzrə kurslarımızla sizə geniş seçim imkanı təqdim edirik. Dil öyrənmək istəyənlər üçün sadəcə dərs deyilik – biz sizi yeni mədəniyyətlərlə tanış edir, qlobal düşüncə tərzinə sahib olmağınıza şərait yaradırıq.</p>
+                            <p>IELTS, SAT, YÖS, CILS, TELC və GOETHE kimi beynəlxalq imtahanlara yüksək səviyyəli hazırlıq proqramlarımızla sizi məqsədinizə bir addım daha yaxınlaşdırırıq. Peşəkar və təcrübəli müəllimlərimiz, fərdi yanaşmamız və tələbəyönümlü metodikamız sayəsində uğur qaçılmaz olur.</p>
+                            <p>Top-Notch Language Hub – burada uğurlu təhsil və güclü dil biliyi bir aradadır!</p>',
     'share' => 'Paylaş',
     'signup' => 'Qoşul',
     'contact' => 'Əlaqə',
