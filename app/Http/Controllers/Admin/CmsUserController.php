@@ -23,10 +23,10 @@ class CmsUserController extends Controller
 
     public function __construct(CmsUserRepositoryImpl $cmsUserRepository)
     {
-        $this->middleware('permission:cms_users-view')->only('index');
+        /*$this->middleware('permission:cms_users-view')->only('index');
         $this->middleware('permission:cms_users-create')->only(['create', 'store']);
         $this->middleware('permission:cms_users-edit')->only(['edit', 'update']);
-        $this->middleware('permission:cms_users-delete')->only('destroy');
+        $this->middleware('permission:cms_users-delete')->only('destroy');*/
 
         $locales = Translation::where('status',1)->pluck('code')->toArray();
         $this->currentLang = LaravelLocalization::getCurrentLocale();
