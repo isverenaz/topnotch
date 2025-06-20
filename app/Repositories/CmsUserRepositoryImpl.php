@@ -13,12 +13,11 @@ class CmsUserRepositoryImpl implements CmsUserRepository
     public function __construct()
     {
         $this->model  = new CmsUser();
-        $this->cms_user = CmsUser::orderBy('id','DESC')->get();
     }
 
     public function getAll()
     {
-        return $this->cms_user;
+        return $this->model->all();
     }
 
     public function create(array $data)
@@ -28,7 +27,6 @@ class CmsUserRepositoryImpl implements CmsUserRepository
 
     public function update($id, array $data)
     {
-        dd($data);
         return $this->model->whereId($id)->update($data);
     }
 
