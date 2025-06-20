@@ -75,7 +75,7 @@
                         <div class="about-content">
                             <h5 class="sub-title">@lang('site.welcome').</h5>
                             <h2 class="main-title"><span>Top-Notch Language Hub </span>– Uğura gedən yolda etibarlı bələdçiniz!</h2>
-                            <pre>Artıq 7 ildən çoxdur ki, Top-Notch Language Hub olaraq tələbələrimizin xaricdə təhsil arzularını gerçəkləşdirir,
+                            <p>Artıq 7 ildən çoxdur ki, Top-Notch Language Hub olaraq tələbələrimizin xaricdə təhsil arzularını gerçəkləşdirir,
                                 onları beynəlxalq səviyyədə uğurlu bir gələcəyə hazırlayırıq.
                                 İtaliya, Almaniya, Türkiyə, Polşa və digər Avropa ölkələrinin nüfuzlu universitetlərinə qəbul prosesində tam dəstək göstərir,
                                 hər bir tələbənin potensialını ortaya çıxarmağa çalışırıq.
@@ -88,7 +88,7 @@
                                 Peşəkar və təcrübəli müəllimlərimiz, fərdi yanaşmamız və tələbəyönümlü metodikamız sayəsində uğur qaçılmaz olur.
 
                                 Top-Notch Language Hub – burada uğurlu təhsil və güclü dil biliyi bir aradadır!
-                            </pre>
+                            </p>
                             <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup')</a>
                         </div>
                         <!-- About Content End -->
