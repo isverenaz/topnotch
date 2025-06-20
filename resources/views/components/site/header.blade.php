@@ -135,6 +135,22 @@
                             </ul>
                             @endif
                         </li>
+                        <li>
+                            <a href="#">{{ ucwords($currentLang) }}</a>
+                            @if(!empty($translations[0]))
+                            <ul class="sub-menu">
+                                @foreach($translations as $localeCode => $properties)
+                                    @if($properties['code'] != $currentLang)
+                                <li>
+                                    <a href="{{ LaravelLocalization::getLocalizedURL($properties['code'], route('site.index')) }}" hreflang="{{ $properties['code'] }}">
+                                        {{ ucwords($properties['code']) }}
+                                    </a>
+                                    @endif
+                                </li>
+                                @endforeach
+                            </ul>
+                            @endif
+                        </li>
                     </ul>
                 </div>
                 <!-- Header Menu End -->
@@ -239,6 +255,18 @@
                 </li>
             @endif
                 <li>
+                    <a href="{{ route("site.schools") }}">@lang('site.schools')</a>
+                    @if(!empty($schoolCategories))
+                        <ul class="sub-menu">
+                            @foreach($schoolCategories as $schoolCategory)
+                                <li>
+                                    <a href="{{ route("site.schools",['schoolCategory' => $schoolCategory['slug'][$currentLang]]) }}">{{$schoolCategory['title'][$currentLang]}}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </li>
+                <li>
                     <a href="{{ route("site.blogs") }}">@lang('site.blogs')</a>
                     @if(!empty($categories))
                         <ul class="sub-menu">
@@ -250,7 +278,6 @@
                         </ul>
                     @endif
                 </li>
-            <li><a href="{{ route("site.contact") }}">@lang('site.contact_us')</a></li>
         </ul>
 
     </div>
