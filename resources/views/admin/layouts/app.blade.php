@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@lang('admin.site_name')-@yield('admin.title')</title>
-
+    @if(!empty($data['setting']['favicon']))
     <link rel="shortcut icon" href="{{ asset('uploads/settings/'.$data['setting']['favicon']) }}">
+    @endif
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/css/jquery.uploader.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/css/dropzone.min.css') }}">
