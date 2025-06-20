@@ -8,7 +8,7 @@ use App\Http\Requests\Admin\CmsUserRequest;
 use App\Models\CmsUser;
 use App\Models\Log;
 use App\Models\Translation;
-use \App\Repositories\CmsUserRepositoryImpl;
+use App\Repositories\CmsUserRepositoryImpl;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Lang;
