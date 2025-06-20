@@ -8,7 +8,7 @@ use App\Http\Requests\Admin\CmsUserRequest;
 use App\Models\CmsUser;
 use App\Models\Log;
 use App\Models\Translation;
-use App\Repositories\CmsUserRepositoryImpl;
+use \App\Repositories\CmsUserRepositoryImpl;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Lang;
@@ -213,11 +213,11 @@ class CmsUserController extends Controller
             }
 
             $data = CmsUserHelper::data($cmsUserRequest,$cmsUser);
-            echo "<pre>";
+           /* echo "<pre>";
             echo $id;
             echo "</pre>";
             print_r($data);
-            dd();
+            dd();*/
             $this->cmsUserRepository->update($id,$data);
             if (isset($cmsUserRequest->role) && !empty($cmsUserRequest->role)) {
                 DB::table('model_has_roles')->where('model_id',$id)->delete();
