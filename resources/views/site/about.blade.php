@@ -103,8 +103,8 @@
 
                         <!-- Section Title Start -->
                         <div class="section-title shape-02">
-                            <h5 class="sub-title">@lang('reklam.about_title')</h5>
-                            <h2 class="main-title">@lang('reklam.about_text')</h2>
+                            <h5 class="sub-title">@lang('site.about_title')</h5>
+                            <h2 class="main-title">@lang('site.about_text')</h2>
                         </div>
                         <!-- Section Title End -->
 
