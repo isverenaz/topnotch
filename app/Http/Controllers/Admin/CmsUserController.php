@@ -48,7 +48,8 @@ class CmsUserController extends Controller
             return self::notFound();
         }
 
-        $cms_users = $this->cmsUserRepository->getAll();
+//        $cms_users = $this->cmsUserRepository->getAll();
+        $cms_users = CmsUser::all();
         return view('admin.cms-users.index',compact('cms_users'));
     }
 
@@ -218,7 +219,8 @@ class CmsUserController extends Controller
             echo "</pre>";
             print_r($data);
             dd();*/
-            $this->cmsUserRepository->update($id,$data);
+//            $this->cmsUserRepository->update($id,$data);
+            CmsUser::whereId($id)->update($data);
             if (isset($cmsUserRequest->role) && !empty($cmsUserRequest->role)) {
                 DB::table('model_has_roles')->where('model_id',$id)->delete();
                 $cmsUser->assignRole($cmsUserRequest->role);

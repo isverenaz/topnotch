@@ -8,7 +8,6 @@ use App\Models\CmsUser;
 class CmsUserRepositoryImpl implements CmsUserRepository
 {
     protected $model;
-    protected $cms_user;
 
     public function __construct()
     {
