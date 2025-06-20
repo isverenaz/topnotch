@@ -28,6 +28,7 @@ class CmsUserRepositoryImpl implements CmsUserRepository
 
     public function update($id, array $data)
     {
+        dd($data);
         return $this->model->whereId($id)->update($data);
     }
 
