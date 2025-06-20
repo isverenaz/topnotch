@@ -20839,7 +20839,7 @@ img {
     background-color: #e7f8ee;
     border-radius: 5px;
     font-size: 14px;
-    color: #309255;
+    color: #212832;
     display: inline-block;
     text-align: center;
     border-radius: 5px;
@@ -20854,7 +20854,7 @@ img {
 }
 
 .single-courses .courses-content .courses-author .tag a:hover {
-    background-color: #309255;
+    background-color: #212832;
     color: #fff
 }
 
@@ -21368,7 +21368,7 @@ img {
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 10px;
     background-color: #fff;
-    color: #309255;
+    color: #212832;
     display: inline-block;
     font-size: 32px;
     -webkit-transition: all 0.3s ease 0s;
@@ -21415,8 +21415,8 @@ img {
 }
 
 .single-work:hover .work-icon i {
-    border-color: #309255;
-    background-color: #309255;
+    border-color: #212832;
+    background-color: #212832;
     color: #fff
 }
 
@@ -28866,7 +28866,7 @@ img {
 .footer-widget .widget-address p {
     font-size: 15px;
     font-weight: 400;
-    color: #309255;
+    color: #212832;
     margin-top: 6px
 }
 

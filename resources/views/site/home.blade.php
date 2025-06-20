@@ -64,7 +64,7 @@
 
         </div>
         <!-- Slider Rating Box End -->
-
+        @if($slider['image'])
         <!-- Slider Images Start -->
         <div class="slider-images">
             <div class="images">
@@ -72,6 +72,7 @@
 {{--                <img src="{{ asset("site/assets/images/slider/slider-1.png") }}" alt="Slider">--}}
             </div>
         </div>
+        @endif
         <!-- Slider Images End -->
 
         <!-- Slider Video Start -->
