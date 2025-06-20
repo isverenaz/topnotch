@@ -213,6 +213,11 @@ class CmsUserController extends Controller
             }
 
             $data = CmsUserHelper::data($cmsUserRequest,$cmsUser);
+            echo "<pre>";
+            echo $id;
+            echo "</pre>";
+            print_r($data);
+            dd();
             $this->cmsUserRepository->update($id,$data);
             if (isset($cmsUserRequest->role) && !empty($cmsUserRequest->role)) {
                 DB::table('model_has_roles')->where('model_id',$id)->delete();
