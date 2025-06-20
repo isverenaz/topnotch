@@ -74,8 +74,15 @@
                         <!-- About Content Start -->
                         <div class="about-content">
                             <h5 class="sub-title">@lang('site.welcome').</h5>
-                            <h2 class="main-title">You can join with Edule and upgrade your skill for your <span>bright future.</span></h2>
-                            <p>Lorem Ipsum has been the industr’s standard dummy text ever since unknown printer took galley type and scmbled make type specimen book. It has survived not only five centuries.</p>
+                            <h2 class="main-title"><span>Top-Notch Language Hub </span>– Uğura gedən yolda etibarlı bələdçiniz!</h2>
+                            <pre>Artıq 7 ildən çoxdur ki, Top-Notch Language Hub olaraq tələbələrimizin xaricdə təhsil arzularını gerçəkləşdirir, onları beynəlxalq səviyyədə uğurlu bir gələcəyə hazırlayırıq. İtaliya, Almaniya, Türkiyə, Polşa və digər Avropa ölkələrinin nüfuzlu universitetlərinə qəbul prosesində tam dəstək göstərir, hər bir tələbənin potensialını ortaya çıxarmağa çalışırıq.
+
+Xaricdə təhsillə yanaşı, dil hazırlığı sahəsində də fərqlənirik. Alman, ingilis, rus, italyan, polyak, fransız və koreya dilləri üzrə kurslarımızla sizə geniş seçim imkanı təqdim edirik. Dil öyrənmək istəyənlər üçün sadəcə dərs deyilik – biz sizi yeni mədəniyyətlərlə tanış edir, qlobal düşüncə tərzinə sahib olmağınıza şərait yaradırıq.
+
+IELTS, SAT, YÖS, CILS, TELC və GOETHE kimi beynəlxalq imtahanlara yüksək səviyyəli hazırlıq proqramlarımızla sizi məqsədinizə bir addım daha yaxınlaşdırırıq. Peşəkar və təcrübəli müəllimlərimiz, fərdi yanaşmamız və tələbəyönümlü metodikamız sayəsində uğur qaçılmaz olur.
+
+Top-Notch Language Hub – burada uğurlu təhsil və güclü dil biliyi bir aradadır!
+</pre>
                             <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup')</a>
                         </div>
                         <!-- About Content End -->
