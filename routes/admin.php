@@ -28,6 +28,7 @@ try {
         Route::get('category-categories/parent', 'CategoryController@getParentCategories')->name('category-category.getParentCategories');
         Route::get('category-categories/sub-parent', 'CategoryController@getSubCategories')->name('category-category.getSubParentCategories');
         Route::resource('category', 'CategoryController');
+        Route::resource('school-category', 'SchoolCategoriesController');
         Route::resource('news', 'NewsController');
         Route::post('/news/slider-image/delete', 'NewsController@deleteSliderImage')->name('news.slider_image.delete');
          Route::resource('projects', 'ProjectController');
@@ -53,6 +54,8 @@ try {
         Route::resource('educational-degrees', 'EducationalDegreesController');
         Route::get('languages/languageId', 'LanguagesController@getParentLanguagesByLanguageId')->name('languages.getParentLanguagesByLanguageId');
         Route::resource('languages', 'LanguagesController');
+        Route::get('schools/languageId', 'SchoolController@getParentLanguagesByLanguageId')->name('schools.getParentLanguagesByLanguageId');
+        Route::resource('schools', 'SchoolController');
         Route::resource('study-abroads', 'StudyAbroadsController');
         Route::resource('language-courses', 'LanguageCoursesController');
     });

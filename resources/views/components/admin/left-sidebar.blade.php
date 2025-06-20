@@ -215,6 +215,31 @@
                 </ul>
             </li>
             <li class="sidebar-item">
+                <a role="button" class="sidebar-link-group-title has-sub">@lang('admin.schools')</a>
+                <ul class="sidebar-link-group" @if(in_array(Route::currentRouteName(),['admin.school-category.index'])) style="display: block;!important;" @else style="display: none;!important;" @endif>
+                    @can('category-view')
+                        <li class="sidebar-dropdown-item">
+                            <a href="{{ route('admin.school-category.index') }}" class="sidebar-link">
+                            <span class="nav-icon">
+                                <i class="fa-light fa-filter-list"></i>
+                            </span>
+                                <span class="sidebar-txt">@lang('admin.categories')</span>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('schools-view')
+                        <li class="sidebar-dropdown-item">
+                            <a href="{{ route('admin.schools.index') }}" class="sidebar-link">
+                            <span class="nav-icon">
+                                <i class="fa-light fa-filter-list"></i>
+                            </span>
+                                <span class="sidebar-txt">@lang('admin.schools')</span>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+            <li class="sidebar-item">
                 <a role="button" class="sidebar-link-group-title has-sub">@lang('admin.word_translations')</a>
                 <ul class="sidebar-link-group" @if(in_array(Route::currentRouteName(),['admin.translations.index', 'admin.site-words.index', 'admin.admin-words.index'])) style="display: block;!important;" @else style="display: none;!important;" @endif>
                     @can('translations-view')

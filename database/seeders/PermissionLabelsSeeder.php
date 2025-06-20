@@ -39,6 +39,7 @@ class PermissionLabelsSeeder extends Seeder
             'languages',
             'study-abroad',
             'language-courses',
+            'schools'
         ];
 
         foreach ($labels as $label) {

@@ -18,6 +18,7 @@
     'languages' => 'Tədris edilən dillər',
     'language_courses' => 'Dil kurları',
 
+    'schools' => 'Məktəblər',
     'news' => 'Xəbərlər',
     'career_contact_with' => 'Vakansiyalar və Müraciətlər',
     'career' => 'Vakansiyalar',

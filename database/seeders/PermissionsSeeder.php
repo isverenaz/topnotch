@@ -127,7 +127,12 @@ class PermissionsSeeder extends Seeder
             ['name' => 'language-courses-create', 'guard_name' => 'admin', 'label' => 'language-courses'],
             ['name' => 'language-courses-edit', 'guard_name' => 'admin', 'label' => 'language-courses'],
             ['name' => 'language-courses-delete', 'guard_name' => 'admin', 'label' => 'language-courses'],
-        ];
+
+            ['name' => 'schools-view', 'guard_name' => 'admin', 'label' => 'schools'],
+            ['name' => 'schools-create', 'guard_name' => 'admin', 'label' => 'schools'],
+            ['name' => 'schools-edit', 'guard_name' => 'admin', 'label' => 'schools'],
+            ['name' => 'schools-delete', 'guard_name' => 'admin', 'label' => 'schools'],
+            ];
 
         foreach ($permissions as $permission) {
             DB::table('permissions')->updateOrInsert(

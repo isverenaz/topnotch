@@ -6,6 +6,7 @@ use App\Models\InstituteCategory;
 use App\Models\LaboratoryCategory;
 use App\Models\Language;
 use App\Models\Page;
+use App\Models\SchoolCategory;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -40,6 +41,7 @@ class Header extends Component
         $countries = Country::with('universities')->where(['status' => 1])->orderBy('name->'.$currentLang,'ASC')->get();
         $languages = Language::with('parentLanguages')->where(['status' => 1])->orderBy('name->'.$currentLang,'ASC')->get();
         $categories = Category::where(['status' => 1])->orderBy('title->'.$currentLang,'ASC')->get();
-        return view('components.site.header',compact('currentLang','languages','setting','countries','translations','categories'));
+        $schoolCategories = SchoolCategory::where(['status' => 1])->orderBy('title->'.$currentLang,'ASC')->get();
+        return view('components.site.header',compact('currentLang','languages','setting','countries','translations','categories','schoolCategories'));
     }
 }

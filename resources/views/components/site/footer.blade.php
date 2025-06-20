@@ -80,8 +80,9 @@
                             <ul class="widget-link">
                                 <li><a href="{{ route('site.about') }}">Haqqımızda</a></li>
                                 <li><a href="{{ route('site.faqs') }}">Tez-tez verilən suallar</a></li>
+                                <li><a href="{{ route("site.contact") }}">@lang('site.contact_us')</a></li>
                                 {{--<li><a href="{{ route('site.conditions') }}">Şərtlər</a></li>
-                                <li><a href="{{ route('site.rules') }}">Qaydalar</a></li>--}}
+                                            <li><a href="{{ route('site.rules') }}">Qaydalar</a></li>--}}
                             </ul>
 
                         </div>

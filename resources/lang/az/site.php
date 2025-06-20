@@ -10,6 +10,8 @@
     'contact_us'=> 'Bizimlə Əlaqə',
     'signup_us'=> 'Bizimlə təhsil al',
     'copyright' => 'Bütün hüquqlar qorunur.',
+    'schools' => 'Məktəblər',
+    'teacher' => 'Müəllim',
 
     //content
     'partner_text' => 'Bizimlə <span>əməkdaşlıq</span> edən universitetlər',

@@ -24,6 +24,8 @@ use App\Models\News;
 use App\Models\Page;
 use App\Models\PageContent;
 use App\Models\Position;
+use App\Models\School;
+use App\Models\SchoolCategory;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -129,6 +131,7 @@ class HomeController extends Controller
 
     public function signup()
     {
+        return redirect(route('site.contact'));
         $currentLang = $this->currentLang;
         return view('site.signup',compact('currentLang'));
     }
@@ -164,6 +167,26 @@ class HomeController extends Controller
         $category = Category::where(['slug->'.$currentLang => $category, 'status' => 1])->first();
         $blog = News::where(['category_id'=>$category->id,'slug->'.$currentLang => $slug,'status' => 1])->orderBy('id','DESC')->first();
         return view('site.blog-detail',compact('currentLang','category','blog'));
+    }
+    public function schools($schoolCategory = null)
+    {
+        $currentLang = $this->currentLang;
+        if ($schoolCategory != null) {
+            $category = SchoolCategory::where(['slug->'.$currentLang => $schoolCategory, 'status' => 1])->first();
+            $schools = School::with(['category', 'language', 'parentLanguage','teacher','country'])->where(['category_id'=>$category->id,'status' => 1])->orderBy('id','DESC')->get();
+        }else{
+            $schools = School::with(['category', 'language', 'parentLanguage','teacher','country'])->where(['status' => 1])->orderBy('id','DESC')->get();
+        }
+        return view('site.schools',compact('currentLang','category','schools'));
+    }
+
+
+    public function schoolDetails($schoolCategory = null,$slug)
+    {
+        $currentLang = $this->currentLang;
+        $schoolCategory = SchoolCategory::where(['slug->'.$currentLang => $schoolCategory, 'status' => 1])->first();
+        $school = School::with(['category', 'language', 'parentLanguage','teacher','country'])->where(['category_id'=>$schoolCategory->id,'slug->'.$currentLang => $slug,'status' => 1])->orderBy('id','DESC')->first();
+        return view('site.school-detail',compact('currentLang','schoolCategory','school'));
     }
 
 
