@@ -172,12 +172,12 @@ class HomeController extends Controller
     {
         $currentLang = $this->currentLang;
         if ($schoolCategory != null) {
-            $category = SchoolCategory::where(['slug->'.$currentLang => $schoolCategory, 'status' => 1])->first();
-            $schools = School::with(['category', 'language', 'parentLanguage','teacher','country'])->where(['category_id'=>$category->id,'status' => 1])->orderBy('id','DESC')->get();
+            $schoolCategory = SchoolCategory::where(['slug->'.$currentLang => $schoolCategory, 'status' => 1])->first();
+            $schools = School::with(['category', 'language', 'parentLanguage','teacher','country'])->where(['category_id'=>$schoolCategory->id,'status' => 1])->orderBy('id','DESC')->get();
         }else{
             $schools = School::with(['category', 'language', 'parentLanguage','teacher','country'])->where(['status' => 1])->orderBy('id','DESC')->get();
         }
-        return view('site.schools',compact('currentLang','category','schools'));
+        return view('site.schools',compact('currentLang','schoolCategory','schools'));
     }
 
 
