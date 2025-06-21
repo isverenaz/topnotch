@@ -71,7 +71,7 @@
                 <!-- Header Menu Start -->
                 <div class="header-menu d-none d-lg-block">
                     <ul class="nav-menu">
-                        @if(!empty($countries[0]))
+                        @if(!empty($countries[0]['name'][$currentLang]))
                         <li>
                             <a href="{{ route('site.study-abroad') }}">@lang('site.study_abroads')</a>
                             <ul class="sub-menu">
@@ -90,7 +90,7 @@
                             </ul>
                         </li>
                         @endif
-                        @if(!empty($languages[0]))
+                        @if(!empty($languages[0]['name'][$currentLang]))
                         <li>
                             <a href="{{ route('site.language-courses') }}">@lang('site.language_courses')</a>
                             <ul class="sub-menu">
@@ -113,7 +113,7 @@
                         @endif
                         <li>
                             <a href="{{ route("site.schools") }}">@lang('site.schools')</a>
-                            @if(!empty($schoolCategories))
+                            @if(!empty($schoolCategories[0]['title'][$currentLang]))
                             <ul class="sub-menu">
                                 @foreach($schoolCategories as $schoolCategory)
                                 <li>
@@ -136,8 +136,8 @@
                             @endif
                         </li>
                         <li>
-                            <a href="#">{{ ucwords($currentLang) }}</a>
-                            @if(!empty($translations[0]))
+                            <a href="{{ LaravelLocalization::getLocalizedURL($currentLang, route('site.index')) }}">{{ ucwords($currentLang) }}</a>
+                            @if(!empty($translations[0]) && count($translations) > 1)
                             <ul class="sub-menu">
                                 @foreach($translations as $localeCode => $properties)
                                     @if($properties['code'] != $currentLang)
@@ -158,7 +158,7 @@
                 <!-- Header Sing In & Up Start -->
                 <div class="header-sign-in-up d-none d-lg-block">
                     <ul>
-                        <li><a class="sign-up" href="{{ route('site.signup') }}">@lang('site.signup_us')</a></li>
+                        <li><a class="sign-up" href="{{ route('site.contact') }}">@lang('site.contact_us')</a></li>
                     </ul>
                 </div>
                 <!-- Header Sing In & Up End -->
