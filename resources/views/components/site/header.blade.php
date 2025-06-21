@@ -10,7 +10,7 @@
 
                 <!-- Header Top Left Start -->
                 <div class="header-top-left">
-                    <p>Dostun ilə gəl <a href="#">Xaricdə təhsil üçün</a> 10% endirim qazan!</p>
+                    <p>@lang('reklam.header_title')</p>
                 </div>
                 <!-- Header Top Left End -->
 
@@ -275,6 +275,22 @@
                                     <a href="{{ route("site.blogs",['category' => $category['slug'][$currentLang]]) }}">{{$category['title'][$currentLang]}}</a>
                                 </li>
                             @endforeach
+                        </ul>
+                    @endif
+                </li>
+                <li>
+                    <a href="#">{{ ucwords($currentLang) }}</a>
+                    @if(!empty($translations[0]))
+                        <ul class="sub-menu">
+                            @foreach($translations as $localeCode => $properties)
+                                @if($properties['code'] != $currentLang)
+                                    <li>
+                                        <a href="{{ LaravelLocalization::getLocalizedURL($properties['code'], route('site.index')) }}" hreflang="{{ $properties['code'] }}">
+                                            {{ ucwords($properties['code']) }}
+                                        </a>
+                                        @endif
+                                    </li>
+                                    @endforeach
                         </ul>
                     @endif
                 </li>

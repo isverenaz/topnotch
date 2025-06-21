@@ -21,10 +21,10 @@
             <!-- Page Banner Start -->
             <div class="page-banner-content">
                 <ul class="breadcrumb">
-                    <li><a href="{{ route('site.index') }}">Əsas səhifə</a></li>
-                    <li class="active">Haqqımızda</li>
+                    <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
+                    <li class="active">@lang('site.about_us')</li>
                 </ul>
-                <h2 class="title">Bizi əlaqə saxlayıb <span>İstədiyiniz dili öyrənib, İstədiyiniz universitetdə</span> təhsil ala bilərsiniz.</h2>
+                <h2 class="title">@lang('site.about_text')</h2>
             </div>
             <!-- Page Banner End -->
         </div>
@@ -75,7 +75,7 @@
                             <h5 class="sub-title">@lang('site.welcome').</h5>
                             <h2 class="main-title">
                                 @lang('site.about_title')</h2>
-                            @lang('site.about_text')
+                            @lang('site.about_full_text')
                             <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup')</a>
                         </div>
                         <!-- About Content End -->
