@@ -96,7 +96,7 @@ class AjaxController extends Controller
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Xətta baş verdi!',
+                'message' => $e->getMessage(),
             ]);
         }
     }
