@@ -14,8 +14,8 @@
     'teacher' => 'Müəllim',
 
     //content
-    'service_title' => 'Bizə qoşulan 1,235+ tələbədən biri ol!',
-    'service_text' => 'Biz necə <span> işləyirik?</span>',
+    'home_service_title' => 'Bizə qoşulan 1,235+ tələbədən biri ol!',
+    'home_service_text' => 'Biz necə <span> işləyirik?</span>',
     'partner_text' => 'Bizimlə <span>əməkdaşlıq</span> edən universitetlər',
     'study_abroads_text' => 'Bizimlə <span>Xaricdə təhsilini</span> Davam etdir',
     'language_courses_text' => 'Bizimlə <span>Xarici dilini </span> İnkişaf etdir',

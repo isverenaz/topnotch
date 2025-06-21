@@ -14,8 +14,8 @@
     'teacher' => 'Преподаватель',
 
     // content
-    'service_title' => 'Присоединяйся к более чем 1235 студентам!',
-    'service_text' => 'Как <span>мы работаем?</span>',
+    'home_service_title' => 'Присоединяйся к более чем 1235 студентам!',
+    'home_service_text' => 'Как <span>мы работаем?</span>',
     'partner_text' => 'Университеты, с которыми мы <span>сотрудничаем</span>',
     'study_abroads_text' => 'Продолжи <span>обучение за границей</span> вместе с нами',
     'language_courses_text' => 'Улучшай <span>свои языковые навыки</span> с нами',
