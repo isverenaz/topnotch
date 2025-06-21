@@ -86,7 +86,7 @@ class AjaxController extends Controller
                 'type' => 'contact'
             ];
 
-            Notification::route('mail', 'topnotch2525@gmai.com')->notify(new Mail($mail_data));
+            Notification::route('mail', 'topnotchaz2025@gmail.com')->notify(new Mail($mail_data));
 
             return response()->json([
                 'success' => true,
@@ -96,7 +96,7 @@ class AjaxController extends Controller
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => null,
+                'message' => 'Xətta baş verdi!',
             ]);
         }
     }

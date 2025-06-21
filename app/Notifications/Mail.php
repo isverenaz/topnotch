@@ -36,11 +36,11 @@ class Mail extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        $subject = $this->data['name']??'afsi.gov.az';
+        $subject = $this->data['name']??'topnotch.az';
         $data = $this->data;
 
         return (new MailMessage)
-            ->from('autoresponse@afsa.gov.az', 'afsi.gov.az')#->name('EntranceIndia')
+            ->from('isveren.consulting@gmail.com', 'topnotch.az')#->name('EntranceIndia')
                 ->view('email.email',['data'=>$data])
             ->subject($subject);
     }
