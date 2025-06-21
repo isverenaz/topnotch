@@ -76,17 +76,17 @@ class AjaxController extends Controller
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'message' => $request->message,
-            ]);
+            ]);;*/
 
             $mail_data = [
-                'name' => $request->name,,
+                'name' => $request->name,
                 'phone' => $request->phone,
                 'email' => $request->email,
-                'message' => $request->note,
+                'note' => $request->message,
                 'type' => 'contact'
             ];
 
-            Notification::route('mail', $this->setting->email)->notify(new Mail($mail_data));*/
+            Notification::route('mail', 'topnotch2525@gmai.com')->notify(new Mail($mail_data));
 
             return response()->json([
                 'success' => true,
