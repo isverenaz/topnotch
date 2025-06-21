@@ -188,8 +188,8 @@
 
                         <!-- Section Title Start -->
                         <div class="section-title shape-02">
-                            <h5 class="sub-title">@lang('reklam.home_title_one')</h5>
-                            <h2 class="main-title">@lang('reklam.home_text_one')</h2>
+                            <h5 class="sub-title">@lang('site.home_title_one')</h5>
+                            <h2 class="main-title">@lang('site.home_text_one')</h2>
                         </div>
                         <!-- Section Title End -->
 
@@ -213,8 +213,8 @@
 
             <!-- Section Title Start -->
             <div class="section-title shape-03 text-center">
-                <h5 class="sub-title">Bizə qoşulan 1,235+ tələbədən biri ol!</h5>
-                <h2 class="main-title">Biz necə <span> işləyirik?</span></h2>
+                <h5 class="sub-title">@lang('site.home_service_title')</h5>
+                <h2 class="main-title">@lang('site.home_service_text')</h2>
             </div>
             <!-- Section Title End -->
             @if(!empty($services))
@@ -263,8 +263,8 @@
 
                 <!-- Section Title Start -->
                 <div class="section-title section-title-white">
-                    <h5 class="sub-title">@lang('reklam.home_title_two')</h5>
-                    <h2 class="main-title">@lang('reklam.home_text_two')</h2>
+                    <h5 class="sub-title">@lang('site.home_title_two')</h5>
+                    <h2 class="main-title">@lang('site.home_text_two')</h2>
                 </div>
                 <!-- Section Title End -->
 

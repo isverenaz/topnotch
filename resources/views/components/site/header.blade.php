@@ -10,7 +10,7 @@
 
                 <!-- Header Top Left Start -->
                 <div class="header-top-left">
-                    <p>@lang('reklam.header_title')</p>
+                    <p>@lang('site.header_title')</p>
                 </div>
                 <!-- Header Top Left End -->
 

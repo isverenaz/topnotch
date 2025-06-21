@@ -62,7 +62,7 @@
 
                         <!-- Footer Widget Start -->
                         <div class="footer-widget">
-                            <h4 class="footer-widget-title">Təhsil dərəcələri</h4>
+                            <h4 class="footer-widget-title">@lang('site.education_degree')</h4>
 
                             <ul class="widget-link">
                                 @foreach($degrees as $degree)
@@ -75,11 +75,11 @@
 
                         <!-- Footer Widget Start -->
                         <div class="footer-widget">
-                            <h4 class="footer-widget-title">Əlavələrimiz</h4>
+                            <h4 class="footer-widget-title">@lang('site.our_additions')</h4>
 
                             <ul class="widget-link">
-                                <li><a href="{{ route('site.about') }}">Haqqımızda</a></li>
-                                <li><a href="{{ route('site.faqs') }}">Tez-tez verilən suallar</a></li>
+                                <li><a href="{{ route('site.about') }}">@lang('site.about_us')</a></li>
+                                <li><a href="{{ route('site.faqs') }}">@lang('site.faq')</a></li>
                                 <li><a href="{{ route("site.contact") }}">@lang('site.contact_us')</a></li>
                                 {{--<li><a href="{{ route('site.conditions') }}">Şərtlər</a></li>
                                             <li><a href="{{ route('site.rules') }}">Qaydalar</a></li>--}}

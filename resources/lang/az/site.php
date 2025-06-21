@@ -14,6 +14,8 @@
     'teacher' => 'Müəllim',
 
     //content
+    'service_title' => 'Bizə qoşulan 1,235+ tələbədən biri ol!',
+    'service_text' => 'Biz necə <span> işləyirik?</span>',
     'partner_text' => 'Bizimlə <span>əməkdaşlıq</span> edən universitetlər',
     'study_abroads_text' => 'Bizimlə <span>Xaricdə təhsilini</span> Davam etdir',
     'language_courses_text' => 'Bizimlə <span>Xarici dilini </span> İnkişaf etdir',
@@ -49,5 +51,20 @@
     'number_required' => ' Əlaqə nömrəsi boş ola bilməz',
     'number_regex' => ' Əlaqə nömrəsi +994XX XXX XX XX formatında olmalı',
     'email_required' => ' E-poçt  boş ola bilməz',
-    'message_required' => ' Qeyd  boş ola bilməz'
+    'message_required' => ' Qeyd  boş ola bilməz',
+    'our_additions' => 'Əlavələrimiz',
+    'faq'=> 'Tez-tez verilən suallar',
+    'education_degree' => 'Təhsil dərəcələri',
+    'page_not_found' => 'Səhifə tapılmadı.',
+    'error_message' => 'Xətaya görə üzr istəyirik. Bu səhifəni tapa bilmirik.',
+    'back_to_home' => 'Əsas səhifəyə qayıt',
+
+    //reklam
+    'header_title' => 'Dostun ilə gəl <a href="#">Xaricdə təhsil üçün</a> 10% endirim qazan!',
+    'home_title_one' => 'İELTS üçün kurs axtarırsan?',
+    'home_text_one' => 'Ele indi <span>yay kampaniyalarımızdan</span> faydalan.',
+    'home_title_two' => 'Fransız dili kursu axtarırsan?',
+    'home_text_two' => 'TƏLƏS bizim tədris üçün.',
+    'about_title' => 'Become A Instructor',
+    'about_text' => 'You can join with Edule as <span>a instructor?</span>'
 );
