@@ -323,7 +323,7 @@
                         </div>
                         <!-- Single Work End -->
                         <!-- Single Work Start -->
-                        <div class="single-work">
+                        <div class="single-work" style="    background-image: url(https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg) !important;">
                             <img class="shape-1" src="{{ asset("site/assets/images/shape/shape-15.png") }}" alt="Shape">
 
                             <div class="work-icon">
