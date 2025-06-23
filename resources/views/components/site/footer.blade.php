@@ -4,7 +4,6 @@
     <!-- Footer Widget Section Start -->
     <div class="footer-widget-section">
 
-        <img class="shape-1 animation-down" src="{{ asset("site/assets/images/shape/shape-21.png") }}" alt="Shape">
 
         <div class="container">
             <div class="row">
@@ -112,8 +111,6 @@
                 </div>
             </div>
         </div>
-
-        <img class="shape-2 animation-left" src="{{ asset("site/assets/images/shape/shape-22.png") }}" alt="Shape">
 
     </div>
     <!-- Footer Widget Section End -->
