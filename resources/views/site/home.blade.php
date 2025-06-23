@@ -110,9 +110,9 @@
     <div class="section slider-section" style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
 
         <!-- Slider Shape Start -->
-        <div class="slider-shape">
+        {{--<div class="slider-shape">
             <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
-        </div>
+        </div>--}}
         <!-- Slider Shape End -->
 
         <div class="container">
