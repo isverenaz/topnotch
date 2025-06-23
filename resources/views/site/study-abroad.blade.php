@@ -11,7 +11,7 @@
 @endsection
 @section('site.content')
     <!-- Page Banner Start -->
-    <div class="section page-banner">
+    <div class="section page-banner"  style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
 
         <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
 
