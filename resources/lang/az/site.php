@@ -3,7 +3,7 @@
     'main' => 'Əsas',
     'home' => 'Əsas səhifə',
     'study_abroads'=> 'Xaricdə təhsil',
-    'language_courses'=> 'Dil kurları',
+    'language_courses'=> 'Dil kursları',
     'about_us'=> 'Haqqımızda',
     'services'=> 'Xidmətlər',
     'blogs'=> 'Yeniliklər',
