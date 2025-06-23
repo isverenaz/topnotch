@@ -367,7 +367,7 @@
                                 <div class="swiper-wrapper">
                                     @foreach($universities as $university)
                                         <!-- Single Brand Start -->
-                                        <div  style="width: 154.2px !important; margin-right: 36px;!important;" class="single-brand swiper-slide">
+                                        <div class="single-brand swiper-slide">
                                             <img src="{{ asset("uploads/universities/".$university['image']) }}" alt="{{$university['name'][$currentLang]}}">
                                         </div>
                                         <!-- Single Brand End -->
