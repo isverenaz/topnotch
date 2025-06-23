@@ -79,7 +79,7 @@
                                     @if(!empty($country['universities'][0]))
                                     <li>
                                         <a href="{{ route('site.study-abroad',['country' => $country['slug'][$currentLang], 'university' => '']) }}">{{$country['name'][$currentLang]}}</a>
-                                        <ul class="sub-menu">
+                                        <ul class="sub-menu scrol-menu">
                                             @foreach($country['universities'] as $university)
                                             <li><a href="{{ route('site.study-abroad',['country' => $country['slug'][$currentLang], 'university' => $university['slug'][$currentLang]]) }}">{!! $university['name'][$currentLang] !!}</a></li>
                                             @endforeach

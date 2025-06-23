@@ -18880,7 +18880,8 @@ img {
 .header-menu ul li a:before {
     position: absolute;
     content: "";
-    background-image: url(../images/shape/shape-3.png);
+    background-color: #1f2e55;
+    /*background-image: url(../images/shape/shape-3.png);*/
     width: 70px;
     height: 5px;
     background-position: center center;

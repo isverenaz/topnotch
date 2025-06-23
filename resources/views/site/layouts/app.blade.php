@@ -22,6 +22,22 @@
             font-weight: bold;
             width: 70px;
         }
+        .scrol-menu {
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* İstəyə bağlı scrollbar dizaynı */
+        .scrol-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scrol-menu::-webkit-scrollbar-thumb {
+            background-color: #aaa;
+            border-radius: 4px;
+        }
+
     </style>
 </head>
 <body>
