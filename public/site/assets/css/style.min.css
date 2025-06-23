@@ -69,7 +69,7 @@
     --bs-border-radius-xl: 1rem;
     --bs-border-radius-2xl: 2rem;
     --bs-border-radius-pill: 50rem;
-    --bs-link-color: #309255;
+    --bs-link-color: #267544;
     --bs-link-hover-color: #267544;
     --bs-code-color: #d63384;
     --bs-highlight-bg: #fff3cd
@@ -237,7 +237,7 @@ a {
 }
 
 a:hover {
-    color: var(--bs-link-hover-color)
+    color: #212832
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -17580,7 +17580,7 @@ img {
 .section-title .sub-title {
     font-size: 20px;
     font-weight: 500;
-    color: #309255;
+    color: #1f2e55;
     margin-bottom: 20px
 }
 
@@ -17616,7 +17616,7 @@ img {
 }
 
 .section-title .main-title span {
-    color: #309255;
+    color: #1f2e55;
     position: relative
 }
 
@@ -19314,7 +19314,7 @@ img {
 }
 
 .mobile-top p i {
-    color: #309255;
+    color: #212832;
     font-size: 20px;
     padding-right: 15px
 }
@@ -19361,7 +19361,7 @@ img {
     height: 45px;
     line-height: 41px;
     padding: 0 30px;
-    border: 1px solid #309255;
+    border: 1px solid #212832;
     border-radius: 5px;
     background-color: #fff
 }
@@ -19373,7 +19373,7 @@ img {
 }
 
 .mobile-sign-in-up ul li a:hover {
-    background-color: #309255;
+    background-color: #212832;
     color: #fff
 }
 
@@ -19966,7 +19966,7 @@ img {
 }
 
 .slider-section {
-    background-color: #eefbf3;
+    background-color: #dbdbdb;
     height: 940px;
     position: relative;
     overflow: hidden;
@@ -20561,7 +20561,7 @@ img {
 }
 
 .courses-tabs-menu {
-    background-color: #eefbf3;
+    background-color: #dbdbdb;
     padding: 40px 100px;
     border-radius: 10px;
     margin-top: 50px;
@@ -20659,7 +20659,7 @@ img {
 
 .single-courses {
     margin-top: 30px;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid rgb(4 4 17 / 20%);
     border-radius: 15px;
     padding: 20px;
     -webkit-transition: all 0.3s ease 0s;
@@ -20805,7 +20805,7 @@ img {
 
 .single-courses .courses-content .courses-author .author .author-name .name-2 {
     position: relative;
-    color: #309255;
+    color: #1f2e55;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: 400
@@ -21036,7 +21036,7 @@ img {
 }
 
 .single-courses .courses-content .courses-rating p a {
-    color: #309255
+    color: #1f2e55
 }
 
 .single-courses .courses-content .courses-rating .rating-progress-bar {
@@ -21107,7 +21107,7 @@ img {
 }
 
 .single-courses:hover {
-    border-color: #309255
+    border-color: #212832
 }
 
 .courses-btn {
@@ -21115,7 +21115,7 @@ img {
 }
 
 .courses-btn .btn {
-    border: 1px solid #309255;
+    border: 1px solid #212832;
     line-height: 58px
 }
 
@@ -21213,7 +21213,7 @@ img {
 }
 
 .call-to-action-wrapper {
-    background-color: #e7f8ee;
+    background-color: #dbdbdb;
     border-radius: 10px;
     padding: 20px 100px 50px;
     position: relative
@@ -21318,7 +21318,7 @@ img {
 .single-work {
     max-width: 300px;
     border-radius: 10px;
-    background-color: #e7f8ee;
+    background-color: #dbdbdb;
     padding: 38px;
     padding-bottom: 35px;
     margin-top: 30px;
@@ -22043,7 +22043,7 @@ img {
 
 .page-banner {
     height: 550px;
-    background-color: #e7f8ee;
+    background-color: #dbdbdb;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -22202,7 +22202,7 @@ img {
 }
 
 .page-banner-content .breadcrumb li.active {
-    color: #309255
+    color: #1f2e55
 }
 
 .page-banner-content .title {
@@ -22228,7 +22228,7 @@ img {
 
 .page-banner-content .title span {
     position: relative;
-    color: #309255
+    color: #1f2e55
 }
 
 .page-banner-content .title span:before {
@@ -22318,7 +22318,7 @@ img {
     width: 140px;
     height: 140px;
     text-align: center;
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid rgb(5 25 62);
     border-radius: 50%;
     margin: 0 auto;
     padding: 10px
@@ -22339,7 +22339,7 @@ img {
 }
 
 .shape-icon-box .box-content .box-wrapper {
-    background-color: #309255;
+    background-color: #1f2e55;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -22696,7 +22696,7 @@ img {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background-color: #ffba00;
+    background-color: #1f2e55;
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -22831,7 +22831,7 @@ img {
 .courses-details .courses-details-admin .admin-author .author-content .Enroll {
     font-size: 14px;
     font-weight: 400;
-    color: #309255;
+    color: #212832;
     display: inline-block;
     line-height: 22px
 }
@@ -24013,7 +24013,7 @@ img {
 }
 
 .single-faq-item {
-    border: 1px solid rgba(48, 146, 85, 0.2);
+    border: 1px solid rgb(3 2 18 / 20%);
     padding: 10px 70px 35px;
     border-radius: 10px;
     margin-top: 20px;
@@ -24058,12 +24058,12 @@ img {
 }
 
 .single-faq-item:hover {
-    background-color: #e7f8ee;
-    border-color: #e7f8ee
+    background-color: #dbdbdb;
+    border-color: #dbdbdb
 }
 
 .single-faq-item:hover .faq-title .title {
-    color: #309255
+    /*color: #309255*/
 }
 
 .faq-btn {
@@ -24198,7 +24198,7 @@ img {
 }
 
 .contact-info {
-    background-color: #e7f8ee;
+    background-color: #dbdbdb;
     padding: 70px 60px;
     border-radius: 15px;
     margin-top: 50px;
@@ -24295,7 +24295,7 @@ img {
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 50%;
     font-size: 30px;
-    color: #309255;
+    color: #212832;
     text-align: center;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s
@@ -24358,8 +24358,8 @@ img {
 }
 
 .single-contact-info:hover .info-icon i {
-    background-color: #309255;
-    border-color: #309255;
+    background-color: #212832;
+    border-color: #212832;
     color: #fff
 }
 
@@ -24408,7 +24408,7 @@ img {
 }
 
 .contact-form .title span {
-    color: #309255;
+    color: #212832;
     position: relative
 }
 
@@ -28889,7 +28889,7 @@ img {
 
 .footer-widget .widget-info li p i {
     font-size: 20px;
-    color: #309255
+    color: #212832
 }
 
 .footer-widget .widget-info li p a {
@@ -28938,7 +28938,7 @@ img {
 }
 
 .footer-widget .widget-link li a:hover {
-    color: #309255
+    color: #212832
 }
 
 .footer-widget .widget-subscribe {
@@ -29047,7 +29047,7 @@ img {
     width: 50px;
     height: 50px;
     line-height: 52px;
-    border: 1px solid rgba(48, 146, 85, 0.25);
+    border: 1px solid rgb(6 8 27 / 25%);
     border-radius: 10px;
     text-align: center;
     font-size: 18px;
@@ -29065,8 +29065,8 @@ img {
 }
 
 .sidebar-widget .social li a:hover {
-    background-color: #309255;
-    border-color: #309255;
+    background-color: #1f2e55;
+    border-color: #1f2e55;
     color: #fff
 }
 
@@ -29078,7 +29078,7 @@ img {
 }
 
 .widget-information {
-    background-color: #e7f8ee;
+    background-color: #dbdbdb;
     padding: 30px 30px 40px;
     border: 1px solid rgba(48, 146, 85, 0.2);
     border-radius: 10px
@@ -29106,7 +29106,7 @@ img {
 }
 
 .widget-information .info-list ul li i {
-    color: #309255;
+    color: #1f2e55;
     margin-right: 3px;
     font-size: 16px
 }
@@ -29416,7 +29416,7 @@ img {
 }
 
 .footer-section {
-    background-color: #e7f8ee
+    background-color: #dbdbdb
 }
 
 .footer-copyright {
@@ -29475,7 +29475,7 @@ img {
 }
 
 .copyright-text p span {
-    color: #309255;
+    color: #dbdbdb;
     text-transform: uppercase
 }
 
@@ -29484,7 +29484,7 @@ img {
 }
 
 .copyright-text p a {
-    color: #309255;
+    color: #dbdbdb;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     font-weight: 500

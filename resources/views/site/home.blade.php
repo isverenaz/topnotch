@@ -301,14 +301,14 @@
                     @foreach($studyAbroads as $studyAbroad)
                         <div class="col-lg-4 col-md-6">
                             <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
+                            <div class="single-blog">
+                                <div class="blog-image">
                                     <a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}">
                                         <img src="{{ asset("uploads/studyAbroads/".$studyAbroad['image']) }}" alt="{{$studyAbroad['name'][$currentLang]}}">
                                     </a>
                                 </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
+                                <div class="blog-content">
+                                    <div class="blog-author">
                                         <div class="author">
                                             @if(!empty($studyAbroad['university']['image']))
                                                 <div class="author-thumb">
@@ -329,13 +329,7 @@
                                         <span> <i class="icofont-clock-time"></i> {{$studyAbroad['university']}}</span>
                                         <span> <i class="icofont-read-book"></i> 29 baxış </span>
                                     </div>--}}
-                                    <div class="courses-price-review">
-                                        <div class="courses-price">
-                                            <div class="rating-meta">
-                                                <p><a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}">@lang('site.read_more')</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}" class="btn btn-secondary btn-hover-primary">@lang('site.read_more')</a>
                                 </div>
                             </div>
                             <!-- Single Courses End -->
