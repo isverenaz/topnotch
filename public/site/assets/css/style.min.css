@@ -636,7 +636,7 @@ progress {
 
 @media (min-width: 1600px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1200px
+        /*max-width: 1200px*/
     }
 }
 
@@ -18803,7 +18803,7 @@ img {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border: 1px solid rgba(48, 146, 85, 0.25);
+    border: 1px solid rgb(247 254 255);
     padding: 16px 15px;
     border-radius: 15px;
     margin-left: -15px;
@@ -19966,7 +19966,7 @@ img {
 }
 
 .slider-section {
-    background-color: #dbdbdb;
+    /*background-color: #dbdbdb;*/
     height: 940px;
     position: relative;
     overflow: hidden;
@@ -20047,7 +20047,7 @@ img {
 }
 
 .slider-content {
-    max-width: 410px
+    /*max-width: 410px*/
 }
 
 .slider-content .sub-title {
@@ -20127,8 +20127,8 @@ img {
 
 .slider-courses-box {
     position: absolute;
-    top: 38%;
-    left: 50%
+    top: 24%;
+    left: 8%;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

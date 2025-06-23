@@ -57,7 +57,7 @@
         <div class="container">
 
             <!-- Header Main Start -->
-            <div class="header-main-wrapper">
+            <div class="header-main-wrapper" style="background-color: #fff;!important;">
                 @if(!empty($setting['footer_logo']))
                 <!-- Header Logo Start -->
                 <div class="header-logo">

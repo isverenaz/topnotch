@@ -2,6 +2,102 @@
 @section('site.title')
 @endsection
 @section('site.css')
+    <style>
+        /* === Slider əsas konteyner === */
+        .slider-section {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 150px 0 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* === Qarartma effekti === */
+        .slider-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4); /* 40% qara şəffaf overlay */
+            z-index: 1;
+        }
+
+        /* === Slider məzmunu === */
+        .slider-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ffffff; /* Yazılar ağ */
+        }
+
+        /* Alt başlıq */
+        .slider-content .sub-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Başlıq */
+        .slider-content .main-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Açıqlama mətn */
+        .slider-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Qoşul düyməsi */
+        .slider-content .btn {
+            background-color: #ffffff;
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effekti */
+        .slider-content .btn:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* === Mobil üçün uyğunlaşdırma === */
+        @media (max-width: 768px) {
+            .slider-section {
+                padding: 100px 20px 80px;
+            }
+
+            .slider-content .main-title {
+                font-size: 24px;
+            }
+
+            .slider-content p {
+                font-size: 16px;
+            }
+
+            .slider-content .btn {
+                font-size: 16px;
+                padding: 10px 25px;
+            }
+
+            .slider-courses-box,
+            .slider-rating-box {
+                display: none; /* İstəyə bağlı mobil versiyada gizlətmək olar */
+            }
+        }
+
+    </style>
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -11,7 +107,7 @@
 @endsection
 @section('site.content')
     <!-- Slider Start -->
-    <div class="section slider-section">
+    <div class="section slider-section" style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
 
         <!-- Slider Shape Start -->
         <div class="slider-shape">
@@ -20,16 +116,14 @@
         <!-- Slider Shape End -->
 
         <div class="container">
-
             <!-- Slider Content Start -->
             <div class="slider-content">
-                <h4 class="sub-title">Top-Notch</h4>
-                <h2 class="main-title">{{$slider['title'][$currentLang] ?? ''}}</h2>
-                <p>{!! $slider['text'][$currentLang] ?? '' !!}</p>
-                <a class="btn btn-primary btn-hover-dark" href="{{ route('site.signup') }}">@lang('site.signup')</a>
+                <h1 class="main-title" style="color: aliceblue">{{$slider['title'][$currentLang] ?? ''}}</h1>
+                <p style="margin: 0 auto; font-size: 42px; line-height: 1.6;">
+                    {!! $slider['text'][$currentLang] ?? '' !!}
+                </p>
             </div>
             <!-- Slider Content End -->
-
         </div>
 
         <!-- Slider Courses Box Start -->
@@ -64,15 +158,15 @@
 
         </div>
         <!-- Slider Rating Box End -->
-        @if(!empty($slider['image']))
+    {{--    @if(!empty($slider['image']))
         <!-- Slider Images Start -->
         <div class="slider-images">
             <div class="images">
                 <img src="{{ asset("uploads/sliders/".$slider['image']) }}" alt="Slider">
-{{--                <img src="{{ asset("site/assets/images/slider/slider-1.png") }}" alt="Slider">--}}
+--}}{{--                <img src="{{ asset("site/assets/images/slider/slider-1.png") }}" alt="Slider">--}}{{--
             </div>
         </div>
-        @endif
+        @endif--}}
         <!-- Slider Images End -->
 
         <!-- Slider Video Start -->
