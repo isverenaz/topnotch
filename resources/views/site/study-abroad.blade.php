@@ -2,6 +2,102 @@
 @section('site.title')
 @endsection
 @section('site.css')
+    <style>
+        /* === Slider əsas konteyner === */
+        .slider-section {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 150px 0 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* === Qarartma effekti === */
+        .slider-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4); /* 40% qara şəffaf overlay */
+            z-index: 1;
+        }
+
+        /* === Slider məzmunu === */
+        .slider-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ffffff; /* Yazılar ağ */
+        }
+
+        /* Alt başlıq */
+        .slider-content .sub-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Başlıq */
+        .slider-content .main-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Açıqlama mətn */
+        .slider-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Qoşul düyməsi */
+        .slider-content .btn {
+            background-color: #ffffff;
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effekti */
+        .slider-content .btn:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* === Mobil üçün uyğunlaşdırma === */
+        @media (max-width: 768px) {
+            .slider-section {
+                padding: 100px 20px 80px;
+            }
+
+            .slider-content .main-title {
+                font-size: 24px;
+            }
+
+            .slider-content p {
+                font-size: 16px;
+            }
+
+            .slider-content .btn {
+                font-size: 16px;
+                padding: 10px 25px;
+            }
+
+            .slider-courses-box,
+            .slider-rating-box {
+                display: none; /* İstəyə bağlı mobil versiyada gizlətmək olar */
+            }
+        }
+
+    </style>
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -10,48 +106,28 @@
     <link rel="stylesheet" href="{{ asset("site/assets/css/style.min.css") }}">
 @endsection
 @section('site.content')
-    <!-- Page Banner Start -->
-    <div class="section page-banner"  style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
-
-        <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
-
-        <img class="shape-2" src="{{ asset("site/assets/images/shape/shape-23.png") }}" alt="Shape">
-
+    <!-- Slider Start -->
+    <div class="section slider-section" style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
         <div class="container">
-            <!-- Page Banner Start -->
-            <div class="page-banner-content">
-                <ul class="breadcrumb">
-                    <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
-                    <li @if(empty($country) && empty($university)) class="active" @endif> @lang('site.study_abroads')</li>
-                    @if(!empty($country))
-                        <li @empty($university) class="active" @endempty>{{$country['name'][$currentLang]}}</li>
-                    @endif
-                    @if(!empty($university))
-                        <li class="active">{{$university['name'][$currentLang]}}</li>
-                    @endif
-                </ul>
-                <h2 class="title">@lang('site.study_abroads_text')</h2>
+            <!-- Slider Content Start -->
+            <div class="slider-content">
+
+                <h2 class="main-title" style="color: aliceblue"> @lang('site.study_abroads')
+                @if(!empty($country))
+                    / {{$country['name'][$currentLang]}}
+                @endif
+                @if(!empty($country) &&  !empty($university))
+                    / {{$university['name'][$currentLang]}}
+                @endif
+                </h2>
+                <p style="margin: 0 auto; font-size: 42px; line-height: 1.6;">
+                    @lang('site.study_abroads_text')
+                </p>
             </div>
-            <!-- Page Banner End -->
+            <!-- Slider Content End -->
         </div>
-
-        <!-- Shape Icon Box Start -->
-        <div class="shape-icon-box">
-
-            <img class="icon-shape-1 animation-left" src="{{ asset("site/assets/images/shape/shape-5.png") }}" alt="Shape">
-
-            <div class="box-content">
-                <div class="box-wrapper">
-                    <i class="flaticon-badge"></i>
-                </div>
-            </div>
-            <img class="icon-shape-2" src="{{ asset("site/assets/images/shape/shape-6.png") }}" alt="Shape">
-        </div>
-        <!-- Shape Icon Box End -->
-        <img class="shape-3" src="{{ asset("site/assets/images/shape/shape-24.png") }}" alt="Shape">
-        <img class="shape-author" src="{{ asset("site/assets/images/author/author-11.jpg") }}" alt="Shape">
     </div>
-    <!-- Page Banner End -->
+    <!-- Slider End -->
     <div class="section section-padding">
         <div class="container">
             <!-- Courses Wrapper Start  -->
