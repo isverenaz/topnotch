@@ -267,7 +267,7 @@
     <!-- All Courses End -->
     <br><br><br>
     <!-- Download App Start -->
-    <div class="section section-padding download-section">
+    <div style="top: 23px;!important;" class="section section-padding download-section">
 
         <div class="app-shape-1"></div>
         <div class="app-shape-2"></div>
