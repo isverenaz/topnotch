@@ -19,8 +19,6 @@ class CategoryHelper
         }
 
         $data = [
-            'parent_id' => !empty($request->parent_id)? $request->parent_id: null,
-            'sub_parent_id' => !empty($request->sub_parent_id)? $request->sub_parent_id: null,
             'title' => $title,
             'slug' => $slug,
             'status' => $request->status,
