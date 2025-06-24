@@ -16,7 +16,7 @@
     'positions' => 'Vəzifələr',
     'teachers' => 'Müəllimlər',
     'languages' => 'Tədris edilən dillər',
-    'language_courses' => 'Dil kurları',
+    'language_courses' => 'Dil kursları',
 
     'schools' => 'Məktəblər',
     'news' => 'Xəbərlər',
