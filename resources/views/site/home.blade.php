@@ -265,7 +265,7 @@
         </div>
     </div>
     <!-- All Courses End -->
-
+    <br><br><br>
     <!-- Download App Start -->
     <div class="section section-padding download-section">
 
