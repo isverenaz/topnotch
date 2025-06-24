@@ -146,13 +146,6 @@ class ServiceController extends Controller
     {
         try {
             $service = Service::where('id',$id)->first();
-            $parentServiceCategory= Service::where(['parent_id' => $id])->get();
-            $subParentServiceCategory= Service::where(['sub_parent_id' => $id])->get();
-            if (!empty($parentServiceCategory[0])) {;
-                Service::where(['parent_id' => $id])->delete();
-            }elseif (!empty($subParentServiceCategory[0])){
-                Service::where(['sub_parent_id' => $id])->delete();
-            }
             if ($this->serviceRepository->delete($service['id'])) {
                 $messages = Lang::get('admin.delete_success');
                 $logData = [

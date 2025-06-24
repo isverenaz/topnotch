@@ -130,13 +130,6 @@ class CategoryController extends Controller
     {
         try {
             $category = $this->categoryRepository->edit($id);
-            $parentCategory= Category::where(['parent_id' => $id])->get();
-            $subParentCategory= Category::where(['sub_parent_id' => $id])->get();
-            if (!empty($parentCategory[0])) {;
-                Category::where(['parent_id' => $id])->delete();
-            }elseif (!empty($subParentCategory[0])){
-                Category::where(['sub_parent_id' => $id])->delete();
-            }
             $news = News::where('category_id',$id)->get();
             if (!empty($news[0])) {
                 News::where('category_id',$id)->delete();
