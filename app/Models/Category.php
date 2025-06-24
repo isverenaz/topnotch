@@ -26,6 +26,6 @@ class Category extends Model
 
     public function news()
     {
-        return $this->hasMany(News::class,'category_id','id')->where(['status' => 1])->orderBy('datetime','DESC');
+        return $this->hasMany(News::class,'category_id','id')->where(['status' => 1, 'is_main' => 1])->orderBy('datetime','DESC');
     }
 }
