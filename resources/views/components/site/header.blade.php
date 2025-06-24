@@ -216,12 +216,12 @@
         <ul class="nav-menu">
             @if(!empty($countries[0]))
             <li>
-                <a href="{{ route('site.study-abroad') }}">@lang('site.study_abroads')</a>
+                <a href="@if(empty($countries[0])){{ route('site.study-abroad') }}@else#@endif">@lang('site.study_abroads')</a>
                 <ul class="sub-menu">
                     @foreach($countries as $country)
                         @if(!empty($country['universities'][0]))
                             <li>
-                                <a href="{{ route('site.study-abroad',['country' => $country['slug'][$currentLang], 'university' => '']) }}">{{$country['name'][$currentLang]}}</a>
+                                <a href="@if(empty($country['universities'][0])){{ route('site.study-abroad',['country' => $country['slug'][$currentLang], 'university' => '']) }}@else#@endif">{{$country['name'][$currentLang]}}</a>
                                 <ul class="sub-menu">
                                     @foreach($country['universities'] as $university)
                                         <li><a href="{{ route('site.study-abroad',['country' => $country['slug'][$currentLang], 'university' => $university['slug'][$currentLang]]) }}">{!! $university['name'][$currentLang] !!}</a></li>
@@ -235,12 +235,12 @@
             @endif
             @if(!empty($languages[0]))
                 <li>
-                    <a href="{{ route('site.language-courses') }}">@lang('site.language_courses')</a>
+                    <a href="@if(empty($languages[0])){{ route('site.language-courses') }}@else#@endif">@lang('site.language_courses')</a>
                     <ul class="sub-menu">
                         @foreach($languages as $lang)
                             @if(!empty($lang['parentLanguages'][0]))
                                 <li>
-                                    <a href="{{ route('site.language-courses',['language' => $lang['slug'][$currentLang], 'leve' => '']) }}">{{$lang['name'][$currentLang]}}</a>
+                                    <a href="@if(empty($lang['parentLanguages'][0])){{ route('site.language-courses',['language' => $lang['slug'][$currentLang], 'leve' => '']) }}@else#@endif">{{$lang['name'][$currentLang]}}</a>
                                     <ul class="sub-menu">
                                         @foreach($lang['parentLanguages'] as $parentLang)
                                             <li>
@@ -255,7 +255,7 @@
                 </li>
             @endif
                 <li>
-                    <a href="{{ route("site.schools") }}">@lang('site.schools')</a>
+                    <a href="@if(empty($schoolCategories[0])){{ route("site.schools") }}@else#@endif">@lang('site.schools')</a>
                     @if(!empty($schoolCategories))
                         <ul class="sub-menu">
                             @foreach($schoolCategories as $schoolCategory)
@@ -267,7 +267,7 @@
                     @endif
                 </li>
                 <li>
-                    <a href="{{ route("site.blogs") }}">@lang('site.blogs')</a>
+                    <a href="@if(empty($categories[0])){{ route("site.blogs") }}@else#@endif">@lang('site.blogs')</a>
                     @if(!empty($categories))
                         <ul class="sub-menu">
                             @foreach($categories as $category)
