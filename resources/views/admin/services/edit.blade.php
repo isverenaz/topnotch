@@ -94,48 +94,7 @@
 @endsection
 
 @section('admin.js')
-    <script>
-        $(document).ready(function () {
-            $('#input-category').on('change', function () {
-                let parentId = $(this).val();
-                let subCategoryWrapper = $('#sub-category-wrapper');
-                let subCategorySelect = $('#input-sub-category');
-
-                // Əgər parent_id boşdursa, sub_category selectini gizlədirik
-                if (!parentId) {
-                    subCategoryWrapper.hide();
-                    subCategorySelect.html('<option value="">@lang("admin.choose")</option>');
-                    return;
-                }
-
-                // AJAX ilə alt kateqoriyaları gətiririk
-                $.ajax({
-                    url: '{{ route('admin.laboratory-category.getParentCategories') }}', // Bu URL `web.php` faylında göstərilməlidir
-                    type: 'GET',
-                    data: { category_id: parentId },
-                    success: function (response) {
-                        if (response.success && response.parentCategories.length > 0) {
-                            // Alt kateqoriyaları doldur
-                            subCategorySelect.html('<option value="">@lang("admin.choose")</option>');
-                            $.each(response.parentCategories, function (index, subCategory) {
-                                subCategorySelect.append(
-                                    `<option value="${subCategory.id}">${subCategory.title}</option>`
-                                );
-                            });
-                            subCategoryWrapper.show();
-                        } else {
-                            // Alt kateqoriya yoxdursa, seçimi gizlət
-                            subCategoryWrapper.hide();
-                            subCategorySelect.html('<option value="">@lang("admin.choose")</option>');
-                        }
-                    },
-                    error: function () {
-                        alert('@lang("admin.error_loading_categories")');
-                    }
-                });
-            });
-        });
-    </script>
+    
     <script src="{{ asset('admin/assets/vendor/js/swiper-bundle.min.js') }}"></script>
     @if(!empty($service['image']))
     <script>
