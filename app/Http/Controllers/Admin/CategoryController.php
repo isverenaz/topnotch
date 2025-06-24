@@ -152,7 +152,7 @@ class CategoryController extends Controller
                 return redirect()->back()->with('success', $messages);
             }
         } catch (\Exception $exception) {
-            $messages = Lang::get('admin.error');
+            $messages = $exception->getMessage();//Lang::get('admin.error');
             $logData = [
                 'subj_id' => $id,
                 'subj_table' => 'categories',
