@@ -137,7 +137,10 @@ class CategoryController extends Controller
             }elseif (!empty($subParentCategory[0])){
                 Category::where(['sub_parent_id' => $id])->delete();
             }
-            News::where('category_id',$id)->delete();
+            $news = News::where('category_id',$id)->get();
+            if (!empty($news[0])) {
+                News::where('category_id',$id)->delete();
+            }
             if ($this->categoryRepository->delete($category['id'])) {
                 $messages = Lang::get('admin.delete_success');
                 $logData = [
