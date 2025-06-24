@@ -77,6 +77,9 @@
                                 @lang('site.about_title')</h2>
                             @lang('site.about_full_text')
                             <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup')</a>
+                            <br>
+                            <br>
+                            <br>
                         </div>
                         <!-- About Content End -->
 
@@ -87,41 +90,42 @@
 
     </div>
     <!-- About End -->
+    <!-- Download App Start -->
+    <div class="section section-padding download-section">
 
-    <!-- Call to Action Start -->
-    <div class="section section-padding-02">
+        <div class="app-shape-1"></div>
+        <div class="app-shape-2"></div>
+        <div class="app-shape-3"></div>
+        <div class="app-shape-4"></div>
+
         <div class="container">
 
-            <!-- Call to Action Wrapper Start -->
-            <div class="call-to-action-wrapper">
+            <!-- Download App Wrapper Start -->
+            <div class="download-app-wrapper mt-n6">
 
-                <img class="cat-shape-01 animation-round" src="{{ asset("site/assets/images/shape/shape-12.png") }}" alt="Shape">
-                <img class="cat-shape-02" src="{{ asset("site/assets/images/shape/shape-13.svg") }}" alt="Shape">
-                <img class="cat-shape-03 animation-round" src="{{ asset("site/assets/images/shape/shape-12.png") }}" alt="Shape">
-
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-
-                        <!-- Section Title Start -->
-                        <div class="section-title shape-02">
-                            <h5 class="sub-title">@lang('site.about_title')</h5>
-                            <h2 class="main-title">@lang('site.about_text')</h2>
-                        </div>
-                        <!-- Section Title End -->
-
-                    </div>
-                    <div class="col-md-6">
-                        <div class="call-to-action-btn">
-                            <a class="btn btn-primary btn-hover-dark" href="{{ route('site.contact') }}">@lang('site.contact')</a>
-                        </div>
-                    </div>
+                <!-- Section Title Start -->
+                <div class="section-title section-title-white">
+                    <h5 class="sub-title">@lang('site.about_title')</h5>
+                    <h2 class="main-title">@lang('site.about_text')</h2>
                 </div>
+                <!-- Section Title End -->
+
+                <img class="shape-1 animation-right" src="{{ asset("site/assets/images/shape/shape-14.png") }}" alt="Shape">
+
+                <!-- Download App Button End -->
+                <div class="download-app-btn">
+                    <ul class="app-btn">
+                        <li><a href="{{ route('site.signup') }}">@lang('site.signup')</a></li>
+                    </ul>
+                </div>
+                <!-- Download App Button End -->
+
             </div>
-            <!-- Call to Action Wrapper End -->
+            <!-- Download App Wrapper End -->
 
         </div>
     </div>
-    <!-- Call to Action End -->
+    <!-- Download App End -->
 
     <!-- Team Member's Start -->
     <div class="section section-padding mt-n1">
@@ -143,7 +147,7 @@
                             <!-- Single Team Start -->
                             <div class="single-team">
                                 <div class="team-thumb">
-                                    <img src="{{ asset("uploads/teachers/".$teacher['image']) }}" alt="Author">
+                                    <img src="{{ !empty($teacher['image'])? asset("uploads/teachers/".$teacher['image']): asset('site/assets/images/user.jpg') }}" alt="Author">
                                 </div>
                                 <div class="team-content">
                                     <h4 class="name">{{ $teacher['name'][$currentLang] }}</h4>

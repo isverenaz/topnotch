@@ -94,7 +94,7 @@
 @endsection
 
 @section('admin.js')
-    
+
     <script src="{{ asset('admin/assets/vendor/js/swiper-bundle.min.js') }}"></script>
     @if(!empty($service['image']))
     <script>
