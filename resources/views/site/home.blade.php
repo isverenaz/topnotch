@@ -107,7 +107,7 @@
 @endsection
 @section('site.content')
     <!-- Slider Start -->
-    <div class="section slider-section" style="background-image: url("{{ asset('uploads/sliders/'.$slider['image']) }}")/*url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')*/!important;">
+    <div class="section slider-section" style="background-image: url('{{ asset('uploads/sliders/'.$slider['image']) }}')/*url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')*/!important;">
 
         <!-- Slider Shape Start -->
         {{--<div class="slider-shape">
