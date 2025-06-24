@@ -29,7 +29,7 @@
                         <li class="active">{{$university['name'][$currentLang]}}</li>
                     @endif
                 </ul>
-                <h2 class="title">{{$studyAbroad['text'][$currentLang] ?? ''}}</h2>
+                <h2 class="title">{{$studyAbroad['name'][$currentLang] ?? ''}}</h2>
             </div>
             <!-- Page Banner End -->
         </div>
@@ -55,7 +55,7 @@
         <div class="container">
             <div class="row gx-10">
                 <div class="col-lg-8">
-
+                    <h2 class="title">{{$studyAbroad['text'][$currentLang] ?? ''}}</h2>
                     <!-- Courses Details Start -->
                     <div class="courses-details">
 
