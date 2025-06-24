@@ -202,8 +202,8 @@
             <div class="courses-tabs-menu courses-active">
                 <div class="swiper-container">
                     <ul class="swiper-wrapper nav">
-                        @foreach($categories as $cat)
-                            <li class="swiper-slide"><button class="active" data-bs-toggle="tab" data-bs-target="#{{$cat['slug'][$currentLang]}}">{{$cat['title'][$currentLang]}}</button></li>
+                        @foreach($categories as $catKey => $cat)
+                            <li class="swiper-slide"><button class="@if(++$catKey ==1) active @endif" data-bs-toggle="tab" data-bs-target="#{{$cat['slug'][$currentLang]}}{{$cat['id']}}">{{$cat['title'][$currentLang]}}</button></li>
                         @endforeach
                     </ul>
                 </div>
@@ -216,8 +216,8 @@
             <!-- All Courses tab content Start -->
             <div class="tab-content courses-tab-content">
 
-                @foreach($categories as $cat)
-                <div class="tab-pane fade show active" id="{{$cat['slug'][$currentLang]}}">
+                @foreach($categories as $catKey => $cat)
+                <div class="tab-pane fade @if(++$catKey ==1) show active @endif " id="{{$cat['slug'][$currentLang]}}{{$cat['id']}}">
                     <!-- All Courses Wrapper Start -->
                     <div class="courses-wrapper">
                         <div class="row">
