@@ -182,7 +182,7 @@
 
     </div>
     <!-- Slider End -->
-
+    @if(!empty($categories[0]['title'][$currentLang]))
     <!-- All Courses Start -->
     <div class="section section-padding-02">
         <div class="container">
@@ -219,6 +219,7 @@
                 @foreach($categories as $catKey => $cat)
                 <div class="tab-pane fade @if(++$catKey ==1) show active @endif " id="{{$cat['slug'][$currentLang]}}{{$cat['id']}}">
                     <!-- All Courses Wrapper Start -->
+                    @if(!empty($cat['news'][0]['title'][$currentLang]))
                     <div class="courses-wrapper">
                         <div class="row">
                             @foreach($cat['news'] as $blog)
@@ -257,6 +258,7 @@
                             @endforeach
                         </div>
                     </div>
+                    @endif
                     <!-- All Courses Wrapper End -->
                 </div>
                 @endforeach
@@ -264,8 +266,10 @@
             <!-- All Courses tab content End -->
         </div>
     </div>
+    @endif
     <!-- All Courses End -->
     <br><br><br>
+
     <!-- Download App Start -->
     <div style="top: 23px;!important;" class="section section-padding download-section">
 
@@ -313,7 +317,7 @@
                 <h2 class="main-title">@lang('site.home_service_text')</h2>
             </div>
             <!-- Section Title End -->
-            @if(!empty($services))
+            @if(!empty($services[0]['title'][$currentLang]))
                 <!-- How it Work Wrapper Start -->
                 <div class="how-it-work-wrapper">
                     @foreach($services as $service)
@@ -390,7 +394,7 @@
                 <h2 class="main-title">@lang('site.study_abroads_text')</h2>
             </div>
             <!-- Section Title End -->
-            @if(!empty($studyAbroads))
+            @if(!empty($studyAbroads[0]['name'][$currentLang]))
             <!-- Blog Wrapper Start -->
             <div class="blog-wrapper">
                 <div class="row">
@@ -439,7 +443,7 @@
         </div>
     </div>
 
-    @if(!empty($universities[0]))
+    @if(!empty($universities[0]['name'][$currentLang]))
         <!-- Brand Logo Start -->
         <div class="section section-padding-02">
             <div class="container">
