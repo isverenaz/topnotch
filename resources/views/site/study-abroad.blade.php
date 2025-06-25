@@ -106,8 +106,49 @@
     <link rel="stylesheet" href="{{ asset("site/assets/css/style.min.css") }}">
 @endsection
 @section('site.content')
+    <!-- Page Banner Start -->
+    <div class="section page-banner">
+
+        <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
+
+        <img class="shape-2" src="{{ asset("site/assets/images/shape/shape-23.png") }}" alt="Shape">
+
+        <div class="container">
+            <!-- Page Banner Start -->
+            <div class="page-banner-content">
+                <ul class="breadcrumb">
+                    <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
+                    <li @if(empty($country) && empty($university)) class="active" @endif> @lang('site.study_abroads')</li>
+                    @if(!empty($country))
+                        <li @empty($university) class="active" @endempty>{{$country['name'][$currentLang]}}</li>
+                    @endif
+                    @if(!empty($university))
+                        <li class="active">{{$university['name'][$currentLang]}}</li>
+                    @endif
+                </ul>
+                <h2 class="title">@lang('site.study_abroads_text')</h2>
+            </div>
+            <!-- Page Banner End -->
+        </div>
+
+        <!-- Shape Icon Box Start -->
+        <div class="shape-icon-box">
+
+            <img class="icon-shape-1 animation-left" src="{{ asset("site/assets/images/shape/shape-5.png") }}" alt="Shape">
+
+            <div class="box-content">
+                <div class="box-wrapper">
+                    <i class="flaticon-badge"></i>
+                </div>
+            </div>
+            <img class="icon-shape-2" src="{{ asset("site/assets/images/shape/shape-6.png") }}" alt="Shape">
+        </div>
+        <!-- Shape Icon Box End -->
+        <img class="shape-3" src="{{ asset("site/assets/images/shape/shape-24.png") }}" alt="Shape">
+        <img class="shape-author" src="{{ asset("site/assets/images/author/author-11.jpg") }}" alt="Shape">
+    </div>
     <!-- Slider Start -->
-    <div class="section slider-section" style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
+   {{-- <div class="section slider-section" style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
         <div class="container">
             <!-- Slider Content Start -->
             <div class="slider-content">
@@ -126,7 +167,7 @@
             </div>
             <!-- Slider Content End -->
         </div>
-    </div>
+    </div>--}}
     <!-- Slider End -->
     <div class="section section-padding">
         <div class="container">
