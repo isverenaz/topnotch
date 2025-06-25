@@ -64,7 +64,7 @@
                             <h4 class="footer-widget-title">@lang('site.education_degree')</h4>
 
                             <ul class="widget-link">
-                                @if($degrees[0]['name'][$currentLang])
+                                @if(!empty($degrees[0]['name'][$currentLang]))
                                 @foreach($degrees as $degree)
                                     <li><a href="{{ route('site.degree-study-abroad',['degree' => $degree['slug'][$currentLang]]) }}">{{$degree['name'][$currentLang]}}</a></li>
                                 @endforeach
