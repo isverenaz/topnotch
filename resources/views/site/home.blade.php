@@ -228,7 +228,8 @@
                                     <!-- Single Blog Start -->
                                     <div class="single-blog">
                                         <div class="blog-image">
-                                            <a href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}"><img src="{{ asset("uploads/news/".$blog['image']) }}" alt="{{$blog['title'][$currentLang]}}"></a>
+                                            <a href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}">
+                                                <img style="max-height: 196px;!important;" src="{{ asset("uploads/news/".$blog['image']) }}" alt="{{$blog['title'][$currentLang]}}"></a>
                                         </div>
                                         <div class="blog-content">
                                             <div class="blog-author">
