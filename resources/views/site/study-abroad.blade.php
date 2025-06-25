@@ -133,7 +133,7 @@
             <!-- Courses Wrapper Start  -->
             <div class="courses-wrapper-02">
                 <div class="row">
-                    @if(!empty($studyAbroads))
+                    @if($studyAbroads[0]['title'][$currentLang])
                         @foreach($studyAbroads as $studyAbroad)
                             <div class="col-lg-4 col-md-6">
                                 <!-- Single Courses Start -->
