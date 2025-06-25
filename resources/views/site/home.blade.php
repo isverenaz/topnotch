@@ -227,7 +227,7 @@
 
                                     <!-- Single Blog Start -->
                                     <div class="single-blog">
-                                        <div class="blog-image">
+                                        <div class="blog-image" style=" text-align: center;!important;">
                                             <a href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}">
                                                 <img style="max-height: 196px;max-width: 198px; text-align: center;!important;" src="{{ asset("uploads/news/".$blog['image']) }}" alt="{{$blog['title'][$currentLang]}}"></a>
                                         </div>
@@ -403,7 +403,7 @@
                         <div class="col-lg-4 col-md-6">
                             <!-- Single Courses Start -->
                             <div class="single-blog">
-                                <div class="blog-image">
+                                <div class="blog-image" style=" text-align: center;!important;">
                                     <a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}">
                                         <img style="max-height: 196px;max-width: 198px; text-align: center;!important;" src="{{ asset("uploads/studyAbroads/".$studyAbroad['image']) }}" alt="{{$studyAbroad['name'][$currentLang]}}">
                                     </a>
