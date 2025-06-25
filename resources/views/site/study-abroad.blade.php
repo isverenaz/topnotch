@@ -140,7 +140,7 @@
                                 <div class="single-courses">
                                     <div class="courses-images">
                                         <a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}">
-                                            <img src="{{ asset("uploads/studyAbroads/".$studyAbroad['image']) }}" alt="{{$studyAbroad['name'][$currentLang]}}">
+                                            <img style="max-height: 196px;max-width: 198px;!important;" src="{{ asset("uploads/studyAbroads/".$studyAbroad['image']) }}" alt="{{$studyAbroad['name'][$currentLang]}}">
                                         </a>
                                         <div class="courses-option dropdown">
                                             <button class="option-toggle" data-bs-toggle="dropdown" aria-expanded="false">

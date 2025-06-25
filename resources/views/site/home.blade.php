@@ -229,7 +229,7 @@
                                     <div class="single-blog">
                                         <div class="blog-image">
                                             <a href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}">
-                                                <img style="max-height: 196px;!important;" src="{{ asset("uploads/news/".$blog['image']) }}" alt="{{$blog['title'][$currentLang]}}"></a>
+                                                <img style="max-height: 196px;max-width: 198px;!important;" src="{{ asset("uploads/news/".$blog['image']) }}" alt="{{$blog['title'][$currentLang]}}"></a>
                                         </div>
                                         <div class="blog-content">
                                             <div class="blog-author">
@@ -405,7 +405,7 @@
                             <div class="single-blog">
                                 <div class="blog-image">
                                     <a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}">
-                                        <img src="{{ asset("uploads/studyAbroads/".$studyAbroad['image']) }}" alt="{{$studyAbroad['name'][$currentLang]}}">
+                                        <img style="max-height: 196px;max-width: 198px;!important;" src="{{ asset("uploads/studyAbroads/".$studyAbroad['image']) }}" alt="{{$studyAbroad['name'][$currentLang]}}">
                                     </a>
                                 </div>
                                 <div class="blog-content">

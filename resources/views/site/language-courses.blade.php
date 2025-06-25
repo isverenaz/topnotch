@@ -64,7 +64,7 @@
                                 <div class="single-courses">
                                     <div class="courses-images">
                                         <a href="{{ route('site.language-courses-details',['language' => $course['language']['slug'][$currentLang], 'leve' => $course['leve']['slug'][$currentLang], 'slug' => $course['slug'][$currentLang]]) }}">
-                                            <img src="{{ asset("uploads/languageCourses/".$course['image']) }}" alt="{{$course['name'][$currentLang]}}">
+                                            <img style="max-height: 196px;max-width: 198px;!important;" src="{{ asset("uploads/languageCourses/".$course['image']) }}" alt="{{$course['name'][$currentLang]}}">
                                         </a>
                                         <div class="courses-option dropdown">
                                             <button class="option-toggle" data-bs-toggle="dropdown" aria-expanded="false">
