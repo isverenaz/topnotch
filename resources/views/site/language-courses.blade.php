@@ -58,7 +58,6 @@
             <div class="courses-wrapper-02">
                 <div class="row">
                     @if(!empty($languageCourse[0]['title'][$currentLang]))
-                    @if(!empty($languageCourse))
                         @foreach($languageCourse as $course)
                             <div class="col-lg-4 col-md-6">
                                 <!-- Single Courses Start -->
