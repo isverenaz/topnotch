@@ -141,6 +141,7 @@
             <!-- Team Wrapper Start -->
             <div class="team-wrapper">
                 <div class="row row-cols-lg-5 row-cols-sm-3 row-cols-2 ">
+                    @if($teachers[0]['name'][$currentLang])
                     @foreach($teachers as $teacher)
                         <div class="col">
 
@@ -158,6 +159,7 @@
 
                         </div>
                     @endforeach
+                    @endif
                 </div>
             </div>
             <!-- Team Wrapper End -->

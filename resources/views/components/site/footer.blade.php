@@ -13,7 +13,7 @@
                         @if(!empty($setting['footer_logo']))
                         <div class="widget-logo">
                             <a href="{{ route('site.index') }}">
-                                <img src="{{ asset('uploads/settings/'.$setting['footer_logo']) }}" style="max-height: 53px;" alt="{{$setting['title'][$currentLang]}}">
+                                <img src="{{ asset('uploads/settings/'.$setting['footer_logo']) }}" style="max-height: 53px;" alt="{{$setting['title'][$currentLang] ?? ''}}">
                             </a>
                         </div>
                         @endif
@@ -64,9 +64,11 @@
                             <h4 class="footer-widget-title">@lang('site.education_degree')</h4>
 
                             <ul class="widget-link">
+                                @if($degrees[0]['name'][$currentLang])
                                 @foreach($degrees as $degree)
                                     <li><a href="{{ route('site.degree-study-abroad',['degree' => $degree['slug'][$currentLang]]) }}">{{$degree['name'][$currentLang]}}</a></li>
                                 @endforeach
+                                @endif
                             </ul>
 
                         </div>

@@ -59,7 +59,7 @@
             <!-- Blog Wrapper Start -->
             <div class="blog-wrapper">
                 <div class="row">
-                    @if(!empty($blogs))
+                    @if($blogs[0]['title'][$currentLang])
                         @foreach($blogs as $blog)
                         <div class="col-lg-4 col-md-6">
 
