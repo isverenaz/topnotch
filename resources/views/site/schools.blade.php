@@ -54,7 +54,7 @@
             <!-- Courses Wrapper Start  -->
             <div class="courses-wrapper-02">
                 <div class="row">
-                    @if(!empty($schools[0]['title'][$currentLang]))
+                    @if(!empty($schools[0]['name'][$currentLang]))
                         @foreach($schools as $course)
 {{--                            @dd($course['language']['name'][$currentLang])--}}
                             <div class="col-lg-4 col-md-6">

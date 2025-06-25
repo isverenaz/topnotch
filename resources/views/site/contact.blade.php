@@ -87,10 +87,19 @@
                                     <i class="flaticon-phone-call"></i>
                                 </div>
                                 <div class="info-content">
-                                    <h6 class="title">@lang('site.phone').</h6>
+                                    <h6 class="title">@lang('site.phone_nergiz').</h6>
                                     @if(!empty($setting['phone']))
                                         <p><i class="flaticon-phone-call"></i> <a href="tel:{{$setting['phone']}}">{{$setting['phone']}}</a></p>
                                     @endif
+                                </div>
+                            </div>
+                            <div class="single-contact-info">
+                                <div class="info-icon">
+                                    <i class="flaticon-phone-call"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h6 class="title">@lang('site.phone_ilahe').</h6>
+                                        <p><i class="flaticon-phone-call"></i> <a href="tel:+994 50 540 92 93">+994 50 540 92 93</a></p>
                                 </div>
                             </div>
                             <!-- Single Contact Info End -->
