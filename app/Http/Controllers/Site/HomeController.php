@@ -34,6 +34,7 @@ use App\Models\StudyAbroad;
 use App\Models\TariffCategory;
 use App\Models\Teacher;
 use App\Models\Training;
+use App\Models\Translation;
 use App\Models\University;
 use App\Models\Useful;
 use App\Models\UsefulCategory;
@@ -48,7 +49,8 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->currentLang = LaravelLocalization::getCurrentLocale();
-        if (!in_array($this->currentLang,['az','en','ru'])){
+        $locales = Translation::where('status',1)->pluck('code')->toArray();
+        if (!in_array($this->currentLang,$locales)){
             return self::notFound();
         }
     }
