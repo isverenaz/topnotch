@@ -62,7 +62,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <!-- Single Courses Start -->
                                 <div class="single-courses">
-                                    <div class="courses-images">
+                                    <div class="courses-images" style=" text-align: center;!important;">
                                         <a href="{{ route('site.language-courses-details',['language' => $course['language']['slug'][$currentLang], 'leve' => $course['leve']['slug'][$currentLang], 'slug' => $course['slug'][$currentLang]]) }}">
                                             <img style="max-height: 196px;max-width: 198px; text-align: center;!important;" src="{{ asset("uploads/languageCourses/".$course['image']) }}" alt="{{$course['name'][$currentLang]}}">
                                         </a>
