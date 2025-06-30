@@ -340,42 +340,5 @@
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let sortableContainer = document.getElementById("sortable-slider");
-
-            if (sortableContainer) {
-                new Sortable(sortableContainer, {
-                    animation: 150,
-                    onEnd: function (evt) {
-                        let newOrder = [];
-                        document.querySelectorAll(".sortable-item").forEach(item => {
-                            newOrder.push(item.getAttribute("data-image"));
-                        });
-
-                        // AJAX vasitəsilə yeni sıralamanı backend-ə göndəririk
-                        fetch("{{ route('admin.news.orderSliderImage') }}", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                                "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                            },
-                            body: JSON.stringify({
-                                id: "{{ $news->id }}",
-                                new_order: newOrder
-                            })
-                        }).then(response => response.json())
-                            .then(data => {
-                                if (data.success) {
-                                    console.log("Şəkil sıralaması yeniləndi");
-                                }
-                            });
-                    }
-                });
-            }
-        });
-
-    </script>
 @endsection
 
