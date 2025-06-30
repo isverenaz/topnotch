@@ -15,13 +15,13 @@ try {
         Route::get('/rules', 'HomeController@rules')->name('rules');
         Route::get('/study-abroad/{country?}/{university?}', 'HomeController@studyAbroad')->name('study-abroad');
         Route::get('/study-abroad-degree/{degree?}', 'HomeController@degreeStudyAbroad')->name('degree-study-abroad');
-        Route::get('/study-abroad-details/{country?}/{university?}/{slug}', 'HomeController@studyAbroadDetails')->name('study-abroad-details');
+        Route::get('/study-abroad-details/{country?}/{university?}/{slug?}', 'HomeController@studyAbroadDetails')->name('study-abroad-details');
         Route::get('/schools/{schoolCategory?}', 'HomeController@schools')->name('schools');
-        Route::get('/schools-details/{schoolCategory?}/{slug}', 'HomeController@schoolDetails')->name('schools-details');
+        Route::get('/schools-details/{schoolCategory?}/{slug?}', 'HomeController@schoolDetails')->name('schools-details');
         Route::get('/language-courses/{language?}/{leve?}', 'HomeController@languageCourses')->name('language-courses');
-        Route::get('/language-courses-details/{language?}/{leve?}/{slug}', 'HomeController@languageCoursesDetails')->name('language-courses-details');
+        Route::get('/language-courses-details/{language?}/{leve?}/{slug?}', 'HomeController@languageCoursesDetails')->name('language-courses-details');
         Route::get('/blogs/{category?}', 'HomeController@blogs')->name('blogs');
-        Route::get('/blog-detail/{category?}/{slug}', 'HomeController@blogDetail')->name('blogDetail');
+        Route::get('/blog-detail/{category?}/{slug?}', 'HomeController@blogDetail')->name('blogDetail');
         Route::get('/contact', 'HomeController@contact')->name('contact');
         Route::get('/404', 'HomeController@notPage')->name('404');
         Route::get('/signup', 'HomeController@signup')->name('signup');
