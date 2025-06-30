@@ -53,6 +53,9 @@ class HomeController extends Controller
         if (!in_array($this->currentLang,$locales)){
             return self::notFound();
         }
+        if (Request::path() === '/') {
+            return redirect('/az');
+        }
     }
 
     public function index()
