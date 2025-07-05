@@ -257,7 +257,7 @@
             @endif
                 <li>
                     <a href="@if(empty($schoolCategories[0])){{ route("site.schools") }}@else#@endif">@lang('site.schools')</a>
-                    @if(!empty($schoolCategories[0]['name'][$currentLang]))
+                    @if(!empty($schoolCategories[0]['title'][$currentLang]))
                         <ul class="sub-menu">
                             @foreach($schoolCategories as $schoolCategory)
                                 <li>
