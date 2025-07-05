@@ -7,7 +7,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 order-md-1 order-lg-1">
+                <div class="col-lg-4 col-md-6">
                     <!-- Footer Widget Start -->
                     <div class="footer-widget">
                         @if(!empty($setting['footer_logo']))
@@ -54,7 +54,7 @@
                     <!-- Footer Widget End -->
 
                 </div>
-                <div class="col-lg-3 col-md-6 order-md-2 order-lg-2">
+                <div class="col-lg-5 col-md-6">
 
                     <!-- Footer Widget Link Start -->
                     <div class="footer-widget-link">
