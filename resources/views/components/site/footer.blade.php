@@ -74,42 +74,28 @@
                         </div>
                         <!-- Footer Widget End -->
 
-                        <!-- Footer Widget Start -->
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">@lang('site.our_additions')</h4>
-
-                            <ul class="widget-link">
-                                <li><a href="{{ route('site.about') }}">@lang('site.about_us')</a></li>
-                                <li><a href="{{ route('site.faqs') }}">@lang('site.faq')</a></li>
-                                <li><a href="{{ route("site.contact") }}">@lang('site.contact_us')</a></li>
-                                {{--<li><a href="{{ route('site.conditions') }}">Şərtlər</a></li>
-                                            <li><a href="{{ route('site.rules') }}">Qaydalar</a></li>--}}
-                            </ul>
-
-                        </div>
-                        <!-- Footer Widget End -->
-
                     </div>
                     <!-- Footer Widget Link End -->
 
                 </div>
                 <div class="col-lg-3 col-md-6 order-md-2 order-lg-3">
+                    <div class="footer-widget-link">
 
                     <!-- Footer Widget Start -->
                     <div class="footer-widget">
-                        <h4 class="footer-widget-title">Yenilikdən xəbərdar ol!</h4>
+                        <h4 class="footer-widget-title">@lang('site.our_additions')</h4>
 
-                        {{--<div class="widget-subscribe">
-                            <div class="widget-form">
-                                <form action="#">
-                                    <input type="text" placeholder="E-poçtunu qeyd et">
-                                    <button class="btn btn-primary btn-hover-dark">Abune olun</button>
-                                </form>
-                            </div>
-                        </div>--}}
+                        <ul class="widget-link">
+                            <li><a href="{{ route('site.about') }}">@lang('site.about_us')</a></li>
+                            <li><a href="{{ route('site.faqs') }}">@lang('site.faq')</a></li>
+                            <li><a href="{{ route("site.contact") }}">@lang('site.contact_us')</a></li>
+                            {{--<li><a href="{{ route('site.conditions') }}">Şərtlər</a></li>
+                                        <li><a href="{{ route('site.rules') }}">Qaydalar</a></li>--}}
+                        </ul>
+
                     </div>
                     <!-- Footer Widget End -->
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,7 +111,7 @@
             <div class="copyright-wrapper">
 
                 <div class="copyright-text">
-                    <p>&copy; <?php echo date('Y') ?> <span> @lang('site.site_name') </span> Bütün hüquqlarımız qorunur! <i class="icofont-heart-alt"></i> by <a href="#">Anvar Asgarov</a></p>
+                    <p>&copy; <?php echo date('Y') ?> <span> @lang('site.site_name') </span> @lang('site.copyright') <i class="icofont-heart-alt"></i> by <a href="https://instagram.com/asgarov.az/">Anvar Asgarov</a></p>
                 </div>
             </div>
             <!-- Footer Copyright End -->
