@@ -54,7 +54,7 @@
                     <!-- Footer Widget End -->
 
                 </div>
-                <div class="col-lg-6 order-md-3 order-lg-2">
+                <div class="col-lg-3 col-md-6 order-md-2 order-lg-3">
 
                     <!-- Footer Widget Link Start -->
                     <div class="footer-widget-link">
