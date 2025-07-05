@@ -57,7 +57,7 @@
                 <div class="col-lg-6 order-md-3 order-lg-2 d-flex justify-content-center">
 
                     <!-- Footer Widget Link Start -->
-                    <div class="footer-widget-link">
+                    <div class="footer-widget-link" style="width: 100%;!important;">
 
                         <!-- Footer Widget Start -->
                         <div class="footer-widget">
