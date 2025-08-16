@@ -111,7 +111,7 @@
             <div class="copyright-wrapper">
 
                 <div class="copyright-text">
-                    <p>&copy; <?php echo date('Y') ?> <span> @lang('site.site_name') </span> @lang('site.copyright') <i class="icofont-heart-alt"></i> by <a href="https://instagram.com/asgarov.az/">Anvar Asgarov</a></p>
+                    <p>&copy; <?php echo date('Y') ?> <span> @lang('site.site_name') </span> @lang('site.copyright')  by <a href="https://nacaspia.com">NACaspia Informaion Technologies MMC</a></p>
                 </div>
             </div>
             <!-- Footer Copyright End -->
