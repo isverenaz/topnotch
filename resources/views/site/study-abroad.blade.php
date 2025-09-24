@@ -6,22 +6,18 @@
     @php
         // Burada dinamik title yarada bilərsiniz
         $pageTitle = !empty($country)
-            ? $country['name'][$currentLang].' | '.Lang::get('site.study_abroads')
-            : Lang::get('site.study_abroads_text');
+            ? $country['name'][$currentLang].' | '.Lang::get('site.site_name').' | '.'- Xaricdə Təhsil'
+            : Lang::get('site.site_name').' | '.'- Xaricdə Təhsil';
         $metaDescription = !empty($country)
-            ? $country['name'][$currentLang].' | '.Lang::get('site.study_abroads')
-            : Lang::get('site.study_abroads_text');
+            ? $country['name'][$currentLang].' | '.Lang::get('site.study_abroads').' | '.'- Xaricdə Təhsil'
+            : Lang::get('site.site_name').' | '.'- Xaricdə Təhsil';
     @endphp
     <title>{{ $pageTitle }}</title>
 
     {{-- Primary Meta Tags --}}
     <meta name="title" content="{{ $pageTitle }}">
-    <meta name="description"
-          content="{{ isset($metaDescription)
-                        ? $metaDescription
-                        : __('site.default_meta_description') }}">
-    <meta name="keywords"
-          content="study abroad, {{ $country['name'][$currentLang] ?? '' }}, university, education">
+    <meta name="description" content="{{ $metaDescription }}">
+    <meta name="keywords" content="{{$pageTitle}}">
 
     {{-- Canonical URL --}}
     <link rel="canonical" href="{{ url()->current() }}">
@@ -30,26 +26,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $pageTitle }}">
-    <meta property="og:description"
-          content="{{ isset($metaDescription)
-                        ? $metaDescription
-                        : __('site.default_meta_description') }}">
-    <meta property="og:image"
-          content="{{ isset($ogImage)
-                        ? asset('uploads/'.$ogImage)
-                        : asset('site/assets/images/default-og.jpg') }}">
-
+    <meta property="og:description" content="{{ $metaDescription }}">
+    <meta property="og:image" content="{{ isset($ogImage) ? asset('uploads/'.$ogImage): 'https://topnotch.az/uploads/settings/1750436451.favicon.png' }}">
     {{-- Twitter --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $pageTitle }}">
-    <meta name="twitter:description"
-          content="{{ isset($metaDescription)
-                        ? $metaDescription
-                        : __('site.default_meta_description') }}">
-    <meta name="twitter:image"
-          content="{{ isset($ogImage)
-                        ? asset('uploads/'.$ogImage)
-                        : '' }}">
+    <meta name="twitter:description" content="{{ $metaDescription }}">
     <style>
         /* === Slider əsas konteyner === */
         .slider-section {
