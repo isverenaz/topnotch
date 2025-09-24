@@ -6,10 +6,6 @@
     <title>@lang('site.site_name') - Xaricdə Təhsil, Dil Kursları və Yay Məktəbləri</title>
 
     @if(!empty($data['setting']['favicon']))
-    <meta property="og:image" content="{{ asset('uploads/settings/'.$data['setting']['favicon']) }}">
-    @endif
-    @if(!empty($data['setting']['favicon']))
-    <meta name="twitter:image" content="{{ asset('uploads/settings/'.$data['setting']['favicon']) }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings/'.$data['setting']['favicon']) }}">
     @endif
     @yield('site.css')
