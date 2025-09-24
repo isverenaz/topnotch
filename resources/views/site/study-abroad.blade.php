@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Lang; @endphp
 @extends('site.layouts.app')
 @section('site.title')
 @endsection
@@ -5,8 +6,11 @@
     @php
         // Burada dinamik title yarada bilərsiniz
         $pageTitle = !empty($country)
-            ? $country['name'][$currentLang].' | '.trans('site.study_abroads')
-            : trans('site.study_abroads_text');
+            ? $country['name'][$currentLang].' | '.Lang::get('site.study_abroads')
+            : Lang::get('site.study_abroads_text');
+        $metaDescription = !empty($country)
+            ? $country['name'][$currentLang].' | '.Lang::get('site.study_abroads')
+            : Lang::get('site.study_abroads_text');
     @endphp
     <title>{{ $pageTitle }}</title>
 
