@@ -2,8 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Spatie\Sitemap\SitemapGenerator;
 
 try {
+    Route::get('/generate-sitemap', function () {
+        SitemapGenerator::create('http://topnotch.test')
+            ->writeToFile(public_path('sitemap.xml'));
+
+        return 'Sitemap yaradıldı!';
+    });
     Route::group([
     'prefix' => implode('/', [LaravelLocalization::setLocale(), '']),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],
