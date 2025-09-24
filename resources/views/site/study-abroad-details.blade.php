@@ -2,6 +2,19 @@
 @section('site.title')
 @endsection
 @section('site.css')
+    <meta name="description" content="{{ $studyAbroad['name'][$currentLang] }} – Xaricdə Təhsil | TopNotch">
+    <!-- Açar sözlər (isteğe bağlı, Google üçün az əhəmiyyətlidir) -->
+    <meta name="keywords" content="{{ $studyAbroad['name'][$currentLang] }} – Xaricdə Təhsil | TopNotch">
+
+    <meta property="og:title" content="{{ $studyAbroad['name'][$currentLang] }} – Xaricdə Təhsil | TopNotch">
+    <meta property="og:description" content="{{ Str::limit(strip_tags($studyAbroad['full_text'][$currentLang] ?? ''), 160) }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:image" content="{{ asset('uploads/studyAbroads/'.$studyAbroad['image']) }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $studyAbroad['name'][$currentLang] }} – Xaricdə Təhsil | TopNotch">
+    <meta name="twitter:description" content="{{ Str::limit(strip_tags($studyAbroad['full_text'][$currentLang] ?? ''), 160) }}">
+    <meta name="twitter:image" content="{{ asset('uploads/studyAbroads/'.$studyAbroad['image']) }}">
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>

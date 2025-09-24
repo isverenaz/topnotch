@@ -2,6 +2,19 @@
 @section('site.title')
 @endsection
 @section('site.css')
+    <meta name="description" content="TopNotch xaricdə təhsil, dil kursları və yay məktəbləri üzrə peşəkar xidmətlər təklif edir. Təhsil arzularınızı gerçəkləşdirmək üçün bizə müraciət edin.">
+    <!-- Açar sözlər (isteğe bağlı, Google üçün az əhəmiyyətlidir) -->
+    <meta name="keywords" content="xaricdə təhsil, dil kursları, yay məktəbləri, xaricdə oxumaq, təhsil məsləhətləri, TopNotch">
+    <!-- Sosial şəbəkələr üçün Open Graph -->
+    <meta property="og:title" content="TopNotch – Xaricdə Təhsil, Dil Kursları və Yay Məktəbləri">
+    <meta property="og:description" content="Xaricdə təhsil, dil kursları və yay məktəbləri üçün ən doğru ünvan – TopNotch.">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TopNotch – Xaricdə Təhsil, Dil Kursları və Yay Məktəbləri">
+    <meta name="twitter:description" content="Xaricdə təhsil və dil kursları üçün peşəkar dəstək. TopNotch ilə arzularınıza çatın.">
+    <!-- Favicon -->
     <style>
         /* === Slider əsas konteyner === */
         .slider-section {
