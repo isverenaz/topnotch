@@ -5,13 +5,14 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^7.4|^8.1",
         "guzzlehttp/guzzle": "^7.9",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "mcamara/laravel-localization": "^2.0",
         "spatie/laravel-permission": "^5.11",
+        "spatie/laravel-sitemap": "^7.3",
         "symfony/dom-crawler": "^6.4"
     },
     "require-dev": {
