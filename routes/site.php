@@ -6,7 +6,7 @@ use Spatie\Sitemap\SitemapGenerator;
 
 try {
     Route::get('/generate-sitemap', function () {
-        SitemapGenerator::create('https://topnotch.az')
+        SitemapGenerator::create('https://topnotch.az/az/')
             ->writeToFile(public_path('sitemap.xml'));
 
         return 'Sitemap yaradıldı!';
