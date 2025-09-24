@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@lang('site.site_name') - Xaricdə Təhsil, Dil Kursları və Yay Məktəbləri</title>
-
+    <meta name="google-site-verification" content="GtSfkXVQHjSV47QaceACjcmXx_vijAyl7QbwAYfy3uw" />
     @if(!empty($data['setting']['favicon']))
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings/'.$data['setting']['favicon']) }}">
     @endif
