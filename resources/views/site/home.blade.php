@@ -10,10 +10,12 @@
     <meta property="og:description" content="Xaricdə təhsil, dil kursları və yay məktəbləri üçün ən doğru ünvan – TopNotch.">
     <meta property="og:url" content="{{ request()->url() }}">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://topnotch.az/uploads/settings/1750436451.favicon.png">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TopNotch – Xaricdə Təhsil, Dil Kursları və Yay Məktəbləri">
     <meta name="twitter:description" content="Xaricdə təhsil və dil kursları üçün peşəkar dəstək. TopNotch ilə arzularınıza çatın.">
+    <meta name="twitter:image" content="https://topnotch.az/uploads/settings/1750436451.favicon.png">
     <!-- Favicon -->
     <style>
         /* === Slider əsas konteyner === */

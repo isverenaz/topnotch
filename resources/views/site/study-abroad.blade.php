@@ -27,11 +27,12 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $pageTitle }}">
     <meta property="og:description" content="{{ $metaDescription }}">
-    <meta property="og:image" content="{{ isset($ogImage) ? asset('uploads/'.$ogImage): 'https://topnotch.az/uploads/settings/1750436451.favicon.png' }}">
+    <meta property="og:image" content="https://topnotch.az/uploads/settings/1750436451.favicon.png">
     {{-- Twitter --}}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $pageTitle }}">
     <meta name="twitter:description" content="{{ $metaDescription }}">
+    <meta name="twitter:image" content="https://topnotch.az/uploads/settings/1750436451.favicon.png">
     <style>
         /* === Slider əsas konteyner === */
         .slider-section {
