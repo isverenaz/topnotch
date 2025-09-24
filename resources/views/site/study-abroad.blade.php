@@ -2,6 +2,50 @@
 @section('site.title')
 @endsection
 @section('site.css')
+    @php
+        // Burada dinamik title yarada bilərsiniz
+        $pageTitle = !empty($country)
+            ? $country['name'][$currentLang].' | '.trans('site.study_abroads')
+            : trans('site.study_abroads_text');
+    @endphp
+    <title>{{ $pageTitle }}</title>
+
+    {{-- Primary Meta Tags --}}
+    <meta name="title" content="{{ $pageTitle }}">
+    <meta name="description"
+          content="{{ isset($metaDescription)
+                        ? $metaDescription
+                        : __('site.default_meta_description') }}">
+    <meta name="keywords"
+          content="study abroad, {{ $country['name'][$currentLang] ?? '' }}, university, education">
+
+    {{-- Canonical URL --}}
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    {{-- Open Graph / Facebook --}}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $pageTitle }}">
+    <meta property="og:description"
+          content="{{ isset($metaDescription)
+                        ? $metaDescription
+                        : __('site.default_meta_description') }}">
+    <meta property="og:image"
+          content="{{ isset($ogImage)
+                        ? asset('uploads/'.$ogImage)
+                        : asset('site/assets/images/default-og.jpg') }}">
+
+    {{-- Twitter --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $pageTitle }}">
+    <meta name="twitter:description"
+          content="{{ isset($metaDescription)
+                        ? $metaDescription
+                        : __('site.default_meta_description') }}">
+    <meta name="twitter:image"
+          content="{{ isset($ogImage)
+                        ? asset('uploads/'.$ogImage)
+                        : '' }}">
     <style>
         /* === Slider əsas konteyner === */
         .slider-section {
@@ -148,26 +192,6 @@
         <img class="shape-author" src="{{ asset("site/assets/images/author/author-11.jpg") }}" alt="Shape">
     </div>
     <!-- Slider Start -->
-   {{-- <div class="section slider-section" style="background-image: url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')!important;">
-        <div class="container">
-            <!-- Slider Content Start -->
-            <div class="slider-content">
-
-                <h2 class="main-title" style="color: aliceblue"> @lang('site.study_abroads')
-                @if(!empty($country))
-                    / {{$country['name'][$currentLang]}}
-                @endif
-                @if(!empty($country) &&  !empty($university))
-                    / {{$university['name'][$currentLang]}}
-                @endif
-                </h2>
-                <p style="margin: 0 auto; font-size: 42px; line-height: 1.6;">
-                    @lang('site.study_abroads_text')
-                </p>
-            </div>
-            <!-- Slider Content End -->
-        </div>
-    </div>--}}
     <!-- Slider End -->
     <div class="section section-padding">
         <div class="container">
