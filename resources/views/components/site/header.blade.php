@@ -71,10 +71,14 @@
                 <!-- Header Menu Start -->
                 <div class="header-menu d-none d-lg-block">
                     <ul class="nav-menu">
-                        @if(!empty($countries[0]['name'][$currentLang]))
                         <li>
                             <a href="{{ route('site.study-abroad') }}">@lang('site.study_abroads')</a>
                             <ul class="sub-menu">
+
+                                <li>
+                                    <a href="{{ route("site.blogs",['category' => $xaricdeCategories['slug'][$currentLang]]) }}">{{$xaricdeCategories['title'][$currentLang]}}</a>
+                                </li>
+                                @if(!empty($countries[0]['name'][$currentLang]))
                                 @foreach($countries as $country)
                                     @if(!empty($country['universities'][0]['name'][$currentLang]))
                                     <li>
@@ -87,13 +91,20 @@
                                     </li>
                                     @endif
                                 @endforeach
+                                @endif
                             </ul>
                         </li>
-                        @endif
-                        @if(!empty($languages[0]['name'][$currentLang]))
                         <li>
                             <a href="{{ route('site.language-courses') }}">@lang('site.language_courses')</a>
                             <ul class="sub-menu">
+                                <li>
+                                    <a href="{{ route('site.teacher') }}">@lang('site.teachers')</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route("site.blogs",['category' => $langCategories['slug'][$currentLang]]) }}">{{$langCategories['title'][$currentLang]}}</a>
+                                </li>
+
+                            @if(!empty($languages[0]['name'][$currentLang]))
                                 @foreach($languages as $lang)
                                     @if(!empty($lang['parentLanguages'][0]['name'][$currentLang]))
                                         <li>
@@ -108,9 +119,9 @@
                                         </li>
                                     @endif
                                 @endforeach
+                            @endif
                             </ul>
                         </li>
-                        @endif
                         <li>
                             <a href="{{ route("site.schools") }}">@lang('site.schools')</a>
                             @if(!empty($schoolCategories[0]['title'][$currentLang]))
@@ -124,16 +135,16 @@
                             @endif
                         </li>
                         <li>
-                            <a href="{{ route("site.blogs") }}">@lang('site.blogs')</a>
-                            @if(!empty($categories[0]['title'][$currentLang]))
+                            <a href="{{ route("site.blogs",['category' => $categories['slug'][$currentLang]]) }}">{{$categories['title'][$currentLang]}}</a>
+                            {{--@if(!empty($categories[0]['title'][$currentLang]))
                             <ul class="sub-menu">
                                 @foreach($categories as $category)
                                 <li>
-                                    <a href="{{ route("site.blogs",['category' => $category['slug'][$currentLang]]) }}">{{$category['title'][$currentLang]}}</a>
+                                    <a href="{{ route("site.blogs",['category' => $categories['slug'][$currentLang]]) }}">{{$categories['title'][$currentLang]}}</a>
                                 </li>
                                 @endforeach
                             </ul>
-                            @endif
+                            @endif--}}
                         </li>
                         <li>
                             <a href="{{ LaravelLocalization::getLocalizedURL($currentLang, route('site.index')) }}">{{ ucwords($currentLang) }}</a>

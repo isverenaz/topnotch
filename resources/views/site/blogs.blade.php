@@ -22,9 +22,8 @@
             <div class="page-banner-content">
                 <ul class="breadcrumb">
                     <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
-                    <li class="active">@lang('site.blogs')</li>
+                    <li class="active">{{$category['title'][$currentLang]}}</li>
                 </ul>
-                <h2 class="title">@lang('site.blog_text')</h2>
             </div>
             <!-- Page Banner End -->
         </div>
@@ -98,18 +97,6 @@
                 </div>
             </div>
             <!-- Blog Wrapper End -->
-
-            <!-- Page Pagination End -->
-            {{--<div class="page-pagination">
-                <ul class="pagination justify-content-center">
-                    <li><a href="#"><i class="icofont-rounded-left"></i></a></li>
-                    <li><a class="active" href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#"><i class="icofont-rounded-right"></i></a></li>
-                </ul>
-            </div>--}}
-            <!-- Page Pagination End -->
 
         </div>
     </div>

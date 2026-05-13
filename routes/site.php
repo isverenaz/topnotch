@@ -17,6 +17,7 @@ try {
     function() {
         Route::get('/', 'HomeController@index')->name('index');
         Route::get('/about', 'HomeController@about')->name('about');
+        Route::get('/teacher', 'HomeController@teacher')->name('teacher');
         Route::get('/faqs', 'HomeController@faqs')->name('faqs');
         Route::get('/conditions', 'HomeController@conditions')->name('conditions');
         Route::get('/rules', 'HomeController@rules')->name('rules');

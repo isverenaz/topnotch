@@ -216,6 +216,13 @@ class HomeController extends Controller
         return view('site.about ', compact('currentLang', 'teachers'));
     }
 
+    public function teacher()
+    {
+        $currentLang = $this->currentLang;
+        $teachers = Teacher::where(['status' => 1])->orderBy('id', 'DESC')->get();
+        return view('site.teacher ', compact('currentLang', 'teachers'));
+    }
+
     public function faqs()
     {
         $currentLang = $this->currentLang;

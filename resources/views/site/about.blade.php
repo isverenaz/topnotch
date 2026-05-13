@@ -127,46 +127,6 @@
     </div>
     <!-- Download App End -->
 
-    <!-- Team Member's Start -->
-    <div class="section section-padding mt-n1">
-        <div class="container">
-
-            <!-- Section Title Start -->
-            <div class="section-title shape-03 text-center">
-                <h5 class="sub-title">@lang('site.team')</h5>
-                <h2 class="main-title">@lang('site.team_text')</h2>
-            </div>
-            <!-- Section Title End -->
-
-            <!-- Team Wrapper Start -->
-            <div class="team-wrapper">
-                <div class="row row-cols-lg-5 row-cols-sm-3 row-cols-2 ">
-                    @if($teachers[0]['name'][$currentLang])
-                    @foreach($teachers as $teacher)
-                        <div class="col">
-
-                            <!-- Single Team Start -->
-                            <div class="single-team">
-                                <div class="team-thumb">
-                                    <img src="{{ !empty($teacher['image'])? asset("uploads/teachers/".$teacher['image']): asset('site/assets/images/user.jpg') }}" alt="Author">
-                                </div>
-                                <div class="team-content">
-                                    <h4 class="name">{{ $teacher['name'][$currentLang] }}</h4>
-                                    <span class="designation">{{$teacher['position']['name'][$currentLang]}}</span>
-                                </div>
-                            </div>
-                            <!-- Single Team End -->
-
-                        </div>
-                    @endforeach
-                    @endif
-                </div>
-            </div>
-            <!-- Team Wrapper End -->
-
-        </div>
-    </div>
-    <!-- Team Member's End -->
 @endsection
 @section('site.js')
     <!-- Modernizer & jQuery JS -->
