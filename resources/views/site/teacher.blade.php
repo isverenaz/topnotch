@@ -13,7 +13,8 @@
             width: 100%;
             aspect-ratio: 1 / 1;
             overflow: hidden;
-            background: linear-gradient(135deg,#f8f9fa,#eef2f7);
+            background: #f8f9fa;
+            /*background: linear-gradient(135deg,#f8f9fa,#eef2f7);*/
             position: relative;
             cursor: pointer;
             display: flex;
