@@ -13,20 +13,25 @@
             width: 100%;
             aspect-ratio: 1 / 1;
             overflow: hidden;
-            background: #f8f9fa;
+            background: linear-gradient(135deg,#f8f9fa,#eef2f7);
             position: relative;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .teacher-post-image img{
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: .4s ease;
+            object-fit: contain;
+            object-position: center;
+            transition: transform .5s ease;
+            padding: 10px;
         }
 
         .teacher-post-image:hover img{
-            transform: scale(1.08);
+            transform: scale(1.15);
         }
 
         /* Modal slider */
