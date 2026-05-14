@@ -21,6 +21,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("site/assets/css/vendor/plugins.min.css") }}">
     <link rel="stylesheet" href="{{ asset("site/assets/css/style.min.css") }}">
+    <style>
+        .video-embed {
+            margin: 20px 0;
+        }
+
+        .video-embed iframe {
+            width: 100%;
+            border-radius: 12px;
+        }
+    </style>
 @endsection
 @section('site.content')
     <div class="section page-banner">
@@ -103,7 +113,25 @@
                                         <!-- Tab Description Start -->
                                         <div class="tab-description">
                                             <div class="description-wrapper">
-                                            {!! $studyAbroad['full_text'][$currentLang] ?? '' !!}
+                                                @php
+                                                    $content = $studyAbroad['full_text'][$currentLang] ?? '';
+
+                                                    // YouTube
+                                                    $content = preg_replace(
+                                                        '/<a[^>]*href="https?:\/\/(?:youtu\.be\/|www\.youtube\.com\/watch\?v=)([a-zA-Z0-9_-]+)(?:[^"]*)".*?<\/a>/i',
+                                                        '<div class="video-embed">
+                                                            <iframe width="100%" height="400"
+                                                                src="https://www.youtube.com/embed/$1"
+                                                                frameborder="0"
+                                                                allowfullscreen>
+                                                            </iframe>
+                                                        </div>',
+                                                        $content
+                                                    );
+
+                                                @endphp
+
+                                                {!! $content !!}
                                             </div>
                                         </div>
                                         <!-- Tab Description End -->
