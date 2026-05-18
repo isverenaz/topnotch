@@ -66,4 +66,5 @@
   'home_text_two' => 'ПОТОРОПИСЬ на наши занятия.',
   '_token' => '10Ol0bIn0njZq6MVoEimGI5JbH62BakRUi2Kbns8',
   '_method' => 'PUT',
+    'who' => 'Кто мы?',
 );

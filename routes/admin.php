@@ -11,6 +11,8 @@ try {
         function()  {
         Route::get('/logout', 'AuthController@logout')->name('logout');
         Route::get('/home', 'HomeController@index')->name('index');
+        Route::get('/about-page', 'AboutPageController@edit')->name('about-page.edit');
+        Route::put('/about-page', 'AboutPageController@update')->name('about-page.update');
         Route::post('/uploads', 'HomeController@uploads')->name('uploads');
         Route::resource('roles','RoleController');
         Route::resource('permissions','PermissionController');

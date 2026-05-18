@@ -40,13 +40,14 @@ class Header extends Component
         $setting = Setting::first();
         $countries = Country::with('universities')->where(['status' => 1])->orderBy('name->'.$currentLang,'ASC')->get();
         $languages = Language::with('parentLanguages')->where(['status' => 1])->orderBy('name->'.$currentLang,'ASC')->get();
-        $xaricdeCategories = Category::where(['status' => 1,'id' => 3])->orderBy('title->'.$currentLang,'ASC')->first();
+        $fealCategories = Category::where(['status' => 1,'id' => 3])->orderBy('title->'.$currentLang,'ASC')->first();
+        $xaricdeCategories = Category::where(['status' => 1,'id' => 5])->orderBy('title->'.$currentLang,'ASC')->first();
         $langCategories = Category::where(['status' => 1,'id' => 4])->orderBy('title->'.$currentLang,'ASC')->first();
         $categories = Category::where('status', 1)
             ->whereNotIn('id', [3, 4])
             ->orderBy('title->' . $currentLang, 'ASC')
             ->first();
         $schoolCategories = SchoolCategory::where(['status' => 1])->orderBy('title->'.$currentLang,'ASC')->get();
-        return view('components.site.header',compact('currentLang','xaricdeCategories','langCategories','languages','setting','countries','translations','categories','schoolCategories'));
+        return view('components.site.header',compact('currentLang','fealCategories','xaricdeCategories','langCategories','languages','setting','countries','translations','categories','schoolCategories'));
     }
 }

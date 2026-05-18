@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\AboutPage;
 use App\Models\Accreditation;
 use App\Models\Career;
 use App\Models\Category;
@@ -212,8 +213,8 @@ class HomeController extends Controller
     public function about()
     {
         $currentLang = $this->currentLang;
-        $teachers = Teacher::where(['status' => 1])->orderBy('id', 'DESC')->get();
-        return view('site.about ', compact('currentLang', 'teachers'));
+        $about = AboutPage::where('status', 1)->first();
+        return view('site.about ', compact('currentLang', 'about'));
     }
 
     public function teacher()

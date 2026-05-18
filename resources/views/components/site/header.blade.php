@@ -71,14 +71,26 @@
                 <!-- Header Menu Start -->
                 <div class="header-menu d-none d-lg-block">
                     <ul class="nav-menu">
-                        <li><a href="{{ route('site.about') }}">@lang('site.about_us')</a></li>
                         <li>
-                            <a href="{{ route('site.study-abroad') }}">@lang('site.study_abroads')</a>
+                            <a href="#">@lang('site.about_us')</a>
                             <ul class="sub-menu">
-
+                                <li>
+                                    <a href="{{ route("site.about") }}">@lang('site.who')</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('site.teacher') }}">@lang('site.teachers')</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route("site.blogs",['category' => $fealCategories['slug'][$currentLang]]) }}">{{$fealCategories['title'][$currentLang]}}</a>
+                                </li>
                                 <li>
                                     <a href="{{ route("site.blogs",['category' => $xaricdeCategories['slug'][$currentLang]]) }}">{{$xaricdeCategories['title'][$currentLang]}}</a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ route('site.study-abroad') }}">@lang('site.study_abroads')</a>
+                            <ul class="sub-menu">
                                 @if(!empty($countries[0]['name'][$currentLang]))
                                 @foreach($countries as $country)
                                     @if(!empty($country['universities'][0]['name'][$currentLang]))
@@ -98,9 +110,6 @@
                         <li>
                             <a href="{{ route('site.language-courses') }}">@lang('site.language_courses')</a>
                             <ul class="sub-menu">
-                                <li>
-                                    <a href="{{ route('site.teacher') }}">@lang('site.teachers')</a>
-                                </li>
                                 <li>
                                     <a href="{{ route("site.blogs",['category' => $langCategories['slug'][$currentLang]]) }}">{{$langCategories['title'][$currentLang]}}</a>
                                 </li>

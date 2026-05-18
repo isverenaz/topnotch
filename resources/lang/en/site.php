@@ -66,4 +66,5 @@
   'home_text_two' => 'HURRY to join our classes.',
   '_token' => '10Ol0bIn0njZq6MVoEimGI5JbH62BakRUi2Kbns8',
   '_method' => 'PUT',
+    'who' => 'Who are we?',
 );

@@ -24,7 +24,8 @@
                     <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
                     <li class="active">@lang('site.about_us')</li>
                 </ul>
-                <h2 class="title">@lang('site.about_text')</h2>
+                <h2 class="title">
+                    {{ $about->sub_title[$currentLang] ?? __('site.welcome') }}</h2>
             </div>
             <!-- Page Banner End -->
         </div>
@@ -62,7 +63,7 @@
                         <!-- About Images Start -->
                         <div class="about-images">
                             <div class="images">
-                                <img src="{{ asset("site/assets/images/about.jpg") }}" alt="About">
+                                <img src="{{ !empty($about->image) ? asset('uploads/about/'.$about->image) : asset('site/assets/images/about.jpg') }}" alt="About">
                             </div>
 
                         </div>
@@ -72,10 +73,15 @@
                     <div class="col-lg-6">
                         <!-- About Content Start -->
                         <div class="about-content">
-                            <h5 class="sub-title">@lang('site.welcome').</h5>
+                            <h5 class="sub-title">
+                                {{ $about->sub_title[$currentLang] ?? __('site.welcome') }}
+                            </h5>
+
                             <h2 class="main-title">
-                                @lang('site.about_title')</h2>
-                            @lang('site.about_full_text')
+                                {{ $about->title[$currentLang] ?? __('site.about_title') }}
+                            </h2>
+
+                            {!! $about->text[$currentLang] ?? __('site.about_full_text') !!}
                             <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup')</a>
                             <br>
                             <br>
@@ -91,40 +97,7 @@
     </div>
     <!-- About End -->
     <!-- Download App Start -->
-    <div class="section section-padding download-section">
 
-        <div class="app-shape-1"></div>
-        <div class="app-shape-2"></div>
-        <div class="app-shape-3"></div>
-        <div class="app-shape-4"></div>
-
-        <div class="container">
-
-            <!-- Download App Wrapper Start -->
-            <div class="download-app-wrapper mt-n6">
-
-                <!-- Section Title Start -->
-                <div class="section-title section-title-white">
-                    <h5 class="sub-title">@lang('site.about_title')</h5>
-                    <h2 class="main-title">@lang('site.about_text')</h2>
-                </div>
-                <!-- Section Title End -->
-
-                <img class="shape-1 animation-right" src="{{ asset("site/assets/images/shape/shape-14.png") }}" alt="Shape">
-
-                <!-- Download App Button End -->
-                <div class="download-app-btn">
-                    <ul class="app-btn">
-                        <li><a href="{{ route('site.signup') }}">@lang('site.signup')</a></li>
-                    </ul>
-                </div>
-                <!-- Download App Button End -->
-
-            </div>
-            <!-- Download App Wrapper End -->
-
-        </div>
-    </div>
     <!-- Download App End -->
 
 @endsection

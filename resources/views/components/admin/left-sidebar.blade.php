@@ -29,6 +29,14 @@
                     @endcan
                     @can('useful-link-view')
                         <li class="sidebar-dropdown-item">
+                            <a href="{{ route('admin.about-page.edit') }}" class="sidebar-link">
+                            <span class="nav-icon">
+                                <i class="fa-light fa-filter-list"></i>
+                            </span>
+                                <span class="sidebar-txt">Haqqımızda</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown-item">
                             <a href="{{ route('admin.useful-link.index') }}" class="sidebar-link">
                             <span class="nav-icon">
                                 <i class="fa-light fa-filter-list"></i>
