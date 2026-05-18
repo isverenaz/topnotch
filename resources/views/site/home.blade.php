@@ -125,6 +125,13 @@
             max-height: 80px;
             object-fit: contain;
         }
+        .study-abroad-active .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
+
+        .study-abroad-active .swiper-slide {
+            height: auto;
+        }
     </style>
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -425,7 +432,7 @@
             </div>
 
             @if(!empty($studyAbroads[0]['name'][$currentLang]))
-                <div class="blog-wrapper  brand-marquee-active">
+                <div class="blog-wrapper study-abroad-active">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
 
@@ -652,6 +659,38 @@
     <script src="{{ asset('site/assets/js/plugins.min.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('site/assets/js/main.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+
+            new Swiper('.study-abroad-active .swiper-container', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                speed: 9000,
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 1,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 25
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
+                }
+            });
+
+        });
+    </script>
     <script>
         $(document).ready(function () {
 
