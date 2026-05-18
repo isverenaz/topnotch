@@ -41,13 +41,10 @@ class SlidersController extends Controller
      */
     public function index()
     {
-        $slider = $this->sliderRepository->getAll(1);
+        $sliders = $this->sliderRepository->getAll(1);
         $locales = Translation::where('status',1)->get();
         $currentLang = $this->currentLang;
-        if (empty($slider)) {
-            return view('admin.sliders.create', compact('locales'));
-        }
-        return view('admin.sliders.edit',compact('slider','locales','currentLang'));
+        return view('admin.sliders.index',compact('sliders','locales','currentLang'));
     }
 
     /**

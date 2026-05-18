@@ -67,13 +67,13 @@ class HomeController extends Controller
     public function index()
     {
         $currentLang = $this->currentLang;
-        $slider = Slider::where('status', 1)->orderBy('id', 'DESC')->first();
+        $sliders = Slider::where('status', 1)->orderBy('id', 'DESC')->get();
         $categories = Category::where(['status' => 1])->orderBy('id', 'DESC')->get();
         $studyAbroads = StudyAbroad::where(['status' => 1, 'is_main' => 1])->orderBy('id', 'DESC')->paginate(3);
         $languageCourses = LanguageCourse::where(['status' => 1, 'is_main' => 1])->orderBy('id', 'DESC')->paginate(3);
         $universities = University::whereNotNull('image')->where(['status' => 1])->orderBy('id', 'DESC')->get();
         $services = Service::where(['status' => 1])->orderBy('id', 'DESC')->get();
-        return view('site.home', compact('currentLang', 'slider', 'categories', 'studyAbroads', 'languageCourses', 'universities', 'services'));
+        return view('site.home', compact('currentLang', 'sliders', 'categories', 'studyAbroads', 'languageCourses', 'universities', 'services'));
     }
 
     public function studyAbroad($country = null, $university = null)

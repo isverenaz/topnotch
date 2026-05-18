@@ -69,10 +69,6 @@
                                         @endif
 
                                         <div class="col-sm-12">
-                                            <label class="form-label">@lang('admin.link')</label>
-                                            <input type="text" class="form-control" name="link" value="{{ !empty($slider->link)? $slider->link: '' }}">
-                                        </div>
-                                        <div class="col-sm-12">
                                             <label class="form-label">@lang('admin.status')</label>
                                             <select class="form-control" name="status">
                                                 <option value="1" @if($slider->status ==1) selected @endif>@lang('admin.active')</option>

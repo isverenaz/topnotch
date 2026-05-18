@@ -61,10 +61,7 @@
                                             <input type="file" class="form-control" name="image">
                                             <p> Şəkilin maksimum ölçüsü 4160x2774 piksel olmalıdır. Şəkil faylının maksimum ölçüsü 620 KB olmalıdır.</p>
                                         </div>
-                                        <div class="col-sm-12">
-                                            <label class="form-label">@lang('admin.link')</label>
-                                            <input type="text" class="form-control" name="link">
-                                        </div>
+
                                         <div class="col-sm-12">
                                             <label class="form-label">@lang('admin.status')</label>
                                             <select class="form-control" name="status">

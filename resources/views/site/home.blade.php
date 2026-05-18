@@ -18,97 +18,182 @@
     <meta name="twitter:image" content="https://topnotch.az/uploads/settings/1750436451.favicon.png">
     <!-- Favicon -->
     <style>
-        /* === Slider əsas konteyner === */
-        .slider-section {
-            background-size: cover;
-            background-position: center;
+        .hero-photo-slider .swiper-container {
             position: relative;
-            padding: 150px 0 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            width: 100%;
             overflow: hidden;
+            border-radius: 0 0 16px 16px;
         }
 
-        /* === Qarartma effekti === */
-        .slider-section::before {
-            content: '';
+        .hero-photo-item {
+            position: relative;
+            width: 100%;
+            height: 690px;
+            overflow: hidden;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .hero-photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .hero-photo-overlay {
             position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4); /* 40% qara şəffaf overlay */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 45%;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.80),
+                rgba(0, 0, 0, 0.35),
+                rgba(0, 0, 0, 0)
+            );
             z-index: 1;
         }
 
-        /* === Slider məzmunu === */
-        .slider-content {
-            position: relative;
+        .hero-photo-content {
+            position: absolute;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
             z-index: 2;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #ffffff; /* Yazılar ağ */
+            max-width: 850px;
         }
 
-        /* Alt başlıq */
-        .slider-content .sub-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        /* Başlıq */
-        .slider-content .main-title {
-            font-size: 36px;
-            margin-bottom: 15px;
+        .hero-photo-content h1 {
+            color: #ffffff;
+            font-size: 28px;
+            line-height: 1.3;
             font-weight: 700;
+            margin: 0;
         }
 
-        /* Açıqlama mətn */
-        .slider-content p {
+        .hero-photo-content p {
+            color: #ffffff;
             font-size: 18px;
-            margin-bottom: 25px;
-            line-height: 1.6;
+            line-height: 1.5;
+            margin-top: 8px;
+            margin-bottom: 0;
         }
 
-        /* Qoşul düyməsi */
-        .slider-content .btn {
-            background-color: #ffffff;
-            color: #000;
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+        /* Slider düymələri */
+        .hero-button-prev,
+        .hero-button-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.92);
+            color: #1f2e55;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s ease;
         }
 
-        /* Hover effekti */
-        .slider-content .btn:hover {
-            background-color: #000;
-            color: #fff;
+        .hero-button-prev {
+            left: 18px;
         }
 
-        /* === Mobil üçün uyğunlaşdırma === */
-        @media (max-width: 768px) {
-            .slider-section {
-                padding: 100px 20px 80px;
+        .hero-button-next {
+            right: 18px;
+        }
+
+        .hero-button-prev i,
+        .hero-button-next i {
+            font-size: 26px;
+        }
+
+        /* Tablet */
+        @media (max-width: 991px) {
+            .hero-photo-item {
+                height: 500px;
             }
 
-            .slider-content .main-title {
+            .hero-photo-content h1 {
                 font-size: 24px;
             }
 
-            .slider-content p {
+            .hero-photo-content p {
+                font-size: 16px;
+            }
+        }
+
+        /* Mobil */
+        @media (max-width: 576px) {
+            .hero-photo-slider .swiper-container,
+            .hero-photo-item {
+                border-radius: 0 0 12px 12px;
+            }
+
+            .hero-photo-item {
+                height: 320px;
+            }
+
+            .hero-photo-content {
+                left: 16px;
+                right: 16px;
+                bottom: 18px;
+            }
+
+            .hero-photo-content h1 {
+                font-size: 18px;
+                line-height: 1.25;
+            }
+
+            .hero-photo-content p {
+                font-size: 13px;
+                line-height: 1.4;
+                margin-top: 5px;
+            }
+
+            .hero-button-prev,
+            .hero-button-next {
+                width: 36px;
+                height: 36px;
+            }
+
+            .hero-button-prev {
+                left: 10px;
+            }
+
+            .hero-button-next {
+                right: 10px;
+            }
+
+            .hero-button-prev i,
+            .hero-button-next i {
+                font-size: 20px;
+            }
+        }
+
+        /* Çox balaca telefonlar */
+        @media (max-width: 380px) {
+            .hero-photo-item {
+                height: 280px;
+            }
+
+            .hero-photo-content h1 {
                 font-size: 16px;
             }
 
-            .slider-content .btn {
-                font-size: 16px;
-                padding: 10px 25px;
+            .hero-photo-content p {
+                font-size: 12px;
             }
 
-            .slider-courses-box,
-            .slider-rating-box {
-                display: none; /* İstəyə bağlı mobil versiyada gizlətmək olar */
+            .hero-button-prev,
+            .hero-button-next {
+                width: 32px;
+                height: 32px;
             }
         }
         .brand-marquee-active .swiper-wrapper {
@@ -142,80 +227,52 @@
 @endsection
 @section('site.content')
     <!-- Slider Start -->
-    <div class="section slider-section" style="background-image: url('{{ asset('uploads/sliders/'.$slider['image']) }}')/*url('https://marmaragroup.az/wp-content/uploads/2018/08/shutterstock_59887279.jpg')*/!important;">
+    @if(!empty($sliders) && count($sliders) > 0)
+        <div class="hero-photo-section">
+            <div class="hero-photo-slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
 
-        <!-- Slider Shape Start -->
-        {{--<div class="slider-shape">
-            <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
-        </div>--}}
-        <!-- Slider Shape End -->
+                        @foreach($sliders as $slider)
+                            <div class="swiper-slide">
+                                <div class="hero-photo-item">
+                                    <img
+                                        src="{{ asset('uploads/sliders/'.$slider['image']) }}"
+                                        alt="{{ $slider['title'][$currentLang] ?? '' }}"
+                                        @if(!$loop->first) loading="lazy" @endif
+                                    >
 
-        <div class="container">
-            <!-- Slider Content Start -->
-            <div class="slider-content">
-                <h1 class="main-title" style="color: aliceblue">{{$slider['title'][$currentLang] ?? ''}}</h1>
-                <p style="margin: 0 auto; font-size: 42px; line-height: 1.6;">
-                    {!! $slider['text'][$currentLang] ?? '' !!}
-                </p>
-            </div>
-            <!-- Slider Content End -->
-        </div>
+                                    <div class="hero-photo-overlay"></div>
 
-        <!-- Slider Courses Box Start -->
-        <div class="slider-courses-box">
+                                    <div class="hero-photo-content">
+                                        @if(!empty($slider['title'][$currentLang]))
+                                            <h1>{{ $slider['title'][$currentLang] }}</h1>
+                                        @endif
 
-            <img class="shape-1 animation-left" src="{{ asset("site/assets/images/shape/shape-5.png") }}" alt="Shape">
+                                        @if(!empty($slider['text'][$currentLang]))
+                                            <p>{!! $slider['text'][$currentLang] !!}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 
-            <div class="box-content">
-                <div class="box-wrapper">
-                    <i class="flaticon-open-book"></i>
-                    <span class="count">1,235</span>
-                    <p>@lang('site.course')</p>
+                    </div>
+
+                    @if(count($sliders) > 1)
+                        <div class="hero-button-prev">
+                            <i class="icofont-rounded-left"></i>
+                        </div>
+
+                        <div class="hero-button-next">
+                            <i class="icofont-rounded-right"></i>
+                        </div>
+                    @endif
+
                 </div>
             </div>
-
-            <img class="shape-2" src="{{ asset("site/assets/images/shape/shape-6.png") }}" alt="Shape">
-
         </div>
-        <!-- Slider Courses Box End -->
-
-        <!-- Slider Rating Box Start -->
-        <div class="slider-rating-box">
-
-            <div class="box-rating">
-                <div class="box-wrapper">
-                    <span class="count">4.8 <i class="flaticon-star"></i></span>
-                    <p>@lang('site.student')</p>
-                </div>
-            </div>
-
-            <img class="shape animation-up" src="{{ asset("site/assets/images/shape/shape-7.png") }}" alt="Shape">
-
-        </div>
-        <!-- Slider Rating Box End -->
-    {{--    @if(!empty($slider['image']))
-        <!-- Slider Images Start -->
-        <div class="slider-images">
-            <div class="images">
-                <img src="{{ asset("uploads/sliders/".$slider['image']) }}" alt="Slider">
---}}{{--                <img src="{{ asset("site/assets/images/slider/slider-1.png") }}" alt="Slider">--}}{{--
-            </div>
-        </div>
-        @endif--}}
-        <!-- Slider Images End -->
-
-        <!-- Slider Video Start -->
-        <div class="slider-video">
-            <img class="shape-1" src="{{ asset("site/assets/images/shape/shape-9.png") }}" alt="Shape">
-
-            <div class="video-play">
-                <img src="{{ asset("site/assets/images/shape/shape-10.png") }}" alt="Shape">
-                <a href="https://www.youtube.com/watch?v=BRvyWfuxGuU" class="play video-popup"><i class="flaticon-play"></i></a>
-            </div>
-        </div>
-        <!-- Slider Video End -->
-
-    </div>
+    @endif
     <!-- Slider End -->
     @if(!empty($categories[0]['title'][$currentLang]))
     <!-- All Courses Start -->
@@ -659,6 +716,27 @@
     <script src="{{ asset('site/assets/js/plugins.min.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('site/assets/js/main.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+
+            let heroSlideCount = $('.hero-photo-slider .swiper-slide').length;
+
+            new Swiper('.hero-photo-slider .swiper-container', {
+                slidesPerView: 1,
+                loop: heroSlideCount > 1,
+                speed: 1600,
+                autoplay: heroSlideCount > 1 ? {
+                    delay: 5000,
+                    disableOnInteraction: false
+                } : false,
+                navigation: {
+                    nextEl: '.hero-button-next',
+                    prevEl: '.hero-button-prev'
+                }
+            });
+
+        });
+    </script>
     <script>
         $(document).ready(function () {
 

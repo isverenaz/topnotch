@@ -17,7 +17,7 @@ class SlidersRepositoryImpl implements SlidersRepository
 
     public function getAll()
     {
-        return $this->model->first();
+        return $this->model->all();
     }
 
     public function create(array $data)
