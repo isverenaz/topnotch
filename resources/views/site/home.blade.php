@@ -401,7 +401,136 @@
     </div>
     <!-- Download App End -->
     <!-- Blog Start -->
+
+
     <div class="section section-padding mt-n1">
+        <div class="container">
+
+            <div class="section-title shape-03 text-center">
+                <h5 class="sub-title">@lang('site.study_abroads')</h5>
+                <h2 class="main-title">@lang('site.study_abroads_text')</h2>
+            </div>
+
+            @if(!empty($studyAbroads[0]['name'][$currentLang]))
+                <div class="blog-wrapper study-abroad-active">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+
+                            @foreach($studyAbroads as $studyAbroad)
+                                <div class="swiper-slide">
+                                    <div class="single-blog">
+                                        <div class="blog-image" style="text-align: center !important;">
+                                            <a href="{{ route('site.study-abroad-details', [
+                                            'country' => $studyAbroad['country']['slug'][$currentLang],
+                                            'university' => $studyAbroad['university']['slug'][$currentLang],
+                                            'slug' => $studyAbroad['slug'][$currentLang]
+                                        ]) }}">
+                                                <img
+                                                    style="max-height: 196px; max-width: 198px; text-align: center !important;"
+                                                    src="{{ asset('uploads/studyAbroads/'.$studyAbroad['image']) }}"
+                                                    alt="{{ $studyAbroad['name'][$currentLang] }}"
+                                                >
+                                            </a>
+                                        </div>
+
+                                        <div class="blog-content">
+                                            <div class="blog-author">
+                                                <div class="author">
+                                                    @if(!empty($studyAbroad['university']['image']))
+                                                        <div class="author-thumb">
+                                                            <a href="#">
+                                                                <img
+                                                                    src="{{ asset('uploads/universities/'.$studyAbroad['university']['image']) }}"
+                                                                    alt="{{ $studyAbroad['university']['name'][$currentLang] }}"
+                                                                >
+                                                            </a>
+                                                        </div>
+                                                    @endif
+
+                                                    <div class="author-name">
+                                                        <a class="name" href="#">
+                                                            {{ $studyAbroad['university']['name'][$currentLang] }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tag">
+                                                    <a href="#">
+                                                        {{ $studyAbroad['country']['name'][$currentLang] }}
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <h4 class="title">
+                                                <a href="{{ route('site.study-abroad-details', [
+                                                'country' => $studyAbroad['country']['slug'][$currentLang],
+                                                'university' => $studyAbroad['university']['slug'][$currentLang],
+                                                'slug' => $studyAbroad['slug'][$currentLang]
+                                            ]) }}">
+                                                    {{ $studyAbroad['name'][$currentLang] }}
+                                                </a>
+                                            </h4>
+
+                                            <a href="{{ route('site.study-abroad-details', [
+                                            'country' => $studyAbroad['country']['slug'][$currentLang],
+                                            'university' => $studyAbroad['university']['slug'][$currentLang],
+                                            'slug' => $studyAbroad['slug'][$currentLang]
+                                        ]) }}" class="btn btn-secondary btn-hover-primary">
+                                                @lang('site.read_more')
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                </div>
+            @endif
+
+        </div>
+    </div>
+
+
+    @if(!empty($universities[0]['name'][$currentLang]))
+        <div class="section section-padding-02">
+            <div class="container">
+
+                <div class="brand-logo-wrapper">
+
+                    <img class="shape-1" src="{{ asset('site/assets/images/shape/shape-19.png') }}" alt="Shape">
+                    <img class="shape-2 animation-round" src="{{ asset('site/assets/images/shape/shape-20.png') }}" alt="Shape">
+
+                    <div class="section-title shape-03">
+                        <h2 class="main-title">@lang('site.partner_text')</h2>
+                    </div>
+
+                    @if(!empty($universities))
+                        <div class="brand-logo brand-fast-active">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+
+                                    @foreach($universities as $university)
+                                        <div class="single-brand swiper-slide">
+                                            <img
+                                                src="{{ asset('uploads/universities/'.$university['image']) }}"
+                                                alt="{{ $university['name'][$currentLang] }}"
+                                            >
+                                        </div>
+                                    @endforeach
+
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
+                </div>
+
+            </div>
+        </div>
+    @endif
+
+    {{--<div class="section section-padding mt-n1">
         <div class="container">
 
             <!-- Section Title Start -->
@@ -412,7 +541,7 @@
             <!-- Section Title End -->
             @if(!empty($studyAbroads[0]['name'][$currentLang]))
             <!-- Blog Wrapper Start -->
-            <div class="blog-wrapper">
+            <div class="blog-wrapper ">
                 <div class="row">
                     @foreach($studyAbroads as $studyAbroad)
                         <div class="col-lg-4 col-md-6">
@@ -441,10 +570,10 @@
                                     </div>
 
                                     <h4 class="title"><a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}">{{$studyAbroad['name'][$currentLang]}}</a></h4>
-                                    {{--<div class="courses-meta">
+                                    --}}{{--<div class="courses-meta">
                                         <span> <i class="icofont-clock-time"></i> {{$studyAbroad['university']}}</span>
                                         <span> <i class="icofont-read-book"></i> 29 baxış </span>
-                                    </div>--}}
+                                    </div>--}}{{--
                                     <a href="{{ route('site.study-abroad-details',['country' => $studyAbroad['country']['slug'][$currentLang], 'university' => $studyAbroad['university']['slug'][$currentLang], 'slug' => $studyAbroad['slug'][$currentLang]]) }}" class="btn btn-secondary btn-hover-primary">@lang('site.read_more')</a>
                                 </div>
                             </div>
@@ -500,7 +629,7 @@
             </div>
         </div>
         <!-- Brand Logo End -->
-    @endif
+    @endif--}}
 @endsection
 @section('site.js')
     <!-- Modernizer & jQuery JS -->
@@ -510,4 +639,56 @@
     <script src="{{ asset('site/assets/js/plugins.min.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('site/assets/js/main.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+
+            new Swiper('.study-abroad-active .swiper-container', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                speed: 500,
+                autoplay: {
+                    delay: 500,
+                    disableOnInteraction: false
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    992: {
+                        slidesPerView: 3
+                    }
+                }
+            });
+
+            new Swiper('.brand-fast-active .swiper-container', {
+                slidesPerView: 5,
+                spaceBetween: 40,
+                loop: true,
+                speed: 500,
+                autoplay: {
+                    delay: 400,
+                    disableOnInteraction: false
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 2
+                    },
+                    576: {
+                        slidesPerView: 3
+                    },
+                    768: {
+                        slidesPerView: 4
+                    },
+                    992: {
+                        slidesPerView: 5
+                    }
+                }
+            });
+
+        });
+    </script>
 @endsection
