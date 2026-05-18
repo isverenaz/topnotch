@@ -425,7 +425,7 @@
             </div>
 
             @if(!empty($studyAbroads[0]['name'][$currentLang]))
-                <div class="blog-wrapper study-abroad-active">
+                <div class="blog-wrapper  brand-marquee-active">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
 
@@ -652,33 +652,6 @@
     <script src="{{ asset('site/assets/js/plugins.min.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('site/assets/js/main.js') }}"></script>
-    <script>
-        $(document).ready(function () {
-
-            new Swiper('.study-abroad-active .swiper-container', {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                loop: true,
-                speed: 1200,
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false
-                },
-                breakpoints: {
-                    0: {
-                        slidesPerView: 1
-                    },
-                    768: {
-                        slidesPerView: 2
-                    },
-                    992: {
-                        slidesPerView: 3
-                    }
-                }
-            });
-
-        });
-    </script>
     <script>
         $(document).ready(function () {
 
