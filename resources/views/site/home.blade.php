@@ -111,7 +111,20 @@
                 display: none; /* İstəyə bağlı mobil versiyada gizlətmək olar */
             }
         }
+        .brand-marquee-active .swiper-wrapper {
+            transition-timing-function: linear !important;
+        }
 
+        .brand-marquee-active .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-marquee-active .single-brand img {
+            max-height: 80px;
+            object-fit: contain;
+        }
     </style>
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -506,7 +519,7 @@
                     </div>
 
                     @if(!empty($universities))
-                        <div class="brand-logo brand-fast-active">
+                        <div class="brand-logo brand-marquee-active">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
 
@@ -664,27 +677,38 @@
                 }
             });
 
-            new Swiper('.brand-fast-active .swiper-container', {
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            new Swiper('.brand-marquee-active .swiper-container', {
                 slidesPerView: 5,
-                spaceBetween: 40,
+                spaceBetween: 50,
                 loop: true,
-                speed: 1200,
+                speed: 6000,
+                allowTouchMove: false,
                 autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false
                 },
                 breakpoints: {
                     0: {
-                        slidesPerView: 2
+                        slidesPerView: 2,
+                        spaceBetween: 25
                     },
                     576: {
-                        slidesPerView: 3
+                        slidesPerView: 3,
+                        spaceBetween: 30
                     },
                     768: {
-                        slidesPerView: 4
+                        slidesPerView: 4,
+                        spaceBetween: 40
                     },
                     992: {
-                        slidesPerView: 5
+                        slidesPerView: 5,
+                        spaceBetween: 50
                     }
                 }
             });
