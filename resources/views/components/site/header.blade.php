@@ -71,6 +71,7 @@
                 <!-- Header Menu Start -->
                 <div class="header-menu d-none d-lg-block">
                     <ul class="nav-menu">
+                        <li><a href="{{ route('site.about') }}">@lang('site.about_us')</a></li>
                         <li>
                             <a href="{{ route('site.study-abroad') }}">@lang('site.study_abroads')</a>
                             <ul class="sub-menu">
@@ -136,16 +137,8 @@
                         </li>
                         <li>
                             <a href="{{ route("site.blogs",['category' => $categories['slug'][$currentLang]]) }}">{{$categories['title'][$currentLang]}}</a>
-                            {{--@if(!empty($categories[0]['title'][$currentLang]))
-                            <ul class="sub-menu">
-                                @foreach($categories as $category)
-                                <li>
-                                    <a href="{{ route("site.blogs",['category' => $categories['slug'][$currentLang]]) }}">{{$categories['title'][$currentLang]}}</a>
-                                </li>
-                                @endforeach
-                            </ul>
-                            @endif--}}
                         </li>
+
                         <li>
                             <a href="{{ LaravelLocalization::getLocalizedURL($currentLang, route('site.index')) }}">{{ ucwords($currentLang) }}</a>
                             @if(!empty($translations[0]) && count($translations) > 1)
