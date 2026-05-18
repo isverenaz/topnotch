@@ -23,7 +23,7 @@
                                     </div>
                                 @endforeach
                                 <div class="col-md-3">
-                                    <button class="btn btn-success" type="submit">Submit</button>
+                                    <button class="btn btn-success" type="submit">Yadda saxla</button>
                                 </div>
                             </div>
                         </form>

@@ -201,6 +201,7 @@ class TranslationsController extends Controller
 
     public function site_word_update($code, Request $request)
     {
+        dd($code, $request->all());
         $translation = Translation::where(['status' => 1, 'code' => $code])->first();
 
         if (!empty($translation)) {

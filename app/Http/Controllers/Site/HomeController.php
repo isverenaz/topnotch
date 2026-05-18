@@ -67,7 +67,7 @@ class HomeController extends Controller
     public function index()
     {
         $currentLang = $this->currentLang;
-        $sliders = Slider::where('status', 1)->orderBy('id', 'DESC')->get();
+        $sliders = Slider::where('status', 1)->get();
         $categories = Category::where(['status' => 1])->orderBy('id', 'DESC')->get();
         $studyAbroads = StudyAbroad::where(['status' => 1, 'is_main' => 1])->orderBy('id', 'DESC')->paginate(3);
         $languageCourses = LanguageCourse::where(['status' => 1, 'is_main' => 1])->orderBy('id', 'DESC')->paginate(3);
