@@ -28,6 +28,7 @@ return [
     'career_contact' => 'Applications',
     'contact' => 'Contact',
     'categories' => 'Categories',
+    'course_categories' => 'Course Categories',
     'category' => 'Category',
     'main_tariff' => 'Main Tariff',
     'parent_position' => 'Parent Position',

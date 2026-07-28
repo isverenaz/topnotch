@@ -63,6 +63,7 @@ class CommitController extends Controller
      */
     public function store(CommitsRequest $commitsRequest)
     {
+        DB::beginTransaction();
         try {
             $data = CommitsHelper::data($commitsRequest);
             $commit = $this->commitRepository->create($data);
@@ -110,6 +111,7 @@ class CommitController extends Controller
 
     public function update(CommitsRequest $commitsRequest, $id)
     {
+        DB::beginTransaction();
         try {
             $data = CommitsHelper::data($commitsRequest);
             $commit = $this->commitRepository->update($id,$data);
@@ -141,6 +143,7 @@ class CommitController extends Controller
 
     public function destroy($id)
     {
+        DB::beginTransaction();
         try {
             $commit = $this->commitRepository->edit($id);
             if ($this->commitRepository->delete($commit['id'])) {

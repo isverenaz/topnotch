@@ -20,10 +20,19 @@ class CommitsHelper
             $description[$code] = $request->input("description.".$code, '');
         }
 
+        if ($request->hasFile('image')) {
+            $image = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads/commits'), $image);
+        } else {
+            $image = !empty($request->old_image) ? $request->old_image : null;
+        }
+
         $data = [
+            'image' => $image,
             'name' => $name,
             'slug' => $slug,
-            'description' => $description
+            'description' => $description,
+            'datetime' => $request->datetime ?? now(),
         ];
         return $data;
     }

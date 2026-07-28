@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\LanguageCoursesRequest;
 use App\Http\Requests\Admin\StudyAbroadsRequest;
 use App\Models\EducationalDegree;
+use App\Models\CourseCategory;
 use App\Models\Language;
 use App\Models\LanguageCourse;
 use App\Models\Teacher;
@@ -69,9 +70,10 @@ class LanguageCoursesController extends Controller
     {
         $locales = Translation::where('status',1)->get();
         $currentLang = $this->currentLang;
+        $courseCategories = CourseCategory::where('status', 1)->orderBy('order_by', 'asc')->orderByDesc('id')->get();
         $mainLanguages = Language::whereNull('parent_id')->where('status',1)->get();
         $teachers = Teacher::where('status',1)->get();
-        return view('admin.language-courses.create', compact('locales','currentLang','mainLanguages', 'teachers'));
+        return view('admin.language-courses.create', compact('locales','currentLang','mainLanguages', 'teachers', 'courseCategories'));
     }
 
     /**
@@ -79,6 +81,7 @@ class LanguageCoursesController extends Controller
      */
     public function store(LanguageCoursesRequest $languageCoursesRequest)
     {
+        DB::beginTransaction();
         try {
             $data = LanguageCoursesHelper::data($languageCoursesRequest);
             $dataSave = $this->languageCourseRepository->create($data);
@@ -124,9 +127,10 @@ class LanguageCoursesController extends Controller
         $languageCourse = $this->languageCourseRepository->edit($id);
         $locales = Translation::where('status',1)->get();
         $currentLang = $this->currentLang;
+        $courseCategories = CourseCategory::where('status', 1)->orderBy('order_by', 'asc')->orderByDesc('id')->get();
         $mainLanguages = Language::whereNull('parent_id')->where('status',1)->get();
         $teachers = Teacher::where('status',1)->get();
-        return view('admin.language-courses.edit', compact('locales','languageCourse','currentLang','mainLanguages','teachers'));
+        return view('admin.language-courses.edit', compact('locales','languageCourse','currentLang','mainLanguages','teachers','courseCategories'));
     }
 
     /**
@@ -134,6 +138,7 @@ class LanguageCoursesController extends Controller
      */
     public function update(LanguageCoursesRequest $languageCoursesRequest, $id)
     {
+        DB::beginTransaction();
         try {
             $languageCourse = $this->languageCourseRepository->edit($id);
             $data = LanguageCoursesHelper::data($languageCoursesRequest,$languageCourse);
@@ -169,6 +174,7 @@ class LanguageCoursesController extends Controller
      */
     public function destroy($id)
     {
+        DB::beginTransaction();
         try {
             $languageCourse = $this->languageCourseRepository->edit($id);
             if ($this->languageCourseRepository->delete($languageCourse['id'])) {

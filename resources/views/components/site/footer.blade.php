@@ -1,135 +1,134 @@
-<!-- Footer Start  -->
-<div class="section footer-section">
+@php
+    $setting = $data['setting'] ?? null;
+    $siteName = $data['siteName'] ?? config('app.name', 'Topnotch.az');
+    $siteAddress = $data['siteAddress'] ?? null;
+    $sitePhone = $data['sitePhone'] ?? null;
+    $siteEmail = $data['siteEmail'] ?? null;
+    $footerLogo = !empty(data_get($setting, 'footer_logo'))
+        ? asset('uploads/settings/' . data_get($setting, 'footer_logo'))
+        : asset('site/assets/img/logo-icon.png');
+    $copyrightYear = now()->year;
+@endphp
 
-    <!-- Footer Widget Section Start -->
-    <div class="footer-widget-section">
-
-
+<section class="bg-cover newsletter bg-main" style="background:url({{ asset('ste/assets/img/detail-bg-2.jpg') }});">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-8 col-sm-12">
+                <div class="text-center">
+                    <div class="subscribe-caption d-block mb-4">
+                        <h2 class="text-light">@lang('site.newsletter_title')</h2>
+                        <p class="text-light opacity-75">@lang('site.newsletter_text')</p>
+                    </div>
+                    <a href="{{ route('site.signup') }}" class="btn btn-dark rounded-pill px-5">@lang('site.newsletter_button')</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="dark-footer">
+    <div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-6">
-                    <!-- Footer Widget Start -->
                     <div class="footer-widget">
-                        @if(!empty($setting['footer_logo']))
-                        <div class="widget-logo">
-                            <a href="{{ route('site.index') }}">
-                                <img src="{{ asset('uploads/settings/'.$setting['footer_logo']) }}" style="max-height: 53px;" alt="{{$setting['title'][$currentLang] ?? ''}}">
-                            </a>
+                        <img src="{{ $footerLogo }}" class="img-footer" alt="{{ $siteName }}" />
+                        <div class="footer-add">
+                            @if(!empty($siteAddress))
+                                <address class="mb-4 lh-base">{!! nl2br(e($siteAddress)) !!}<br>{{ $siteName }}</address>
+                            @endif
+                            @if(!empty($sitePhone))
+                                <div class="d-flex align-items-center call-now gap-2 mb-3">
+                                    <div class="square--30 circle bg-light-main text-main"><i class="bi bi-telephone"></i></div>
+                                    <div class="fs-6 fw-semibold">{{ $sitePhone }}</div>
+                                </div>
+                            @endif
+                            @if(!empty($siteEmail))
+                                <div class="d-flex align-items-center call-now gap-2">
+                                    <div class="square--30 circle bg-light-main text-main"><i class="bi bi-envelope"></i></div>
+                                    <div class="fs-6 fw-semibold">{{ $siteEmail }}</div>
+                                </div>
+                            @endif
                         </div>
-                        @endif
-
-                        <div class="widget-address">
-                            <h4 class="footer-widget-title">{{$setting['title'][$currentLang] ?? ''}}</h4>
-                            <p>{{$setting['address'][$currentLang] ?? ''}}</p>
-                        </div>
-
-                        <ul class="widget-info">
-                            <li>
-                                @if(!empty($setting['phone']))
-                                    <p><i class="flaticon-phone-call"></i> <a href="tel:{{$setting['phone']}}">{{$setting['phone']}}</a></p>
-                                @endif
-                            </li>
-                            <li>
-                                @if(!empty($setting['email']))
-                                    <p><i class="flaticon-email"></i> <a href="mailto:{{$setting['email']}}">{{$setting['email']}}</a></p>
-                                @endif
-                            </li>
-                        </ul>
-
-                        <ul class="widget-social">
-                            @if(!empty($setting['facebook']))
-                                <li><a href="{{$setting['facebook']}}"><i class="flaticon-facebook"></i></a></li>
-                            @endif
-                            @if(!empty($setting['linkedin']))
-                                <li><a href="{{$setting['linkedin']}}"><i class="flaticon-linkedin"></i></a></li>
-                            @endif
-                            @if(!empty($setting['youtube']))
-                                <li><a href="{{$setting['youtube']}}"><i class="flaticon-youtube"></i></a></li>
-                            @endif
-                            @if(!empty($setting['instagram']))
-                                <li><a href="{{$setting['instagram']}}"><i class="flaticon-instagram"></i></a></li>
-                            @endif
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="footer-widget">
+                        <h4 class="widget-title">@lang('site.footer_services')</h4>
+                        <ul class="footer-menu">
+                            <li><a href="{{ route('site.study-abroad') }}">@lang('site.study_abroads')</a></li>
+                            <li><a href="{{ route('site.courses') }}">@lang('site.courses_title')</a></li>
+                            <li><a href="{{ route('site.schools') }}">@lang('site.schools')</a></li>
                         </ul>
                     </div>
-                    <!-- Footer Widget End -->
-
                 </div>
-                <div class="col-lg-4 col-md-6">
-
-                    <!-- Footer Widget Link Start -->
-                    <div class="footer-widget-link">
-
-                        <!-- Footer Widget Start -->
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">@lang('site.education_degree')</h4>
-
-                            <ul class="widget-link">
-                                @if(!empty($degrees[0]['name'][$currentLang]))
-                                @foreach($degrees as $degree)
-                                    <li><a href="{{ route('site.degree-study-abroad',['degree' => $degree['slug'][$currentLang]]) }}">{{$degree['name'][$currentLang]}}</a></li>
-                                @endforeach
-                                @endif
-                            </ul>
-
-                        </div>
-                        <!-- Footer Widget End -->
-
-                    </div>
-                    <!-- Footer Widget Link End -->
-
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget-link">
-
-                    <!-- Footer Widget Start -->
+                <div class="col-lg-2 col-md-5">
                     <div class="footer-widget">
-                        <h4 class="footer-widget-title">@lang('site.our_additions')</h4>
-
-                        <ul class="widget-link">
+                        <h4 class="widget-title">@lang('site.footer_other')</h4>
+                        <ul class="footer-menu">
                             <li><a href="{{ route('site.about') }}">@lang('site.about_us')</a></li>
                             <li><a href="{{ route('site.faqs') }}">@lang('site.faq')</a></li>
-                            <li><a href="{{ route("site.contact") }}">@lang('site.contact_us')</a></li>
-                            {{--<li><a href="{{ route('site.conditions') }}">Şərtlər</a></li>
-                                        <li><a href="{{ route('site.rules') }}">Qaydalar</a></li>--}}
+                            <li><a href="{{ route('site.contact') }}">@lang('site.contact_us')</a></li>
                         </ul>
-
-                    </div>
-                    <!-- Footer Widget End -->
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- Footer Widget Section End -->
 
-    <!-- Footer Copyright Start -->
-    <div class="footer-copyright">
+    <div class="footer-bottom">
         <div class="container">
-
-            <!-- Footer Copyright Start -->
-            <div class="copyright-wrapper">
-
-                <div class="copyright-text">
-                    <p>&copy; <?php echo date('Y') ?> <span> @lang('site.site_name') </span> @lang('site.copyright')  by <a href="https://nacaspia.com">NACaspia Informaion Technologies MMC</a></p>
+            <div class="row align-items-center g-3">
+                <div class="col-lg-6 col-md-6">
+                    <p class="mb-0">
+                        © {{ $copyrightYear }} {{ $siteName }} — @lang('site.footer_copyright')
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 text-md-end">
+                    <ul class="footer-bottom-social">
+                        <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                        <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
                 </div>
             </div>
-            <!-- Footer Copyright End -->
-
         </div>
     </div>
-    <!-- Footer Copyright End -->
-
+</footer>
+<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="bi bi-arrow-up"></i></a>
 </div>
-<!-- Footer End -->
+<script src="{{ asset('site/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('site/assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('site/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('site/assets/js/select2.min.js') }}"></script>
+<script src="{{ asset('site/assets/js/slick.js') }}"></script>
+<script src="{{ asset('site/assets/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('site/assets/js/counterup.min.js') }}"></script>
+<script src="{{ asset('site/assets/js/custom.js') }}"></script>
+<script>
+    const toggle = document.getElementById('billingSwitch');
+    const prices = document.querySelectorAll('.card-price');
 
-<!--Back To Start-->
-<a href="#" class="back-to-top">
-    <i class="icofont-simple-up"></i>
-</a>
-<!--Back To End-->
+    function updatePrices(isYearly) {
+        prices.forEach(price => {
+            const monthly = price.getAttribute('data-monthly');
+            const yearly = price.getAttribute('data-yearly');
+            if (isYearly) {
+                price.innerHTML = `$${yearly}<span class="text-dark fw-normal fs-6">/year</span>`;
+            } else {
+                price.innerHTML = `$${monthly}<span class="text-dark fw-normal fs-6">/mo</span>`;
+            }
+        });
+    }
 
-</div>
+    if (toggle) {
+        toggle.addEventListener('change', () => {
+            updatePrices(toggle.checked);
+        });
+
+        updatePrices(toggle.checked);
+    }
+</script>
 @yield('site.js')
 </body>
 </html>

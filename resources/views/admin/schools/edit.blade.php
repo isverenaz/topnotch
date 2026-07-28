@@ -199,6 +199,8 @@
 @section('admin.js')
     {{--<script>
         document.addEventListener("DOMContentLoaded", function () {
+            const mainImageUpload = document.getElementById('mainImageUpload');
+            const multipleUpload = document.getElementById('multipleUpload');
             document.querySelectorAll(".delete-image").forEach(function (button) {
                 button.addEventListener("click", function () {
                     const imageName = this.getAttribute("data-image");
@@ -265,7 +267,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Tek resim için: Dosya adını göster
-            document.getElementById('mainImageUpload').addEventListener('change', function (event) {
+            if (mainImageUpload) mainImageUpload.addEventListener('change', function (event) {
                 const mainImagePreview = document.getElementById('mainImagePreview');
                 mainImagePreview.innerHTML = ''; // Önizleme alanını temizle
                 const file = event.target.files[0];
@@ -284,7 +286,7 @@
             });
 
             // Çoklu resim için: Sadece resim önizlemelerini göster ve silme özelliği ekle
-            document.getElementById('multipleUpload').addEventListener('change', function (event) {
+            if (multipleUpload) multipleUpload.addEventListener('change', function (event) {
                 const sliderImagePreview = document.getElementById('sliderImagePreview');
                 sliderImagePreview.innerHTML = ''; // Önizleme alanını temizle
 

@@ -1,158 +1,109 @@
 @extends('site.layouts.app')
+
+@php
+    $newsTitle = data_get($news, "title.$currentLang") ?? data_get($news, 'title.az') ?? __('site.blog_detail_title');
+    $newsText = data_get($news, "text.$currentLang") ?? data_get($news, 'text.az');
+    $newsFullText = data_get($news, "fulltext.$currentLang") ?? data_get($news, 'fulltext.az');
+    $categoryTitle = data_get($news, "category.title.$currentLang") ?? data_get($news, 'category.title.az');
+    $categorySlug = data_get($news, "category.slug.$currentLang") ?? data_get($news, 'category.slug.az');
+    $newsSlug = data_get($news, "slug.$currentLang") ?? data_get($news, 'slug.az');
+@endphp
+
 @section('site.title')
+    {{ $newsTitle }}
 @endsection
-@section('site.css')
-    <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("site/assets/css/vendor/plugins.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("site/assets/css/style.min.css") }}">
+
+@section('site.meta_description')
+    {{ $newsText ? \Illuminate\Support\Str::limit(strip_tags($newsText), 160) : $newsTitle }}
 @endsection
+
+@section('site.meta_keywords')
+    {{ implode(', ', array_filter([$newsTitle, $categoryTitle, __('site.blogs')])) }}
+@endsection
+
 @section('site.content')
-    <div class="section page-banner">
-
-        <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
-
-        <img class="shape-2" src="{{ asset("site/assets/images/shape/shape-23.png") }}" alt="Shape">
-
+    <div class="ed_detail_head">
         <div class="container">
-            <!-- Page Banner Start -->
-            <div class="page-banner-content">
-                <ul class="breadcrumb">
-                    <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
-                    <li>{{$blog['category']['title'][$currentLang]}}</li>
-                    <li class="active">{{$blog['title'][$currentLang]}}</li>
-                </ul>
-                <h2 class="title">{{$blog['text'][$currentLang] ?? ''}}</h2>
-            </div>
-            <!-- Page Banner End -->
-        </div>
-
-        <!-- Shape Icon Box Start -->
-        <div class="shape-icon-box">
-
-            <img class="icon-shape-1 animation-left" src="{{ asset("site/assets/images/shape/shape-5.png") }}" alt="Shape">
-
-            <div class="box-content">
-                <div class="box-wrapper">
-                    <i class="flaticon-badge"></i>
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-5">
+                    <div class="courses-video">
+                        <div class="thumb">
+                            <img class="pro_img img-fluid w100" src="{{ !empty($news->image) ? asset('uploads/news/'.$news->image) : asset('site/assets/img/co-5.jpg') }}" alt="{{ $newsTitle }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-7">
+                    <div class="ed_detail_wrap">
+                        <div class="course-type d-flex align-items-center gap-2 mb-1 flex-wrap">
+                            @if($categoryTitle)
+                                <span class="badge bg-light-green text-green rounded-pill">{{ $categoryTitle }}</span>
+                            @endif
+                        </div>
+                        <div class="ed_header_caption">
+                            <h2 class="ed_title">{{ $newsTitle }}</h2>
+                        </div>
+                        <div class="ed_header_short">
+                            @if($newsText)
+                                <p>{{ \Illuminate\Support\Str::limit(strip_tags($newsText), 220) }}</p>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
-            <img class="icon-shape-2" src="{{ asset("site/assets/images/shape/shape-6.png") }}" alt="Shape">
         </div>
-        <!-- Shape Icon Box End -->
-        <img class="shape-3" src="{{ asset("site/assets/images/shape/shape-24.png") }}" alt="Shape">
-        <img class="shape-author" src="{{ asset("site/assets/images/author/author-11.jpg") }}" alt="Shape">
     </div>
-    <!-- Courses Start -->
-    <div class="section section-padding mt-n10">
+
+    <section class="bg-light">
         <div class="container">
-            <div class="row gx-10">
-                <div class="col-lg-8">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-12 pe-xl-4">
+                    <div class="edu_wraper">
+                        <h4 class="edu_title">@lang('site.blog_detail_title')</h4>
+                        {!! $newsFullText ?: nl2br(e($newsText ?? '')) !!}
+                    </div>
+                </div>
 
-                    <!-- Courses Details Start -->
-                    <div class="courses-details">
-                        @if(!empty($blog['image']))
-                            <div class="courses-details-images">
-                                <img src="{{ asset("uploads/news/".$blog['image']) }}" alt="{{$blog['title'][$currentLang]}}">
-                                <span class="tags">@lang('site.blogs')</span>
-                            </div>
-                        @endif
-                        <h2 class="title">{{$blog['title'][$currentLang] ?? ''}}</h2>
+                <div class="col-xl-4 col-lg-4 col-md-12 pe-xl-5">
+                    <div class="edu_wraper">
+                        <h4 class="edu_title">@lang('site.blog_detail_related')</h4>
+                        <ul class="edu_list right">
+                            <li><span class="info-title"><i class="bi bi-tags"></i>@lang('site.blogs')</span><span class="text-dark right">{{ $categoryTitle ?? '-' }}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="courses-details-admin">
-                            <div class="admin-author">
-                                {{--@if(!empty($languageCourse['teacher']['image']))
-                                    <div class="author-thumb">
-                                        <a href="#"><img src="{{ asset("uploads/teachers/".$languageCourse['teacher']['image']) }}" alt="{{ $languageCourse['teacher']['name'][$currentLang] }}"></a>
-                                    </div>
-                                @endif--}}
-                                {{--<div class="author-content">
-                                    <a class="name">{{ $languageCourse['teacher']['name'][$currentLang] }}</a>
-                                    <span class="Enroll"><i class="icofont-eye"></i>{{$languageCourse['read'] ?? 0}}</span>
-                                </div>--}}
-                            </div>
+            @if($relatedNews->count())
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="sec-heading">
+                            <h2>@lang('site.blog_detail_related')</h2>
                         </div>
-
-                        <!-- Courses Details Tab Start -->
-                        <div class="courses-details-tab">
-                            <!-- Details Tab Content Start -->
-                            <div class="details-tab-content">
-                                <div class="tab-content">
-                                    <div class="tab-pane fade show active" id="description">
-
-                                        <!-- Tab Description Start -->
-                                        <div class="tab-description">
-                                            <div class="description-wrapper">
-                                                {!! $blog['fulltext'][$currentLang] ?? '' !!}
-                                            </div>
-                                        </div>
-                                        <!-- Tab Description End -->
-
-                                    </div>
+                    </div>
+                    @foreach($relatedNews as $item)
+                        @php
+                            $itemTitle = data_get($item, "title.$currentLang") ?? data_get($item, 'title.az');
+                            $itemCategorySlug = data_get($item, "category.slug.$currentLang") ?? data_get($item, 'category.slug.az');
+                            $itemSlug = data_get($item, "slug.$currentLang") ?? data_get($item, 'slug.az');
+                        @endphp
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card mb-4 shadow-sm card-lift">
+                                <a href="{{ route('site.blogDetail', [$itemCategorySlug, $itemSlug]) }}">
+                                    <img src="{{ !empty($item->image) ? asset('uploads/news/'.$item->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid" alt="{{ $itemTitle }}">
+                                </a>
+                                <div class="card-body">
+                                    <h4 class="grid-blog-heading lh-base">
+                                        <a href="{{ route('site.blogDetail', [$itemCategorySlug, $itemSlug]) }}" class="text-inherit">{{ $itemTitle }}</a>
+                                    </h4>
                                 </div>
                             </div>
-                            <!-- Details Tab Content End -->
-
                         </div>
-                        <!-- Courses Details Tab End -->
-
-                    </div>
-                    <!-- Courses Details End -->
-
+                    @endforeach
                 </div>
-                <div class="col-lg-4">
-                    <!-- Courses Details Sidebar Start -->
-                    <div class="sidebar">
-
-                        <!-- Sidebar Widget Information Start -->
-                        <div class="sidebar-widget widget-information">
-                            <div class="info-list">
-                                <ul>
-                                    <li><i class="icofont-man-in-glasses"></i> <strong>@lang('site.category')</strong> <span> {{$blog['category']['title'][$currentLang]}}</span></li>
-{{--                                    <li><i class="icofont-man-in-glasses"></i> <strong>@lang('site.leve')</strong><span style="font-size: 13px;!important;">{{$languageCourse['leve']['name'][$currentLang]}}</span></li>--}}
-                                                                        <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{ date('d.m.Y',strtotime($blog['datetime'])) }}</span></li>
-                                    {{--                                    <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong> <span>29</span></li>--}}
-                                    {{--                                    <li><i class="icofont-bars"></i> <strong>Level</strong> <span>Secondary</span></li>--}}
-                                    {{--                                    <li><i class="icofont-book-alt"></i> <strong>Language</strong> <span>English</span></li>--}}
-                                    {{--                                    <li><i class="icofont-certificate-alt-1"></i> <strong>Certificate</strong> <span>Yes</span></li>--}}
-                                </ul>
-                            </div>
-                            <div class="info-btn">
-                                <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup_us')</a>
-                            </div>
-                        </div>
-                        <!-- Sidebar Widget Information End -->
-
-                        <!-- Sidebar Widget Share Start -->
-                        <div class="sidebar-widget">
-                            <h4 class="widget-title">@lang('site.share'):</h4>
-
-                            <ul class="social">
-                                <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                                <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
-                                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                                <li><a href="#"><i class="flaticon-skype"></i></a></li>
-                                <li><a href="#"><i class="flaticon-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Sidebar Widget Share End -->
-
-                    </div>
-                    <!-- Courses Details Sidebar End -->
-                </div>
-            </div>
+            @endif
         </div>
-    </div>
-    <!-- Courses End -->
+    </section>
 @endsection
+
 @section('site.js')
-    <!-- Modernizer & jQuery JS -->
-    <script src="{{ asset('site/assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
-    <script src="{{ asset('site/assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
-    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-    <script src="{{ asset('site/assets/js/plugins.min.js') }}"></script>
-    <!-- Main JS -->
-    <script src="{{ asset('site/assets/js/main.js') }}"></script>
 @endsection

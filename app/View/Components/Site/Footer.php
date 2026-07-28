@@ -30,9 +30,18 @@ class Footer extends Component
      */
     public function render()
     {
-        $currentLang = LaravelLocalization::getCurrentLocale();
+        $lang = LaravelLocalization::getCurrentLocale() ?? 'az';
         $setting = Setting::first();
-        $degrees = EducationalDegree::where(['status' => 1])->get();
-        return view('components.site.footer',compact('currentLang','setting','degrees'));
+
+        $data = [
+            'lang' => $lang,
+            'setting' => $setting,
+            'siteAddress' => data_get($setting, "address.$lang") ?? data_get($setting, 'address.az') ?? data_get($setting, 'address.en') ?? data_get($setting, 'address.ru'),
+            'sitePhone' => data_get($setting, 'phone'),
+            'siteEmail' => data_get($setting, 'email'),
+            'siteName' => data_get($setting, "title.$lang") ?? data_get($setting, 'title.az') ?? config('app.name', 'Topnotch.az'),
+        ];
+
+        return view('components.site.footer', compact('data'));
     }
 }

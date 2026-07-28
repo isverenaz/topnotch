@@ -87,6 +87,15 @@
                                             </select>
                                         </div>
                                         <div class="col-md-12">
+                                            <label for="course_category_id" class="form-label">@lang('admin.course_categories')</label>
+                                            <select class="form-control" name="course_category_id" id="course_category_id">
+                                                <option value="">@lang('admin.choose')</option>
+                                                @foreach($courseCategories as $category)
+                                                    <option value="{{ $category->id }}">{{ !empty($category['title'][$currentLang]) ? $category['title'][$currentLang] : null }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12">
                                             <label for="category_id" class="form-label">@lang('admin.languages')</label>
                                             <select class="form-control" name="language_id" id="language_id">
                                                 <option value="">@lang('admin.choose')</option>

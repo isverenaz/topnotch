@@ -1,6 +1,15 @@
 @extends('site.layouts.app')
 @section('site.title')
 @endsection
+
+@section('site.meta_description')
+    {{ __('site.signup_us') }}
+@endsection
+
+@section('site.meta_keywords')
+    {{ implode(', ', array_filter([__('site.signup_us'), __('site.contact_us'), __('site.study_abroads')])) }}
+@endsection
+
 @section('site.css')
 <!-- Google Fonts CSS -->
 <link rel="preconnect" href="https://fonts.googleapis.com/">

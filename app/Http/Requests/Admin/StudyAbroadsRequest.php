@@ -26,7 +26,8 @@ class StudyAbroadsRequest extends FormRequest
         return [
             'country_id' => 'required|integer|exists:countries,id',
             'university_id' => 'required|integer|exists:universities,id',
-            'image' => $isCreate ? 'image|mimes:jpeg,png,jpg,gif,svg': 'image|mimes:jpeg,png,jpg,gif,svg',
+            'degree_id' => 'nullable|integer|exists:educational_degrees,id',
+            'image' => $isCreate ? 'nullable|image|mimes:jpeg,png,jpg,gif,svg' : 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'name.az' => 'required|string|max:255',
             'text.az' => 'required|string',
         ];

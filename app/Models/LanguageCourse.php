@@ -14,6 +14,7 @@ class LanguageCourse extends Model
 
     protected $fillable = [
         'id',
+        'course_category_id',
         'language_id',
         'parent_language_id',
         'teacher_id',
@@ -31,6 +32,7 @@ class LanguageCourse extends Model
 
     protected $casts = [
         'is_main' => 'boolean',
+        'course_category_id' => 'integer',
         'language_id' => 'integer',
         'parent_language_id' => 'integer',
         'teacher_id' => 'integer',
@@ -46,6 +48,11 @@ class LanguageCourse extends Model
 
     public function parentLanguage() {
         return $this->hasOne(Language::class,'id','parent_language_id');
+    }
+
+    public function courseCategory()
+    {
+        return $this->hasOne(CourseCategory::class, 'id', 'course_category_id');
     }
 
     public function language() {

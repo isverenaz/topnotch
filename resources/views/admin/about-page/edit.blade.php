@@ -1,15 +1,11 @@
 @extends('admin.layouts.app')
 
 @section('admin.title')
-    About
+    Haqqımızda
 @endsection
 
 @section('admin.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
-    <!-- Flatpickr JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <style>
         .input-group-text {
@@ -19,14 +15,13 @@
         .input-group-text i {
             font-size: 1.2rem;
         }
-
     </style>
 @endsection
 
 @section('admin.content')
     <div class="main-content">
         <div class="dashboard-breadcrumb mb-25">
-            <h2>About</h2>
+            <h2>Haqqımızda</h2>
         </div>
 
         @include('components.admin.error')
@@ -39,11 +34,15 @@
 
                     <div class="panel">
                         <div class="panel-body">
+                            <div class="alert alert-light border mb-4">
+                                Bu sahə sənin saytın <strong>Haqqımızda</strong> səhifəsindəki blokları idarə edir:
+                                başlıq, alt başlıq, mətn və şəkil.
+                            </div>
 
                             <ul class="nav nav-pills nav-justified" role="tablist">
                                 @foreach($locales as $key => $lang)
                                     <li class="nav-item">
-                                        <a class="nav-link @if($key == 0) active @endif"
+                                        <a class="nav-link @if($key === 0) active @endif"
                                            data-bs-toggle="tab"
                                            href="#lang_{{ $lang->code }}"
                                            role="tab">
@@ -60,19 +59,17 @@
                             </ul>
 
                             <div class="tab-content p-3 text-muted">
-
                                 @foreach($locales as $key => $lang)
-                                    <div class="tab-pane @if($key == 0) active @endif"
+                                    <div class="tab-pane @if($key === 0) active @endif"
                                          id="lang_{{ $lang->code }}"
                                          role="tabpanel">
-
                                         <div class="row g-3">
                                             <div class="col-12">
                                                 <label class="form-label">Başlıq - {{ $lang->code }}</label>
                                                 <input type="text"
                                                        class="form-control"
                                                        name="title[{{ $lang->code }}]"
-                                                       value="{{ old('title.'.$lang->code, $about->title[$lang->code] ?? '') }}">
+                                                       value="{{ old('title.'.$lang->code, data_get($about, 'title.'.$lang->code)) }}">
                                             </div>
 
                                             <div class="col-12">
@@ -80,13 +77,13 @@
                                                 <input type="text"
                                                        class="form-control"
                                                        name="sub_title[{{ $lang->code }}]"
-                                                       value="{{ old('sub_title.'.$lang->code, $about->sub_title[$lang->code] ?? '') }}">
+                                                       value="{{ old('sub_title.'.$lang->code, data_get($about, 'sub_title.'.$lang->code)) }}">
                                             </div>
 
                                             <div class="col-12">
                                                 <label class="form-label">Mətn - {{ $lang->code }}</label>
                                                 <textarea class="editor form-control"
-                                                          name="text[{{ $lang->code }}]">{{ old('text.'.$lang->code, $about->text[$lang->code] ?? '') }}</textarea>
+                                                          name="text[{{ $lang->code }}]">{{ old('text.'.$lang->code, data_get($about, 'text.'.$lang->code)) }}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -98,9 +95,10 @@
                                             <label class="form-label">Şəkil</label>
                                             <input type="file" class="form-control" name="image">
 
-                                            @if(!empty($about->image))
+                                            @if(!empty($about?->image))
                                                 <div class="mt-3">
                                                     <img src="{{ asset('uploads/about/'.$about->image) }}"
+                                                         alt="About image"
                                                          style="max-width: 180px; height: auto;">
                                                 </div>
                                             @endif
@@ -115,13 +113,11 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
 
                             <button type="submit" class="btn btn-sm btn-primary">
                                 @lang('admin.save')
                             </button>
-
                         </div>
                     </div>
                 </form>

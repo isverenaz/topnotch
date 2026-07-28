@@ -1,113 +1,108 @@
 @extends('site.layouts.app')
+
+@php
+    $pageTitle = __('site.blogs_title');
+    $categories = $categories ?? collect();
+@endphp
+
 @section('site.title')
+    {{ $pageTitle }}
 @endsection
-@section('site.css')
-    <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("site/assets/css/vendor/plugins.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("site/assets/css/style.min.css") }}">
+
+@section('site.meta_description')
+    {{ __('site.blogs_text') }}
 @endsection
+
+@section('site.meta_keywords')
+    {{ implode(', ', array_filter([$pageTitle, __('site.blogs'), __('site.read_more')])) }}
+@endsection
+
 @section('site.content')
-    <!-- Page Banner Start -->
-    <div class="section page-banner">
-
-        <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
-
-        <img class="shape-2" src="{{ asset("site/assets/images/shape/shape-23.png") }}" alt="Shape">
-
+    <section class="bg-gredient page-title">
         <div class="container">
-            <!-- Page Banner Start -->
-            <div class="page-banner-content">
-                <ul class="breadcrumb">
-                    <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
-                    <li class="active">{{$category['title'][$currentLang]}}</li>
-                </ul>
-            </div>
-            <!-- Page Banner End -->
-        </div>
-
-        <!-- Shape Icon Box Start -->
-        <div class="shape-icon-box">
-
-            <img class="icon-shape-1 animation-left" src="{{ asset("site/assets/images/shape/shape-5.png") }}" alt="Shape">
-
-            <div class="box-content">
-                <div class="box-wrapper">
-                    <i class="flaticon-badge"></i>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="pageTitle-wrap text-center">
+                        <h1 class="text-light">{{ $pageTitle }}</h1>
+                        <p class="text-light">{{ __('site.blogs_text') }}</p>
+                    </div>
                 </div>
             </div>
-
-            <img class="icon-shape-2" src="{{ asset("site/assets/images/shape/shape-6.png") }}" alt="Shape">
-
         </div>
-        <!-- Shape Icon Box End -->
+    </section>
 
-        <img class="shape-3" src="{{ asset("site/assets/images/shape/shape-24.png") }}" alt="Shape">
-
-        <img class="shape-author" src="{{ asset("site/assets/images/author/author-11.jpg") }}" alt="Shape">
-
-    </div>
-    <!-- Page Banner End -->
-
-    <!-- Blog Start -->
-    <div class="section section-padding mt-n10">
+    <section class="py-5">
         <div class="container">
+            <div class="row g-4">
+                <div class="col-xxl-3 col-lg-4 col-12">
+                    <div class="single-side-box card border shadow-sm rounded-3 p-3 mb-3">
+                        <form method="GET" action="{{ route('site.blogs') }}">
+                            <label class="form-label fw-medium">@lang('admin.search')</label>
+                            <input type="text" name="q" value="{{ $search ?? '' }}" class="form-control mb-3" placeholder="@lang('admin.search')">
+                            <button class="btn btn-dark rounded-pill w-100" type="submit">@lang('admin.filter')</button>
+                        </form>
+                    </div>
+                    <div class="single-side-box card border shadow-sm rounded-3 p-3">
+                        <label class="form-label fw-medium">@lang('admin.categories')</label>
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2 mt-3">
+                            @foreach($categories as $category)
+                                @php $categoryTitle = data_get($category, "title.$currentLang") ?? data_get($category, 'title.az'); @endphp
+                                <li><a href="{{ route('site.blogs', ['category' => $category->id]) }}" class="text-muted-2">{{ $categoryTitle }}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
 
-            <!-- Blog Wrapper Start -->
-            <div class="blog-wrapper">
-                <div class="row">
-                    @if(!empty($blogs[0]['title'][$currentLang]))
-                        @foreach($blogs as $blog)
-                        <div class="col-lg-4 col-md-6">
-
-                            <!-- Single Blog Start -->
-                            <div class="single-blog">
-                                <div class="blog-image" style=" text-align: center;!important;">
-                                    <a href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}"><img style="max-height: 196px;max-width: 198px; text-align: center;!important;" src="{{ asset("uploads/news/".$blog['image']) }}" alt="{{$blog['title'][$currentLang]}}"></a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-author">
-                                        <div class="author">
-                                            <div class="author-name">
-                                                <a class="name" href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}">{{$blog['title'][$currentLang]}}</a>
+                <div class="col-xxl-9 col-lg-8 col-12">
+                    <div class="row align-items-center justify-content-center mb-5">
+                        @forelse($news as $item)
+                            @php
+                                $newsTitle = data_get($item, "title.$currentLang") ?? data_get($item, 'title.az');
+                                $newsText = data_get($item, "text.$currentLang") ?? data_get($item, 'text.az');
+                                $categorySlug = data_get($item, "category.slug.$currentLang") ?? data_get($item, 'category.slug.az');
+                                $newsSlug = data_get($item, "slug.$currentLang") ?? data_get($item, 'slug.az');
+                                $categoryTitle = data_get($item, "category.title.$currentLang") ?? data_get($item, 'category.title.az');
+                            @endphp
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card mb-4 shadow-sm card-lift">
+                                    <a href="{{ route('site.blogDetail', [$categorySlug, $newsSlug]) }}">
+                                        <img src="{{ !empty($item->image) ? asset('uploads/news/'.$item->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid" alt="{{ $newsTitle }}">
+                                    </a>
+                                    <div class="card-body">
+                                        <div class="d-flex mb-2">
+                                            @if($categoryTitle)
+                                                <span class="badge bg-light-green text-green rounded-2">{{ $categoryTitle }}</span>
+                                            @endif
+                                        </div>
+                                        <h4 class="grid-blog-heading lh-base">
+                                            <a href="{{ route('site.blogDetail', [$categorySlug, $newsSlug]) }}" class="text-inherit">{{ $newsTitle }}</a>
+                                        </h4>
+                                        <p>{{ \Illuminate\Support\Str::limit(strip_tags($newsText ?? ''), 120) }}</p>
+                                        <div class="row align-items-center g-0 mt-4">
+                                            <div class="col ps-2">
+                                                <div class="education-footer p-3">
+                                                    <div class="enrolled-link"><a href="{{ route('site.blogDetail', [$categorySlug, $newsSlug]) }}" class="main-link fw-medium">@lang('site.read_more')<i class="bi bi-arrow-right ms-2"></i></a></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <p class="text-muted text-mid m-0">02 Min Read</p>
                                             </div>
                                         </div>
-                                        <div class="tag">
-                                            <a href="{{ route('site.blogs',['category' => $blog['category']['slug'][$currentLang]]) }}">{{$blog['category']['title'][$currentLang]}}</a>
-                                        </div>
                                     </div>
-
-                                    <h4 class="title"><a href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}">{{$blog['text'][$currentLang]}}</a></h4>
-
-                                    <div class="blog-meta">
-                                        <span> <i class="icofont-calendar"></i>{{ date('d.m.Y',strtotime($blog['datetime'])) }}</span>
-{{--                                        <span> <i class="icofont-eye"></i> {{$blog['reads']}}+ </span>--}}
-                                    </div>
-
-                                    <a href="{{ route('site.blogDetail',['category' => $blog['category']['slug'][$currentLang], 'slug' => $blog['slug'][$currentLang]]) }}" class="btn btn-secondary btn-hover-primary">@lang('site.read_more')</a>
                                 </div>
                             </div>
-                            <!-- Single Blog End -->
-
-                        </div>
-                        @endforeach
-                    @endif
+                        @empty
+                            <div class="col-12"><div class="alert alert-light border mb-0">@lang('site.no_data_found')</div></div>
+                        @endforelse
+                    </div>
+                    <div class="row">
+                        <div class="col-12">{{ $news->links() }}</div>
+                    </div>
                 </div>
             </div>
-            <!-- Blog Wrapper End -->
-
         </div>
-    </div>
-    <!-- Blog End -->
+    </section>
 @endsection
+
 @section('site.js')
-    <!-- Modernizer & jQuery JS -->
-    <script src="{{ asset('site/assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
-    <script src="{{ asset('site/assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
-    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-    <script src="{{ asset('site/assets/js/plugins.min.js') }}"></script>
-    <!-- Main JS -->
-    <script src="{{ asset('site/assets/js/main.js') }}"></script>
 @endsection

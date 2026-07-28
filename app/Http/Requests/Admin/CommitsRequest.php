@@ -25,6 +25,8 @@ class CommitsRequest extends FormRequest
         return [
             'name.az' => 'required|string|max:255',
             'description.az' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'datetime' => 'nullable|date',
         ];
     }
 

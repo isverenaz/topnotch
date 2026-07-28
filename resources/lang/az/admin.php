@@ -17,6 +17,7 @@
     'teachers' => 'Müəllimlər',
     'languages' => 'Tədris edilən dillər',
     'language_courses' => 'Dil kursları',
+    'course_categories' => 'Kurs kateqoriyaları',
 
     'schools' => 'Məktəblər',
     'news' => 'Xəbərlər',

@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="{{$lang??'az'}}">
+<html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@lang('site.site_name') - Xaricdə Təhsil, Dil Kursları və Yay Məktəbləri</title>
-    <meta name="google-site-verification" content="GtSfkXVQHjSV47QaceACjcmXx_vijAyl7QbwAYfy3uw" />
-    @if(!empty($data['setting']['favicon']))
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('uploads/settings/'.$data['setting']['favicon']) }}">
+    @php
+        $siteName = config('app.name', 'Topnotch.az');
+        $pageTitle = trim($__env->yieldContent('site.title'));
+        $metaDescription = trim($__env->yieldContent('site.meta_description'));
+        $metaKeywords = trim($__env->yieldContent('site.meta_keywords'));
+        $metaImage = trim($__env->yieldContent('site.meta_image'));
+        $fullTitle = $pageTitle !== '' ? $pageTitle . ' | ' . $siteName : $siteName;
+    @endphp
+    <meta charset="utf-8" />
+    <meta name="author" content="{{ $siteName }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>{{ $fullTitle }}</title>
+    <meta name="description" content="{{ $metaDescription ?: $siteName }}">
+    @if($metaKeywords !== '')
+        <meta name="keywords" content="{{ $metaKeywords }}">
     @endif
+    <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ $siteName }}">
+    <meta property="og:title" content="{{ $fullTitle }}">
+    <meta property="og:description" content="{{ $metaDescription ?: $siteName }}">
+    @if($metaImage !== '')
+        <meta property="og:image" content="{{ $metaImage }}">
+        <meta name="twitter:image" content="{{ $metaImage }}">
+    @endif
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $fullTitle }}">
+    <meta name="twitter:description" content="{{ $metaDescription ?: $siteName }}">
     @yield('site.css')
-    <style>
-        .header-language select {
-            background-color: #1f2b37;
-            color: #fff;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            width: 70px;
-        }
-        .scrol-menu {
-            max-height: 300px;
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        /* İstəyə bağlı scrollbar dizaynı */
-        .scrol-menu::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .scrol-menu::-webkit-scrollbar-thumb {
-            background-color: #aaa;
-            border-radius: 4px;
-        }
-
-    </style>
+    <link href="{{ asset('site/assets/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('site/assets/css/colors.css') }}" rel="stylesheet">
 </head>
-<body>
-<div class="main-wrapper">
-<x-site.header />
-@yield('site.content')
-<x-site.footer />
+<body class="red-skin">
+<div id="preloader">
+    <div class="preloader">
+        <span></span><span></span>
+    </div>
+</div>
+<div id="main-wrapper">
+    <x-site.header />
+    @yield('site.content')
+    <x-site.footer />
+</div>
+</body>
+</html>

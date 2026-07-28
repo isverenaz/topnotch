@@ -31,6 +31,7 @@ try {
         Route::get('category-categories/sub-parent', 'CategoryController@getSubCategories')->name('category-category.getSubParentCategories');
         Route::resource('category', 'CategoryController');
         Route::resource('school-category', 'SchoolCategoriesController');
+        Route::resource('course-categories', 'CourseCategoriesController');
         Route::resource('news', 'NewsController');
         Route::post('/news/slider-image/delete', 'NewsController@deleteSliderImage')->name('news.slider_image.delete');
          Route::resource('projects', 'ProjectController');

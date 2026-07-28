@@ -1,112 +1,189 @@
+@php
+    $aboutTitle = data_get($about, "title.$currentLang") ?? data_get($about, 'title.az') ?? __('site.about_us');
+    $aboutSubTitle = data_get($about, "sub_title.$currentLang") ?? data_get($about, 'sub_title.az') ?? __('site.welcome');
+    $aboutText = data_get($about, "text.$currentLang") ?? data_get($about, 'text.az');
+    $aboutIntro = $aboutText ? \Illuminate\Support\Str::limit(strip_tags($aboutText), 220) : __('site.about_full_text');
+@endphp
+
 @extends('site.layouts.app')
+
 @section('site.title')
+    {{ $aboutTitle }}
 @endsection
+
+@section('site.meta_description')
+    {{ $aboutIntro }}
+@endsection
+
+@section('site.meta_keywords')
+    {{ implode(', ', array_filter([$aboutTitle, __('site.about_us'), __('site.study_abroads'), __('site.language_courses')])) }}
+@endsection
+
 @section('site.css')
-    <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("site/assets/css/vendor/plugins.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("site/assets/css/style.min.css") }}">
 @endsection
+
 @section('site.content')
-    <!-- Page Banner Start -->
-    <div class="section page-banner">
-
-        <img class="shape-1 animation-round" src="{{ asset("site/assets/images/shape/shape-8.png") }}" alt="Shape">
-
-        <img class="shape-2" src="{{ asset("site/assets/images/shape/shape-23.png") }}" alt="Shape">
-
+    <section>
         <div class="container">
-            <!-- Page Banner Start -->
-            <div class="page-banner-content">
-                <ul class="breadcrumb">
-                    <li><a href="{{ route('site.index') }}">@lang('site.home')</a></li>
-                    <li class="active">@lang('site.about_us')</li>
-                </ul>
-                <h2 class="title">
-                    {{ $about->sub_title[$currentLang] ?? __('site.welcome') }}</h2>
-            </div>
-            <!-- Page Banner End -->
-        </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xxl-7 col-xl-8 col-lg-10 col-md-12">
 
-        <!-- Shape Icon Box Start -->
-        <div class="shape-icon-box">
+                    <div class="text-center d-block mb-4">
+                        <h1 class="display-2 fw-semibold page-title">
+                            {{ $aboutTitle }}
+                        </h1>
+                        <p class="fs-5">
+                            {{ $aboutSubTitle }}
+                        </p>
+                    </div>
 
-            <img class="icon-shape-1 animation-left" src="{{ asset("site/assets/images/shape/shape-5.png") }}" alt="Shape">
+                    <div class="d-flex align-items-center justify-content-center gap-3">
+                        <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-4">@lang('site.signup')</a>
+                        <a href="{{ route('site.contact') }}" class="btn btn-gray rounded-pill px-4">@lang('site.contact')</a>
+                    </div>
 
-            <div class="box-content">
-                <div class="box-wrapper">
-                    <i class="flaticon-badge"></i>
                 </div>
             </div>
-
-            <img class="icon-shape-2" src="{{ asset("site/assets/images/shape/shape-6.png") }}" alt="Shape">
-
         </div>
-        <!-- Shape Icon Box End -->
+    </section>
+    <!-- ============================ Page Header Intro End ================================== -->
 
-        <img class="shape-3" src="{{ asset("site/assets/images/shape/shape-24.png") }}" alt="Shape">
+    <!-- ============================ Image BG Start================================== -->
+    <section class="bg-cover" style="background:url({{ asset('site/assets/img/bg-new.jpg') }}) no-repeat;">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
 
-        <img class="shape-author" src="{{ asset("site/assets/images/author/author-11.jpg") }}" alt="Shape">
+                    <div class="ht-300"></div>
 
-    </div>
-    <!-- Page Banner End -->
-    <!-- About Start -->
-    <div class="section">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================ Image BG End ================================== -->
 
-        <div class="section-padding-02 mt-n10">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
+    <!-- ========================== About Facts List Section =============================== -->
+    <section>
+        <div class="container">
 
-                        <!-- About Images Start -->
-                        <div class="about-images">
-                            <div class="images">
-                                <img src="{{ !empty($about->image) ? asset('uploads/about/'.$about->image) : asset('site/assets/images/about.jpg') }}" alt="About">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="benifit-oflearning">
+                        <div class="d-block mb-4">
+                            <h2>{{ $aboutTitle }}</h2>
+                            <p>{{ $aboutIntro }}</p>
+                        </div>
+
+                        <div class="benifit-wraps mb-4">
+                            <div class="d-flex flex-column gap-4">
+
+                                <div class="d-flex align-items-center justify-content-start gap-3">
+                                    <div class="icons"><span class="square--50 circle bg-light-green fs-5"><i class="bi bi-patch-check-fill text-green"></i></span></div>
+                                    <div class="caps">
+                                        <h5>@lang('site.study_abroads')</h5>
+                                        <p class="text-muted-2 m-0">@lang('site.study_abroads_text')</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-start gap-3">
+                                    <div class="icons"><span class="square--50 circle bg-light-green fs-5"><i class="bi bi-patch-check-fill text-green"></i></span></div>
+                                    <div class="caps">
+                                        <h5>@lang('site.language_courses')</h5>
+                                        <p class="text-muted-2 m-0">@lang('site.language_courses_text')</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-start gap-3">
+                                    <div class="icons"><span class="square--50 circle bg-light-green fs-5"><i class="bi bi-patch-check-fill text-green"></i></span></div>
+                                    <div class="caps">
+                                        <h5>@lang('site.education_degree')</h5>
+                                        <p class="text-muted-2 m-0">@lang('site.study_abroad_form_text')</p>
+                                    </div>
+                                </div>
+
                             </div>
-
                         </div>
-                        <!-- About Images End -->
-
+                        <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-5">@lang('site.signup')</a>
                     </div>
-                    <div class="col-lg-6">
-                        <!-- About Content Start -->
-                        <div class="about-content">
-                            <h5 class="sub-title">
-                                {{ $about->sub_title[$currentLang] ?? __('site.welcome') }}
-                            </h5>
 
-                            <h2 class="main-title">
-                                {{ $about->title[$currentLang] ?? __('site.about_title') }}
-                            </h2>
+                </div>
 
-                            {!! $about->text[$currentLang] ?? __('site.about_full_text') !!}
-                            <a href="{{ route('site.signup') }}" class="btn btn-primary btn-hover-dark">@lang('site.signup')</a>
-                            <br>
-                            <br>
-                            <br>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="facts-img">
+                        <img src="{{ !empty($about?->image) ? asset('uploads/about/'.$about->image) : asset('site/assets/img/hero-img-3.png') }}" class="img-fluid" alt="{{ $aboutTitle }}" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- ========================== About Facts List Section =============================== -->
+
+    @if($teachers->count())
+        <!-- ============================ Featured Instructor Start ================================== -->
+        <section class="bg-light">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-sm-12">
+                        <div class="sec-heading center">
+                            <h2>@lang('site.teachers')</h2>
+                            <p>@lang('site.teachers_text')</p>
                         </div>
-                        <!-- About Content End -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+
+                        <div class="arrow_slide four_slide arrow_middle">
+                            @foreach($teachers as $teacher)
+                                @php
+                                    $teacherName = data_get($teacher, "name.$currentLang") ?? data_get($teacher, 'name.az');
+                                    $teacherPosition = data_get($teacher, "position.name.$currentLang") ?? data_get($teacher, 'position.name.az');
+                                    $fallbackAvatar = ['user-1.jpg', 'user-2.jpg', 'user-3.jpg'][$loop->index % 3];
+                                @endphp
+
+                                <div class="singles_items">
+                                    <div class="card rounded-4 border">
+                                        <div class="p-2 d-flex flex-column gap-3">
+
+                                            <!--img-->
+                                            <a href="#">
+                                                <img src="{{ !empty($teacher->image) ? asset('uploads/teachers/'.$teacher->image) : asset('site/assets/img/'.$fallbackAvatar) }}" alt="mentor 2" class="img-fluid w-100 rounded-4">
+                                            </a>
+
+                                            <!--content-->
+                                            <div class="d-flex flex-column gap-4">
+                                                <div class="d-flex flex-column gap-2">
+                                                    <div class="tutor-head-info">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <h5 class="mb-0"><a href="#" class="text-reset">{{ $teacherName }}</a></h5>
+                                                            <span class="verified-tutor">
+																<i class="bi bi-patch-check-fill text-green"></i>
+															</span>
+                                                        </div>
+                                                        @if($teacherPosition)
+                                                        <span class="text-muted-2">{{ $teacherPosition }}</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
 
                     </div>
                 </div>
+
             </div>
-        </div>
-
-    </div>
-    <!-- About End -->
-    <!-- Download App Start -->
-
-    <!-- Download App End -->
-
+        </section>
+    @endif
 @endsection
+
 @section('site.js')
-    <!-- Modernizer & jQuery JS -->
-    <script src="{{ asset('site/assets/js/vendor/modernizr-3.11.2.min.js') }}"></script>
-    <script src="{{ asset('site/assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
-    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-    <script src="{{ asset('site/assets/js/plugins.min.js') }}"></script>
-    <!-- Main JS -->
-    <script src="{{ asset('site/assets/js/main.js') }}"></script>
 @endsection

@@ -25,6 +25,7 @@ class LanguageCoursesHelper
             $image = !empty($languageCourse->image)? $languageCourse->image: NULL;
         }
         $data = [
+            'course_category_id' => $request->course_category_id ?? 0,
             'language_id' => $request->language_id ?? 0,
             'parent_language_id' => $request->parent_language_id ?? 0,
             'teacher_id' => $request->teacher_id ?? 0,

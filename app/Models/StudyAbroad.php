@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\EducationalDegree;
 
 class StudyAbroad extends Model
 {
@@ -22,10 +23,7 @@ class StudyAbroad extends Model
         'full_text',
         'image',
         'status',
-        'is_main',
-        'order_by',
-        'campaign',
-        'is_campaign'
+        'is_main'
     ];
 
     protected $casts = [
@@ -38,9 +36,7 @@ class StudyAbroad extends Model
         'slug' => 'array',
         'text' => 'array',
         'full_text' => 'array',
-        'campaign' => 'array',
         'status' => 'boolean',
-        'is_campaign' => 'boolean',
     ];
 
     public function country() {
@@ -48,5 +44,8 @@ class StudyAbroad extends Model
     }
     public function university() {
         return $this->belongsTo(University::class);
+    }
+    public function degree() {
+        return $this->belongsTo(EducationalDegree::class, 'degree_id', 'id');
     }
 }

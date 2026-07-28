@@ -87,7 +87,7 @@
                         <i class="fa-light fa-times"></i>
                     </button>
                 </div>
-                <form action="{{ route('admin.commits.store') }}" method="POST">
+                <form action="{{ route('admin.commits.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <ul class="nav nav-pills nav-justified" role="tablist">
@@ -130,6 +130,14 @@
                             @endif
                             <div class="tab-pane" id="other" role="tabpanel">
                                 <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label">@lang('admin.datetime')</label>
+                                        <input type="datetime-local" class="form-control" name="datetime" value="{{ now()->format('Y-m-d\TH:i') }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">@lang('admin.main_image')</label>
+                                        <input type="file" class="form-control" name="image">
+                                    </div>
                                     <div class="col-sm-12">
                                         <label class="form-label">@lang('admin.status')</label>
                                         <select class="form-control" name="status">
@@ -157,7 +165,7 @@
             <div class="modal fade" id="editMain{{$value['id']}}" tabindex="-1" aria-labelledby="editMain{{$value['id']}}Label" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <form action="{{ route('admin.commits.update',$value['id']) }}" method="POST">
+                        <form action="{{ route('admin.commits.update',$value['id']) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="modal-body">
@@ -203,6 +211,20 @@
                                     @endif
                                     <div class="tab-pane" id="editother-main{{$value['id']}}" role="tabpanel">
                                         <div class="row g-3">
+                                            <input type="hidden" name="old_image" value="{{ $value['image'] ?? '' }}">
+                                            <div class="col-12">
+                                                <label class="form-label">@lang('admin.datetime')</label>
+                                                <input type="datetime-local" class="form-control" name="datetime" value="{{ !empty($value->datetime) ? \Carbon\Carbon::parse($value->datetime)->format('Y-m-d\TH:i') : now()->format('Y-m-d\TH:i') }}">
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="form-label">@lang('admin.main_image')</label>
+                                                <input type="file" class="form-control" name="image">
+                                                @if(!empty($value->image))
+                                                    <div class="mt-2">
+                                                        <img src="{{ asset('uploads/commits/' . $value->image) }}" alt="" style="width: 120px; height: auto;">
+                                                    </div>
+                                                @endif
+                                            </div>
                                             <div class="col-sm-12">
                                                 <label class="form-label">@lang('admin.status')</label>
                                                 <select class="form-control" name="status">

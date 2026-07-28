@@ -67,8 +67,8 @@ class StudyAbroadsController extends Controller
         $locales = Translation::where('status',1)->get();
         $currentLang = $this->currentLang;
         $countries = Country::where('status',1)->get();
-        $educationalDegree = EducationalDegree::where('status',1)->get();
-        return view('admin.study-abroads.create', compact('locales','currentLang','countries', 'educationalDegree'));
+        $educationalDegrees = EducationalDegree::where('status',1)->get();
+        return view('admin.study-abroads.create', compact('locales','currentLang','countries', 'educationalDegrees'));
     }
 
     /**
@@ -77,6 +77,7 @@ class StudyAbroadsController extends Controller
     public function store(StudyAbroadsRequest $studyAbroadsRequest)
     {
         try {
+            DB::beginTransaction();
             $data = StudyAbroadsHelper::data($studyAbroadsRequest);
             $dataSave = $this->studyAbroadsRepository->create($data);
             if ($dataSave) {
@@ -85,7 +86,7 @@ class StudyAbroadsController extends Controller
                 $messages = Lang::get('admin.add_error');
             }
             $logData = [
-                'subj_id' => $dataSave->id,
+                'subj_id' => $dataSave->id ?? null,
                 'subj_table' => 'study_abroads',
                 'description' => $messages,
             ];
@@ -122,8 +123,8 @@ class StudyAbroadsController extends Controller
         $locales = Translation::where('status',1)->get();
         $currentLang = $this->currentLang;
         $countries = Country::where('status',1)->get();
-        $educationalDegree = EducationalDegree::where('status',1)->get();
-        return view('admin.study-abroads.edit', compact('locales','studyAbroad','currentLang','countries','educationalDegree'));
+        $educationalDegrees = EducationalDegree::where('status',1)->get();
+        return view('admin.study-abroads.edit', compact('locales','studyAbroad','currentLang','countries','educationalDegrees'));
     }
 
     /**
@@ -132,6 +133,7 @@ class StudyAbroadsController extends Controller
     public function update(StudyAbroadsRequest $studyAbroadsRequest, $id)
     {
         try {
+            DB::beginTransaction();
             $studyAbroad = $this->studyAbroadsRepository->edit($id);
             $data = StudyAbroadsHelper::data($studyAbroadsRequest,$studyAbroad);
             $dataUp = $this->studyAbroadsRepository->update($id,$data);
@@ -168,7 +170,7 @@ class StudyAbroadsController extends Controller
     {
         try {
             $studyAbroad = $this->studyAbroadsRepository->edit($id);
-            if ($this->studyAbroadsRepository->delete($studyAbroad['id'])) {
+            if ($studyAbroad && $this->studyAbroadsRepository->delete($studyAbroad['id'])) {
                 $messages = Lang::get('admin.delete_success');
                 $logData = [
                     'subj_id' => $id,

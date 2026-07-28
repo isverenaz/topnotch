@@ -178,8 +178,10 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const mainImageUpload = document.getElementById('mainImageUpload');
+            const multipleUpload = document.getElementById('multipleUpload');
             // Tek resim için: Dosya adını göster
-            document.getElementById('mainImageUpload').addEventListener('change', function (event) {
+            if (mainImageUpload) mainImageUpload.addEventListener('change', function (event) {
                 const mainImagePreview = document.getElementById('mainImagePreview');
                 mainImagePreview.innerHTML = ''; // Önizleme alanını temizle
                 const file = event.target.files[0];
@@ -198,7 +200,7 @@
             });
 
             // Çoklu resim için: Sadece resim önizlemelerini göster ve silme özelliği ekle
-            document.getElementById('multipleUpload').addEventListener('change', function (event) {
+            if (multipleUpload) multipleUpload.addEventListener('change', function (event) {
                 const sliderImagePreview = document.getElementById('sliderImagePreview');
                 sliderImagePreview.innerHTML = ''; // Clear the preview area
 

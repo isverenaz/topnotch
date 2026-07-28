@@ -14,7 +14,7 @@ class StudyAbroadsRepositoryImpl implements StudyAbroadsRepository
 
     public function getAll()
     {
-        return $this->model->orderBy('id','DESC')->get();
+        return $this->model->with(['country', 'university', 'degree'])->orderBy('id','DESC')->get();
     }
 
     public function create(array $data)
@@ -24,7 +24,7 @@ class StudyAbroadsRepositoryImpl implements StudyAbroadsRepository
 
     public function edit($id)
     {
-        return $this->model->with('university')->whereId($id)->first();
+        return $this->model->with(['country', 'university', 'degree'])->whereId($id)->first();
     }
 
     public function update($id, array $data)

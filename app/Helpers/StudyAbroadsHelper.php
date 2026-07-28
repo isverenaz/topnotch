@@ -9,7 +9,7 @@ class StudyAbroadsHelper
     public static function data($request,$studyAbroad = null)
     {
         $locales = Translation::where('status',1)->get();
-        $name = []; $slug = []; $text = []; $full_text = []; $campaign = [];
+        $name = []; $slug = []; $text = []; $full_text = [];
 
         foreach ($locales as $locale) {
             $code = isset($locale['code']) ? $locale['code'] : 'az';
@@ -17,10 +17,9 @@ class StudyAbroadsHelper
             $slug[$code] = Str::slug(trim($request->input("name.".$code, '')));
             $text[$code] = $request->input("text.".$code, '');
             $full_text[$code] = $request->input("full_text.".$code, '');
-            $campaign[$code] = $request->input("campaign.".$code, '');
         }
         if($request->hasFile('image')){
-            $image = time().$request->image->extension();
+            $image = time().'.'.$request->image->extension();
             $request->image->move(public_path('uploads/studyAbroads'), $image);
         }else{
             $image = !empty($studyAbroad->image)? $studyAbroad->image: NULL;
@@ -36,8 +35,6 @@ class StudyAbroadsHelper
             'slug' => $slug,
             'status' => $request->status ?? 0,
             'is_main' => $request->is_main ?? 0,
-            'is_campaign' => $request->is_campaign ?? 0,
-            'campaign' => $campaign ?? 0,
         ];
         return $data;
     }

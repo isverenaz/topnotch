@@ -24,8 +24,9 @@ class LanguageCoursesRequest extends FormRequest
     {
         $isCreate = $this->isMethod('post');
         return [
-            'language_id' => 'required|integer|exists:languages,id',
-            'parent_language_id' => 'required|integer|exists:languages,id',
+            'course_category_id' => 'nullable|integer|exists:course_categories,id',
+            'language_id' => 'nullable|integer|exists:languages,id|required_without:course_category_id',
+            'parent_language_id' => 'nullable|integer|exists:languages,id|required_without:course_category_id',
             'image' => $isCreate ? 'image|mimes:jpeg,png,jpg,gif,svg': 'image|mimes:jpeg,png,jpg,gif,svg',
             'name.az' => 'required|string|max:255',
             'text.az' => 'required|string',

@@ -150,6 +150,8 @@
                           'admin.teachers.create',
                           'admin.languages.index',
                           'admin.languages.create',
+                          'admin.course-categories.index',
+                          'admin.course-categories.create',
                           'admin.language-courses.index',
                           'admin.language-courses.create'
                       ];
@@ -182,6 +184,16 @@
                                     <i class="fa-light fa-filter-list"></i>
                                 </span>
                                 <span class="sidebar-txt">@lang('admin.languages')</span>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('language-courses-view')
+                        <li class="sidebar-dropdown-item">
+                            <a href="{{ route('admin.course-categories.index') }}" class="sidebar-link">
+                                <span class="nav-icon">
+                                    <i class="fa-light fa-filter-list"></i>
+                                </span>
+                                <span class="sidebar-txt">@lang('admin.course_categories')</span>
                             </a>
                         </li>
                         @endcan
