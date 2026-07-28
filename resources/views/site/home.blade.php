@@ -141,10 +141,10 @@
                 <div class="col-xl-6 col-lg-6 col-sm-12">
                     <div class="history-Wraping">
                         <div class="d-block mb-4">
-                            {{--<h2 class="display-5 fw-normal">{{ $aboutTitle }}</h2>
+                            <h2 class="display-5 fw-normal">{{ $aboutTitle }}</h2>
                             @if($aboutSubTitle)
                                 <p class="text-muted-2">{{ $aboutSubTitle }}</p>
-                            @endif--}}
+                            @endif
                             @if($aboutIntro)
                                 <div class="text-muted-2">{!! $aboutIntro !!}</div>
                             @endif
