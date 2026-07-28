@@ -11,7 +11,7 @@
 @endsection
 
 @section('site.meta_description')
-    {{ $aboutIntro }}
+    {{ $aboutText }}
 @endsection
 
 @section('site.meta_keywords')
