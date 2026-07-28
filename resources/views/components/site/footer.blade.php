@@ -10,7 +10,7 @@
     $copyrightYear = now()->year;
 @endphp
 
-<section class="bg-cover newsletter bg-main" style="background:url({{ asset('ste/assets/img/detail-bg-2.jpg') }});">
+<section class="bg-cover newsletter bg-main" style="background:url({{ asset('site/assets/img/detail-bg-2.jpg') }});">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7 col-md-8 col-sm-12">
