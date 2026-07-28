@@ -7,6 +7,7 @@
     $aboutTitle = data_get($aboutPage, "title.$currentLang") ?? data_get($aboutPage, 'title.az') ?? __('site.about_us');
     $aboutSubTitle = data_get($aboutPage, "sub_title.$currentLang") ?? data_get($aboutPage, 'sub_title.az');
     $aboutText = data_get($aboutPage, "text.$currentLang") ?? data_get($aboutPage, 'text.az');
+    $aboutIntro = $aboutText ? \Illuminate\Support\Str::words(strip_tags($aboutText), 40, '...') : null;
     $aboutImage = !empty($aboutPage->image) ? asset('uploads/about/' . $aboutPage->image) : asset('site/assets/img/custom-img-1.png');
     $promoLines = array_filter([
         $siteTitle,
@@ -144,8 +145,8 @@
                             @if($aboutSubTitle)
                                 <p class="text-muted-2">{{ $aboutSubTitle }}</p>
                             @endif
-                            @if($aboutText)
-                                <div class="text-muted-2">{!! $aboutText !!}</div>
+                            @if($aboutIntro)
+                                <div class="text-muted-2">{{ $aboutIntro }}</div>
                             @endif
                         </div>
 
@@ -406,18 +407,16 @@
                 <div>
                     <div class="_partner_brands op-1">
                         <div class="single_brand" id="brand-slide">
-                            @forelse($universities as $university)
-                                @php
-                                    $universityName = data_get($university, "name.$currentLang") ?? data_get($university, 'name.az');
-                                @endphp
-                                <div class="single_brands">
-                                    <img src="{{ !empty($university->image) ? asset('uploads/universities/' . $university->image) : asset('site/assets/img/lg-1.png') }}" class="img-fluid" alt="{{ $universityName }}" />
-                                </div>
-                            @empty
-                                <div class="single_brands">
-                                    <img src="{{ asset('site/assets/img/lg-1.png') }}" class="img-fluid" alt="" />
-                                </div>
-                            @endforelse
+                            @foreach($universities as $university)
+                                @if(!empty($university->image))
+                                    @php
+                                        $universityName = data_get($university, "name.$currentLang") ?? data_get($university, 'name.az');
+                                    @endphp
+                                    <div class="single_brands">
+                                        <img src="{{ asset('uploads/universities/' . $university->image) }}" class="img-fluid" alt="{{ $universityName }}" />
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>

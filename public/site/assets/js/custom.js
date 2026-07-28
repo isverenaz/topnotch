@@ -428,8 +428,8 @@ $(function() {
 	  autoplay: true,
 	  autoplaySpeed: 3200,
 	  infinite: true,
-	  prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide"><span aria-hidden="true">‹</span></button>',
-	  nextArrow: '<button type="button" class="slick-next" aria-label="Next slide"><span aria-hidden="true">›</span></button>'
+	  prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide"><span aria-hidden="true">&lsaquo;</span></button>',
+	  nextArrow: '<button type="button" class="slick-next" aria-label="Next slide"><span aria-hidden="true">&rsaquo;</span></button>'
 	});
 
 	// Select category
