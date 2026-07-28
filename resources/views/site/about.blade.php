@@ -11,7 +11,7 @@
 @endsection
 
 @section('site.meta_description')
-    {{ $aboutText }}
+    {!! $aboutText !!}
 @endsection
 
 @section('site.meta_keywords')
@@ -71,7 +71,7 @@
                     <div class="benifit-oflearning">
                         <div class="d-block mb-4">
                             <h2>{{ $aboutTitle }}</h2>
-                            <p>{{ $aboutText }}</p>
+                            <p>{!! $aboutText !!}</p>
                         </div>
 
                         <div class="benifit-wraps mb-4">
