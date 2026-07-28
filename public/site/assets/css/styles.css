@@ -6949,6 +6949,41 @@ ul.footer-bottom-social li a:hover, ul.footer-bottom-social li a:focus,ul.footer
     margin-right: 13px;
 	color:#ffffff;
 }
+.about-richtext {
+    color: var(--footercolor);
+    line-height: 1.8;
+}
+.about-richtext > * {
+    margin-bottom: 0.85rem;
+}
+.about-richtext > *:last-child {
+    margin-bottom: 0;
+}
+.about-richtext h1,
+.about-richtext h2,
+.about-richtext h3,
+.about-richtext h4,
+.about-richtext h5,
+.about-richtext h6 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+}
+.about-richtext img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+    border-radius: 12px;
+}
+.about-richtext ul,
+.about-richtext ol {
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+}
+.about-richtext p {
+    margin-bottom: 0.85rem;
+}
 .footer-bottom a {
     color: var(--maincolor);
 }

@@ -71,7 +71,7 @@
                     <div class="benifit-oflearning">
                         <div class="d-block mb-4">
                             <h2>{{ $aboutTitle }}</h2>
-                            <p>{!! $aboutText !!}</p>
+                            <div class="about-richtext">{!! $aboutText !!}</div>
                         </div>
                         <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-5">@lang('site.signup')</a>
                     </div>
