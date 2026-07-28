@@ -2,7 +2,6 @@
     $aboutTitle = data_get($about, "title.$currentLang") ?? data_get($about, 'title.az') ?? __('site.about_us');
     $aboutSubTitle = data_get($about, "sub_title.$currentLang") ?? data_get($about, 'sub_title.az') ?? __('site.welcome');
     $aboutText = data_get($about, "text.$currentLang") ?? data_get($about, 'text.az');
-    $aboutIntro = $aboutText ? \Illuminate\Support\Str::limit(strip_tags($aboutText), 220) : __('site.about_full_text');
 @endphp
 
 @extends('site.layouts.app')
@@ -72,7 +71,7 @@
                     <div class="benifit-oflearning">
                         <div class="d-block mb-4">
                             <h2>{{ $aboutTitle }}</h2>
-                            <p>{{ $aboutIntro }}</p>
+                            <p>{{ $aboutText }}</p>
                         </div>
 
                         <div class="benifit-wraps mb-4">
