@@ -73,36 +73,6 @@
                             <h2>{{ $aboutTitle }}</h2>
                             <p>{!! $aboutText !!}</p>
                         </div>
-
-                        <div class="benifit-wraps mb-4">
-                            <div class="d-flex flex-column gap-4">
-
-                                <div class="d-flex align-items-center justify-content-start gap-3">
-                                    <div class="icons"><span class="square--50 circle bg-light-green fs-5"><i class="bi bi-patch-check-fill text-green"></i></span></div>
-                                    <div class="caps">
-                                        <h5>@lang('site.study_abroads')</h5>
-                                        <p class="text-muted-2 m-0">@lang('site.study_abroads_text')</p>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center justify-content-start gap-3">
-                                    <div class="icons"><span class="square--50 circle bg-light-green fs-5"><i class="bi bi-patch-check-fill text-green"></i></span></div>
-                                    <div class="caps">
-                                        <h5>@lang('site.language_courses')</h5>
-                                        <p class="text-muted-2 m-0">@lang('site.language_courses_text')</p>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center justify-content-start gap-3">
-                                    <div class="icons"><span class="square--50 circle bg-light-green fs-5"><i class="bi bi-patch-check-fill text-green"></i></span></div>
-                                    <div class="caps">
-                                        <h5>@lang('site.education_degree')</h5>
-                                        <p class="text-muted-2 m-0">@lang('site.study_abroad_form_text')</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                         <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-5">@lang('site.signup')</a>
                     </div>
 
