@@ -145,9 +145,9 @@
                             @if($aboutSubTitle)
                                 <p class="text-muted-2">{{ $aboutSubTitle }}</p>
                             @endif
-                            @if($aboutIntro)
+                          {{--  @if($aboutIntro)
                                 <div class="text-muted-2">{!! $aboutIntro !!}</div>
-                            @endif
+                            @endif--}}
                         </div>
 
                         <div class="benifit-wraps mb-4">
