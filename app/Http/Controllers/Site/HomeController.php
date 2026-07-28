@@ -58,7 +58,7 @@ class HomeController extends Controller
         $news = News::with('category')->where('status', 1)->where('is_main', 1)->orderByDesc('datetime')->take(8)->get();
         $teachers = Teacher::with('position')->where('status', 1)->where('is_main', 1)->orderBy('order_by', 'asc')->orderByDesc('id')->take(8)->get();
         $commits = Commit::orderByDesc('id')->take(6)->get();
-        $universities = University::where('status', 1)->where('is_main', 1)->orderBy('order_by', 'asc')->orderByDesc('id')->take(10)->get();
+        $universities = University::whereNotNull('image')->where('status', 1)->where('is_main', 1)->orderBy('order_by', 'asc')->orderByDesc('id')->take(10)->get();
         $featuredCourses = LanguageCourse::with(['courseCategory', 'language', 'parentLanguage', 'teacher'])
             ->where('status', 1)
             ->where('is_main', 1)
