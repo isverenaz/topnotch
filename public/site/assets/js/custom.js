@@ -1,6 +1,11 @@
 $(function() {
     "use strict";
 
+	const slickArrow = {
+	  prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>',
+	  nextArrow: '<button type="button" class="slick-next" aria-label="Next slide"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>'
+	};
+
 	// Keep the page usable even if a bundled plugin is missing on a page.
 	$.fn.slick = $.fn.slick || function() { return this; };
 	$.fn.select2 = $.fn.select2 || function() { return this; };
@@ -318,6 +323,8 @@ $(function() {
 	  arrows: true,
 	  autoplay:true,
 	  dots: false,
+	  prevArrow: slickArrow.prevArrow,
+	  nextArrow: slickArrow.nextArrow,
 	  responsive: [
 		{
 		  breakpoint: 768,
@@ -384,6 +391,8 @@ $(function() {
 	  arrows: true,
 	  autoplay:true,
 	  dots: false,
+	  prevArrow: slickArrow.prevArrow,
+	  nextArrow: slickArrow.nextArrow,
 	  responsive: [
 		{
 		  breakpoint:1300,
@@ -428,8 +437,8 @@ $(function() {
 	  autoplay: true,
 	  autoplaySpeed: 3200,
 	  infinite: true,
-	  prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide"><span aria-hidden="true">&lsaquo;</span></button>',
-	  nextArrow: '<button type="button" class="slick-next" aria-label="Next slide"><span aria-hidden="true">&rsaquo;</span></button>'
+	  prevArrow: slickArrow.prevArrow,
+	  nextArrow: slickArrow.nextArrow
 	});
 
 	// Select category

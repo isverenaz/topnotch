@@ -56,7 +56,7 @@
                                 @endphp
                                 <div>
                                     <div class="hero-media-card">
-                                        <img src="{{ !empty($slider->image) ? asset('uploads/sliders/' . $slider->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid" alt="{{ $sliderTitle ?? $siteTitle }}">
+                                        <img src="{{ !empty($slider->image) ? asset('uploads/sliders/' . $slider->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid home-slide-image" alt="{{ $sliderTitle ?? $siteTitle }}" onerror="this.onerror=null;this.src='{{ asset('site/assets/img/co-1.jpg') }}';">
                                         <div class="hero-media-overlay">
                                             <span>{{ $siteTitle }}</span>
                                             <strong>{{ $sliderTitle ?? $siteTitle }}</strong>
@@ -69,7 +69,7 @@
                             @empty
                                 <div>
                                     <div class="hero-media-card">
-                                        <img src="{{ asset('site/assets/img/co-1.jpg') }}" class="img-fluid" alt="{{ $siteTitle }}">
+                                        <img src="{{ asset('site/assets/img/co-1.jpg') }}" class="img-fluid home-slide-image" alt="{{ $siteTitle }}">
                                         <div class="hero-media-overlay">
                                             <span>{{ $siteTitle }}</span>
                                             <strong>{{ $siteTitle }}</strong>
@@ -256,7 +256,7 @@
                                 <div class="education_block_grid border">
                                     <div class="education-thumb position-relative">
                                         <a href="{{ route('site.courses-details', $courseSlug) }}">
-                                            <img src="{{ !empty($course->image) ? asset('uploads/languageCourses/' . $course->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid" alt="{{ $courseTitle }}" style="aspect-ratio: 16 / 10; object-fit: cover;">
+                                            <img src="{{ !empty($course->image) ? asset('uploads/languageCourses/' . $course->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid home-slide-image" alt="{{ $courseTitle }}" onerror="this.onerror=null;this.src='{{ asset('site/assets/img/co-1.jpg') }}';">
                                         </a>
                                     </div>
                                     <div class="education-body p-3">
@@ -317,7 +317,7 @@
                                 <div class="education_block_grid border">
                                     <div class="education-thumb position-relative">
                                         <a href="{{ route('site.blogDetail', [$categorySlug, $newsSlug]) }}">
-                                            <img src="{{ !empty($item->image) ? asset('uploads/news/' . $item->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid" alt="{{ $newsTitle }}" style="aspect-ratio: 16 / 10; object-fit: cover;">
+                                            <img src="{{ !empty($item->image) ? asset('uploads/news/' . $item->image) : asset('site/assets/img/co-1.jpg') }}" class="img-fluid home-slide-image" alt="{{ $newsTitle }}" onerror="this.onerror=null;this.src='{{ asset('site/assets/img/co-1.jpg') }}';">
                                         </a>
                                     </div>
                                     <div class="education-body p-3">
@@ -380,7 +380,7 @@
                                     </div>
                                     <div class="d-flex bg-light align-items-center justify-content-between rounded-3 p-3">
                                         <div class="revierwer-avatar d-flex align-items-center gap-2">
-                                            <div class="avatar-box"><img src="{{ $commitImage }}" class="img-fluid square--50 circle" alt="Avatar Image"></div>
+                                            <div class="avatar-box"><img src="{{ $commitImage }}" class="img-fluid square--50 circle" alt="Avatar Image" onerror="this.onerror=null;this.src='{{ asset('site/assets/img/user-1.jpg') }}';"></div>
                                             <div class="reviewer-caps">
                                                 <h6 class="fw-semibold text-dark m-0">{{ $commitName ?? $siteTitle }}</h6>
                                                 <p class="text-muted-2 m-0 text-mid">{{ $commitDate }}</p>
