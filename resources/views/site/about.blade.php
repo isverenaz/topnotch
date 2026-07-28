@@ -2,6 +2,7 @@
     $aboutTitle = data_get($about, "title.$currentLang") ?? data_get($about, 'title.az') ?? __('site.about_us');
     $aboutSubTitle = data_get($about, "sub_title.$currentLang") ?? data_get($about, 'sub_title.az') ?? __('site.welcome');
     $aboutText = data_get($about, "text.$currentLang") ?? data_get($about, 'text.az');
+    $aboutImage = !empty($about?->image) ? asset('uploads/about/' . $about->image) : asset('site/assets/img/hero-img-3.png');
 @endphp
 
 @extends('site.layouts.app')
@@ -22,70 +23,45 @@
 @endsection
 
 @section('site.content')
-    <section>
+    <section class="about-hero py-5">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-xxl-7 col-xl-8 col-lg-10 col-md-12">
-
-                    <div class="text-center d-block mb-4">
+            <div class="row align-items-center g-4 g-xl-5">
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-hero-copy">
                         <h1 class="display-2 fw-semibold page-title">
                             {{ $aboutTitle }}
                         </h1>
-                        <p class="fs-5">
+                        <p class="fs-5 about-subtitle">
                             {{ $aboutSubTitle }}
                         </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-4">@lang('site.signup')</a>
+                            <a href="{{ route('site.contact') }}" class="btn btn-gray rounded-pill px-4">@lang('site.contact')</a>
+                        </div>
                     </div>
-
-                    <div class="d-flex align-items-center justify-content-center gap-3">
-                        <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-4">@lang('site.signup')</a>
-                        <a href="{{ route('site.contact') }}" class="btn btn-gray rounded-pill px-4">@lang('site.contact')</a>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="facts-img about-hero-media">
+                        <img src="{{ $aboutImage }}" class="img-fluid" alt="{{ $aboutTitle }}" />
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
     <!-- ============================ Page Header Intro End ================================== -->
 
-    <!-- ============================ Image BG Start================================== -->
-    <section class="bg-cover" style="background:url({{ asset('site/assets/img/bg-new.jpg') }}) no-repeat;">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
-
-                    <div class="ht-300"></div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ============================ Image BG End ================================== -->
-
     <!-- ========================== About Facts List Section =============================== -->
-    <section>
+    <section class="about-content py-5 bg-light">
         <div class="container">
-
-            <div class="row align-items-center">
-
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="benifit-oflearning">
-                        <div class="d-block mb-4">
-                            <h2>{{ $aboutTitle }}</h2>
-                            <div class="about-richtext">{!! $aboutText !!}</div>
-                        </div>
-                        <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-5">@lang('site.signup')</a>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="facts-img">
-                        <img src="{{ !empty($about?->image) ? asset('uploads/about/'.$about->image) : asset('site/assets/img/hero-img-3.png') }}" class="img-fluid" alt="{{ $aboutTitle }}" />
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10 col-sm-12">
+                    <div class="about-content-body">
+                        <h2>{{ $aboutTitle }}</h2>
+                        <div class="about-richtext">{!! $aboutText !!}</div>
+                        <a href="{{ route('site.signup') }}" class="btn btn-main rounded-pill px-5 mt-4">@lang('site.signup')</a>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
     <!-- ========================== About Facts List Section =============================== -->
