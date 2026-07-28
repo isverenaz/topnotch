@@ -4,6 +4,7 @@
     $siteAddress = $data['siteAddress'] ?? null;
     $sitePhone = $data['sitePhone'] ?? null;
     $siteEmail = $data['siteEmail'] ?? null;
+    $siteJsVersion = @filemtime(public_path('site/assets/js/custom.js')) ?: time();
     $footerLogo = !empty(data_get($setting, 'footer_logo'))
         ? asset('uploads/settings/' . data_get($setting, 'footer_logo'))
         : asset('site/assets/img/logo-icon.png');
@@ -104,7 +105,7 @@
 <script src="{{ asset('site/assets/js/slick.js') }}"></script>
 <script src="{{ asset('site/assets/js/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('site/assets/js/counterup.min.js') }}"></script>
-<script src="{{ asset('site/assets/js/custom.js') }}"></script>
+<script src="{{ asset('site/assets/js/custom.js') }}?v={{ $siteJsVersion }}"></script>
 <script>
     const toggle = document.getElementById('billingSwitch');
     const prices = document.querySelectorAll('.card-price');

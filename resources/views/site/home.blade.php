@@ -408,14 +408,12 @@
                     <div class="_partner_brands op-1">
                         <div class="single_brand" id="brand-slide">
                             @foreach($universities as $university)
-                                @if(!empty($university->image))
                                     @php
                                         $universityName = data_get($university, "name.$currentLang") ?? data_get($university, 'name.az');
                                     @endphp
                                     <div class="single_brands">
                                         <img src="{{ asset('uploads/universities/' . $university->image) }}" class="img-fluid" alt="{{ $universityName }}" />
                                     </div>
-                                @endif
                             @endforeach
                         </div>
                     </div>

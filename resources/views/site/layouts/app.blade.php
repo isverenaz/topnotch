@@ -3,6 +3,8 @@
 <head>
     @php
         $siteName = config('app.name', 'Topnotch.az');
+        $siteCssVersion = @filemtime(public_path('site/assets/css/styles.css')) ?: time();
+        $siteColorVersion = @filemtime(public_path('site/assets/css/colors.css')) ?: time();
         $pageTitle = trim($__env->yieldContent('site.title'));
         $metaDescription = trim($__env->yieldContent('site.meta_description'));
         $metaKeywords = trim($__env->yieldContent('site.meta_keywords'));
@@ -30,8 +32,8 @@
     <meta name="twitter:title" content="{{ $fullTitle }}">
     <meta name="twitter:description" content="{{ $metaDescription ?: $siteName }}">
     @yield('site.css')
-    <link href="{{ asset('site/assets/css/styles.css') }}" rel="stylesheet">
-    <link href="{{ asset('site/assets/css/colors.css') }}" rel="stylesheet">
+    <link href="{{ asset('site/assets/css/styles.css') }}?v={{ $siteCssVersion }}" rel="stylesheet">
+    <link href="{{ asset('site/assets/css/colors.css') }}?v={{ $siteColorVersion }}" rel="stylesheet">
 </head>
 <body class="red-skin">
 <div id="preloader">
