@@ -352,8 +352,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10 col-sm-12">
                     <div class="sec-heading center">
-                        <h2>@lang('site.team')</h2>
-                        <p>@lang('site.team_text')</p>
+                        <h2>@lang('site.team_text')</h2>
                     </div>
                 </div>
             </div>
