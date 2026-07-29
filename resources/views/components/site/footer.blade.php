@@ -42,6 +42,10 @@
                                     <div class="square--30 circle bg-light-main text-main"><i class="bi bi-telephone"></i></div>
                                     <div class="fs-6 fw-semibold">{{ $sitePhone }}</div>
                                 </div>
+                                <div class="d-flex align-items-center call-now gap-2 mb-3">
+                                    <div class="square--30 circle bg-light-main text-main"><i class="bi bi-telephone"></i></div>
+                                    <div class="fs-6 fw-semibold">+994 50 540 92 93</div>
+                                </div>
                             @endif
                             @if(!empty($siteEmail))
                                 <div class="d-flex align-items-center call-now gap-2">
@@ -81,7 +85,7 @@
             <div class="row align-items-center g-3">
                 <div class="col-lg-6 col-md-6">
                     <p class="mb-0">
-                        © {{ $copyrightYear }} {{ $siteName }} — @lang('site.footer_copyright')
+                        &copy; {{ $copyrightYear }} {{ $siteName }} &mdash; @lang('site.footer_copyright')
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-6 text-md-end">
@@ -96,7 +100,7 @@
         </div>
     </div>
 </footer>
-<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="bi bi-arrow-up"></i></a>
+<a id="back2Top" class="top-scroll" title="{{ __('site.back_to_top') }}" href="#"><i class="bi bi-arrow-up"></i></a>
 </div>
 <script src="{{ asset('site/assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('site/assets/js/popper.min.js') }}"></script>
@@ -105,6 +109,12 @@
 <script src="{{ asset('site/assets/js/slick.js') }}"></script>
 <script src="{{ asset('site/assets/js/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('site/assets/js/counterup.min.js') }}"></script>
+<script>
+    window.siteI18n = window.siteI18n || {};
+    window.siteI18n.selectCategory = @json(__('site.select_category'));
+    window.siteI18n.previousSlide = @json(__('site.previous_slide'));
+    window.siteI18n.nextSlide = @json(__('site.next_slide'));
+</script>
 <script src="{{ asset('site/assets/js/custom.js') }}?v={{ $siteJsVersion }}"></script>
 <script>
     const toggle = document.getElementById('billingSwitch');
@@ -133,3 +143,4 @@
 @yield('site.js')
 </body>
 </html>
+

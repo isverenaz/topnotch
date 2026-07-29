@@ -1,9 +1,10 @@
 $(function() {
     "use strict";
 
+	const siteI18n = window.siteI18n || {};
 	const slickArrow = {
-	  prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>',
-	  nextArrow: '<button type="button" class="slick-next" aria-label="Next slide"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>'
+	  prevArrow: '<button type="button" class="slick-prev" aria-label="' + (siteI18n.previousSlide || 'Previous slide') + '"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>',
+	  nextArrow: '<button type="button" class="slick-next" aria-label="' + (siteI18n.nextSlide || 'Next slide') + '"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>'
 	};
 
 	// Keep the page usable even if a bundled plugin is missing on a page.
@@ -443,7 +444,7 @@ $(function() {
 
 	// Select category
 	$('#c-category').select2({
-		placeholder: "Select Category",
+		placeholder: siteI18n.selectCategory || "Select category",
 		allowClear: true
 	});
 	

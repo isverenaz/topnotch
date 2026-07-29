@@ -97,7 +97,7 @@
 
                                             <!--img-->
                                             <a href="#">
-                                                <img src="{{ !empty($teacher->image) ? asset('uploads/teachers/'.$teacher->image) : asset('site/assets/img/'.$fallbackAvatar) }}" alt="mentor 2" class="img-fluid w-100 rounded-4">
+                                                <img src="{{ !empty($teacher->image) ? asset('uploads/teachers/'.$teacher->image) : asset('site/assets/img/'.$fallbackAvatar) }}" alt="{{ $teacherName }}" class="img-fluid w-100 rounded-4">
                                             </a>
 
                                             <!--content-->

@@ -11,6 +11,7 @@
     $aboutImage = !empty($aboutPage->image) ? asset('uploads/about/' . $aboutPage->image) : asset('site/assets/img/custom-img-1.png');
     $promoLines = array_filter([
         $siteTitle,
+        '+994 50 540 92 93',
         data_get($setting, 'phone'),
         data_get($setting, 'email'),
     ]);
@@ -380,7 +381,7 @@
                                     </div>
                                     <div class="d-flex bg-light align-items-center justify-content-between rounded-3 p-3">
                                         <div class="revierwer-avatar d-flex align-items-center gap-2">
-                                            <div class="avatar-box"><img src="{{ $commitImage }}" class="img-fluid square--50 circle" alt="Avatar Image" onerror="this.onerror=null;this.src='{{ asset('site/assets/img/user-1.jpg') }}';"></div>
+                                            <div class="avatar-box"><img src="{{ $commitImage }}" class="img-fluid square--50 circle" alt="{{ $commitName ?? $siteTitle }}" onerror="this.onerror=null;this.src='{{ asset('site/assets/img/user-1.jpg') }}';"></div>
                                             <div class="reviewer-caps">
                                                 <h6 class="fw-semibold text-dark m-0">{{ $commitName ?? $siteTitle }}</h6>
                                                 <p class="text-muted-2 m-0 text-mid">{{ $commitDate }}</p>
