@@ -73,7 +73,7 @@
   'student' => 'Student',
   'welcome' => 'Welcome to TopNotch',
   'team' => 'Our Team Members',
-  'team_text' => 'Meet our team members',
+  'team_text' => 'Our students reviews',
     'teachers' => 'Müəllimlərimiz',
     'our_teachers' => 'Müəllimlərimiz',
     'teachers_text' => 'Müəllimlərimiz ilə tanış olun',
