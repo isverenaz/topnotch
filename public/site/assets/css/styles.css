@@ -3963,12 +3963,11 @@ li.login-attri .account-drop a {
 .hero-media-card img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
     display: block;
     background: #f7f9fc;
-    padding: 16px;
-    box-sizing: border-box;
+    padding: 0;
 }
 .hero-media-card::after {
     content: "";
@@ -4250,6 +4249,24 @@ li.login-attri .account-drop a {
 }
 .hero-media-card img.home-slide-image {
     height: 100%;
+}
+.trips_icons {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trips_icons .square--60 {
+    flex: 0 0 60px;
+    border-radius: 16px;
+}
+.trips_icons i {
+    line-height: 1;
+    display: block;
+    font-size: 1.5rem;
+}
+.trips_detail {
+    min-width: 0;
 }
 .education-thumb .home-slide-image {
     border-radius: 0.4rem 0.4rem 0 0;
