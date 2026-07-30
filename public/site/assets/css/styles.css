@@ -4257,13 +4257,25 @@ li.login-attri .account-drop a {
     justify-content: center;
 }
 .trips_icons .square--60 {
-    flex: 0 0 60px;
-    border-radius: 16px;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
 }
 .trips_icons i {
     line-height: 1;
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    transform: translateY(0.5px);
+    color: #ffffff;
+}
+.trips_wrap .trips_detail h5 {
+    font-size: 18px;
+    line-height: 1.25;
+}
+.trips_wrap .trips_detail p {
+    font-size: 14px;
 }
 .trips_detail {
     min-width: 0;

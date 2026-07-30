@@ -91,7 +91,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="trips d-flex align-items-center gap-3 pe-xl-5">
                         <div class="trips_icons flex-1">
-                            <span class="square--60 circle bg-transparents"><i class="bi bi-camera-video fs-4 text-light"></i></span>
+                            <span class="square--60 circle bg-transparents"><i class="bi bi-person-badge fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
                             <h5 class="text-light lh-base mb-0">22+ @lang('site.teacher')</h5>
@@ -102,7 +102,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="trips d-flex align-items-center gap-3 pe-xl-5">
                         <div class="trips_icons flex-1">
-                            <span class="square--60 circle bg-transparents"><i class="bi bi-people fs-4 text-light"></i></span>
+                            <span class="square--60 circle bg-transparents"><i class="bi bi-airplane-fill fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
                             <h5 class="text-light lh-base mb-0">6000+ @lang('site.study_abroads')</h5>
@@ -113,7 +113,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="trips d-flex align-items-center gap-3 pe-xl-5">
                         <div class="trips_icons flex-1">
-                            <span class="square--60 circle bg-transparents"><i class="bi bi-building fs-4 text-light"></i></span>
+                            <span class="square--60 circle bg-transparents"><i class="bi bi-translate fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
                             <h5 class="text-light lh-base mb-0">8000+ @lang('site.language_courses')</h5>
@@ -124,7 +124,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="trips d-flex align-items-center gap-3 pe-xl-5">
                         <div class="trips_icons flex-1">
-                            <span class="square--60 circle bg-transparents"><i class="bi bi-newspaper fs-4 text-light"></i></span>
+                            <span class="square--60 circle bg-transparents"><i class="bi bi-building fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
                             <h5 class="text-light lh-base mb-0">80+ @lang('site.university')</h5>
