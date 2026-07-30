@@ -94,8 +94,8 @@
                             <span class="square--60 circle bg-transparents"><i class="bi bi-camera-video fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
-                            <h5 class="text-light lh-base mb-0">{{ $counts['courses'] ?? 0 }}+ @lang('site.course')</h5>
-                            <p class="text-light opacity-75 lh-base m-0">{{ __('site.language_courses') }}</p>
+                            <h5 class="text-light lh-base mb-0">22+ @lang('site.teacher')</h5>
+                            <p class="text-light opacity-75 lh-base m-0">Müəllim heyəti</p>
                         </div>
                     </div>
                 </div>
@@ -105,8 +105,8 @@
                             <span class="square--60 circle bg-transparents"><i class="bi bi-people fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
-                            <h5 class="text-light lh-base mb-0">{{ $counts['teachers'] ?? 0 }}+ @lang('site.teacher')</h5>
-                            <p class="text-light opacity-75 lh-base m-0">{{ __('site.our_teachers') }}</p>
+                            <h5 class="text-light lh-base mb-0">6000+ @lang('site.study_abroads')</h5>
+                            <p class="text-light opacity-75 lh-base m-0">Xaricdə təhsil qəbulu</p>
                         </div>
                     </div>
                 </div>
@@ -116,8 +116,8 @@
                             <span class="square--60 circle bg-transparents"><i class="bi bi-building fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
-                            <h5 class="text-light lh-base mb-0">{{ $counts['schools'] ?? 0 }}+ @lang('site.schools')</h5>
-                            <p class="text-light opacity-75 lh-base m-0">@lang('site.schools')</p>
+                            <h5 class="text-light lh-base mb-0">8000+ @lang('site.language_courses')</h5>
+                            <p class="text-light opacity-75 lh-base m-0">Dil kursu Məzunu</p>
                         </div>
                     </div>
                 </div>
@@ -127,8 +127,8 @@
                             <span class="square--60 circle bg-transparents"><i class="bi bi-newspaper fs-4 text-light"></i></span>
                         </div>
                         <div class="trips_detail">
-                            <h5 class="text-light lh-base mb-0">{{ $counts['news'] ?? 0 }}+ @lang('site.blogs')</h5>
-                            <p class="text-light opacity-75 lh-base m-0">@lang('site.blogs')</p>
+                            <h5 class="text-light lh-base mb-0">80+ @lang('site.university')</h5>
+                            <p class="text-light opacity-75 lh-base m-0">Tərəfdaş Universitet</p>
                         </div>
                     </div>
                 </div>

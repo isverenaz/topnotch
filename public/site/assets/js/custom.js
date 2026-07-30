@@ -2,6 +2,8 @@ $(function() {
     "use strict";
 
 	const siteI18n = window.siteI18n || {};
+	const slowAutoplaySpeed = 6500;
+	const slowTransitionSpeed = 1000;
 	const slickArrow = {
 	  prevArrow: '<button type="button" class="slick-prev" aria-label="' + (siteI18n.previousSlide || 'Previous slide') + '"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>',
 	  nextArrow: '<button type="button" class="slick-next" aria-label="' + (siteI18n.nextSlide || 'Next slide') + '"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>'
@@ -291,6 +293,8 @@ $(function() {
 	  slidesToShow:3,
 	  arrows: false,
 	  autoplay:true,
+	  autoplaySpeed: slowAutoplaySpeed,
+	  speed: slowTransitionSpeed,
 	  dots: false,
 	  responsive: [
 		{
@@ -323,6 +327,8 @@ $(function() {
 	  slidesToShow:1,
 	  arrows: true,
 	  autoplay:true,
+	  autoplaySpeed: slowAutoplaySpeed,
+	  speed: slowTransitionSpeed,
 	  dots: false,
 	  prevArrow: slickArrow.prevArrow,
 	  nextArrow: slickArrow.nextArrow,
@@ -349,6 +355,8 @@ $(function() {
 	  slidesToShow:5,
 	  arrows: false,
 	  autoplay:true,
+	  autoplaySpeed: slowAutoplaySpeed,
+	  speed: slowTransitionSpeed,
 	  dots: true,
 	  responsive: [
 		{
@@ -391,6 +399,8 @@ $(function() {
 	  slidesToShow:4,
 	  arrows: true,
 	  autoplay:true,
+	  autoplaySpeed: slowAutoplaySpeed,
+	  speed: slowTransitionSpeed,
 	  dots: false,
 	  prevArrow: slickArrow.prevArrow,
 	  nextArrow: slickArrow.nextArrow,
@@ -434,9 +444,9 @@ $(function() {
 	  arrows: true,
 	  dots: false,
 	  fade: true,
-	  speed: 650,
+	  speed: 1200,
 	  autoplay: true,
-	  autoplaySpeed: 3200,
+	  autoplaySpeed: 8000,
 	  infinite: true,
 	  prevArrow: slickArrow.prevArrow,
 	  nextArrow: slickArrow.nextArrow
