@@ -6052,11 +6052,30 @@ button.accordion-button {
 }
 
 /*------------- Brand --------------*/
+.single_brand .slick-list {
+    overflow: hidden;
+}
+.single_brand .slick-track {
+    display: flex;
+    align-items: center;
+}
+.single_brand .slick-slide {
+    height: auto;
+}
+.single_brand .single_brands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    padding: 18px 24px;
+}
 .single_brands img {
     transition: all ease .4s;
-    max-width: 130px;
+    max-width: 100%;
+    max-height: 110px;
     margin: 0 auto;
-    display: table;
+    display: block;
+    object-fit: contain;
 }
 .btn.btn-browse-btn {
     color: #ffffff !important;

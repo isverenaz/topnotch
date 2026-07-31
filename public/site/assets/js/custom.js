@@ -4,8 +4,10 @@ $(function() {
 	const siteI18n = window.siteI18n || {};
 	const slowAutoplaySpeed = 6500;
 	const slowTransitionSpeed = 1000;
-	const fastAutoplaySpeed = 1;
-	const fastTransitionSpeed = 2500;
+	const fastAutoplaySpeed = 2400;
+	const fastTransitionSpeed = 700;
+	const brandAutoplaySpeed = 1;
+	const brandTransitionSpeed = 9000;
 	const slickArrow = {
 	  prevArrow: '<button type="button" class="slick-prev" aria-label="' + (siteI18n.previousSlide || 'Previous slide') + '"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>',
 	  nextArrow: '<button type="button" class="slick-next" aria-label="' + (siteI18n.nextSlide || 'Next slide') + '"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>'
@@ -264,6 +266,13 @@ $(function() {
 	  slidesToShow:5,
 	  arrows: false,
 	  autoplay:true,
+	  autoplaySpeed: brandAutoplaySpeed,
+	  speed: brandTransitionSpeed,
+	  cssEase: 'linear',
+	  pauseOnHover: false,
+	  pauseOnFocus: false,
+	  pauseOnDotsHover: false,
+	  waitForAnimate: false,
 	  dots: false,
 	  responsive: [
 		{
