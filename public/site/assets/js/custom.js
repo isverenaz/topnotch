@@ -4,8 +4,8 @@ $(function() {
 	const siteI18n = window.siteI18n || {};
 	const slowAutoplaySpeed = 6500;
 	const slowTransitionSpeed = 1000;
-	const fastAutoplaySpeed = 1400;
-	const fastTransitionSpeed = 500;
+	const fastAutoplaySpeed = 1000;
+	const fastTransitionSpeed = 300;
 	const slickArrow = {
 	  prevArrow: '<button type="button" class="slick-prev" aria-label="' + (siteI18n.previousSlide || 'Previous slide') + '"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>',
 	  nextArrow: '<button type="button" class="slick-next" aria-label="' + (siteI18n.nextSlide || 'Next slide') + '"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>'
@@ -17,7 +17,7 @@ $(function() {
 	$.fn.counterUp = $.fn.counterUp || function() { return this; };
 	$.fn.waypoint = $.fn.waypoint || function() { return this; };
 
-	//Loader	
+	//Loader
 	$(function preloaderLoad() {
         var hidePreloader = function() {
             if ($('#preloader').length) {
@@ -33,7 +33,7 @@ $(function() {
             hidePreloader();
         });
     });
-	
+
 	// Count
 	if ($('.counts').length) {
 		$(window).on('load', function() {
@@ -43,7 +43,7 @@ $(function() {
 			});
 		});
 	}
-	
+
 	// Script Navigation
 	! function(n, e, i, a) {
 		n.navigation = function(t, s) {
@@ -188,8 +188,8 @@ $(function() {
 	}
 	(jQuery, window, document), $(document).ready(function() {
 		$("#navigation").navigation()
-	});	
-	
+	});
+
 	// Tooltip
 	if (window.bootstrap && bootstrap.Tooltip) {
 		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -197,7 +197,7 @@ $(function() {
 			return new bootstrap.Tooltip(tooltipTriggerEl)
 		});
 	}
-	
+
 	// Bottom To Top Scroll Script
 	$(window).on('scroll', function() {
 		var height = $(window).scrollTop();
@@ -207,16 +207,16 @@ $(function() {
 			$('#back2Top').fadeOut();
 		}
 	});
-	
+
 	$("#back2Top").on('click', function(event) {
 		event.preventDefault();
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 		return false;
 	});
-	
-	
+
+
 	// Script For Fix Header on Scroll
-	$(window).on('scroll', function() {    
+	$(window).on('scroll', function() {
 		var scroll = $(window).scrollTop();
 
 		if (scroll >= 50) {
@@ -225,9 +225,9 @@ $(function() {
 			$(".header").removeClass("header-fixed");
 		}
 	});
-	
-	
-	
+
+
+
 	// Dashboard Course Slide
 	$('#dash-course-slide').slick({
 	  slidesToShow:3,
@@ -258,7 +258,7 @@ $(function() {
 		}
 	  ]
 	});
-	
+
 	// Brand Slide
 	$('#brand-slide').slick({
 	  slidesToShow:5,
@@ -289,7 +289,7 @@ $(function() {
 		}
 	  ]
 	});
-	
+
 	// smart_textimonials_style
 	$('.reviews-slide').slick({
 	  slidesToShow:3,
@@ -323,7 +323,7 @@ $(function() {
 	  ]
 	});
 
-	
+
 	// smart_textimonials_style
 	$('#testimonials_style').slick({
 	  slidesToShow:1,
@@ -351,7 +351,7 @@ $(function() {
 		}
 	  ]
 	});
-	
+
 	// smart_textimonials_style
 	$('.categories-slide').slick({
 	  slidesToShow:5,
@@ -395,7 +395,7 @@ $(function() {
 		}
 	  ]
 	});
-	
+
 	// Four Slider
 	$('.four_slide').slick({
 	  slidesToShow:4,
@@ -437,8 +437,8 @@ $(function() {
 		}
 	  ]
 	});
-		
-	
+
+
 	// Hero Media Slider
 	$('.hero-media-slider').slick({
 	  slidesToShow: 1,
@@ -459,36 +459,36 @@ $(function() {
 		placeholder: siteI18n.selectCategory || "Select category",
 		allowClear: true
 	});
-	
+
 	// Select Level
 	$('#level').select2({
 		placeholder: "Select Level",
 		allowClear: true
 	});
-	
+
 	// Select visibility
 	$('#visibility').select2({
 		placeholder: "Select visibility",
 		allowClear: true
 	});
-	
+
 	// sorting
 	$('#sorting').select2({
 		placeholder: "Sort By",
 		allowClear: true
 	});
-	
+
 	// country
 	$('#country').select2({
 		placeholder: "Choose Country",
 		allowClear: true
 	});
-	
+
 	// State
 	$('#state').select2({
 		placeholder: "Choose State",
 		allowClear: true
 	});
-	
-	
+
+
 });
